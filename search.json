@@ -1,24 +1,24 @@
 [
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "matplotlib demo",
-    "section": "",
-    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "文章",
-    "section": "",
-    "text": "matplotlib demo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2024\n\n\n叶叶叶\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "作者",
     "section": "",
     "text": "笔耕不辍"
+  },
+  {
+    "objectID": "posts/等量异种电荷电场/index.html",
+    "href": "posts/等量异种电荷电场/index.html",
+    "title": "等量异种电荷电场",
+    "section": "",
+    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nfrom matplotlib.tri import (Triangulation, UniformTriRefiner, CubicTriInterpolator)\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom numpy import vectorize,pi\nfrom scipy.integrate import quad\n\na=1. #圆环半径\nq=1. #带电量\neps=1e-5 #防止奇点附近值过大\nd_phi=lambda theta,x,y,z : q/np.sqrt((x-a*np.cos(theta))**2+(y-a*np.sin(theta))**2+z**2+eps)\n\n#利用vectorize装饰器一次传入一组x,y,z值作为参数进行积分\n@vectorize\ndef Quad(f_handle,x,y,z):\n    return quad(f_handle,0,2*pi,args=(x,y,z))[0]\n\nn_angles = 30 #角度划分数目\nn_radii = 20 #极径划分数目\nmin_radius = 0.1*a #最小极径\nradii = np.linspace(min_radius, 1.9*a, n_radii)\nangles = np.linspace(0, 2 * np.pi, n_angles, endpoint=False)\nangles = np.repeat(angles[..., np.newaxis], n_radii, axis=1) #...和newaxis都是索引的高级写法，具体作用参见https://numpy.org/doc/stable/reference/arrays.indexing.html\nangles[:, 1::2] += np.pi / n_angles #每隔一圈点将数据点旋转过一个最小角度，使得点之间错开从而更好看（amazing）\n\n#x,y坐标以及对应的电势\nx = np.concatenate(((radii*np.cos(angles)).flatten()+a,(radii*np.cos(angles)).flatten()-a),axis=0)\ny = np.concatenate(((radii*np.sin(angles)).flatten(),(radii*np.sin(angles)).flatten()),axis=0)\nV = Quad(d_phi,x,0,y) #这里实际上是把y坐标取为0，y作为z轴坐标传入的\n\ntriang = Triangulation(x, y) #对x,y代表的点进行三角剖分，默认进行Delaunay三角剖分\ntriang.set_mask( #掩蔽奇点，这里是圆环xoz截面处所在的两个点附近的点\n    np.logical_or(\n    np.hypot(x[triang.triangles].mean(axis=1)+a,y[triang.triangles].mean(axis=1))&lt; 0.1*a,\n    np.hypot(x[triang.triangles].mean(axis=1)-a,y[triang.triangles].mean(axis=1))&lt; 0.1*a,\n    )\n)\n\n#对三角网格进行细分、插值\nrefiner = UniformTriRefiner(triang) #针对前面定义的三角网格triang新建一个refiner\ntri_refi, z_test_refi = refiner.refine_field(V, subdiv=3) #将每个三角形细分为4**subdiv个小三角，refine data，默认使用三次插值器\ntci = CubicTriInterpolator(triang, -V) #用于对电势的负值进行插值的三次插值器\n(Ex, Ey) = tci.gradient(triang.x, triang.y) #计算电势的负梯度\nE_norm = np.sqrt(Ex**2 + Ey**2)\n\nfig, ax = plt.subplots(figsize=(10,10),facecolor='w')\nax.set_aspect('equal')\nax.use_sticky_edges = False\nax.margins(0.07)\n\n# tpc = ax.tripcolor(triang, V, shading='gouraud') #绘制Pseudocolor plots, 但是并不好看\nax.triplot(triang, color='0.8') #绘制三角网格\nlevels = np.arange(0., 20., 0.5) #绘制的等值线的值分布数组\nax.tricontour(tri_refi, z_test_refi, levels=levels, cmap='hot',\n              linewidths=[2.0, 1.0, 1.0, 1.0]) #使用前面refine过后的数据绘制等值线图\nax.quiver(triang.x, triang.y, Ex/E_norm, Ey/E_norm,\n          units='xy', scale=10., zorder=3, color='blue',\n          width=0.007, headwidth=3., headlength=4.) #绘制电场强度矢量，这里进行了normalize，所有箭头长度相同\nax.set_title('Gradient plot in the xoz plane of a wire coil')\nfig.savefig('xoz.png',dpi=120)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
+  },
+  {
+    "objectID": "posts/matplot_demo/index.html",
+    "href": "posts/matplot_demo/index.html",
+    "title": "matplotlib demo",
+    "section": "",
+    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -33,5 +33,12 @@
     "title": "Welcome To My Blog",
     "section": "python代码",
     "text": "python代码\ndef f(x): s = 0 for i in range(x): s += i return s ```\n\\[\n  f(x) = \\frac{1}{2} \\sum_{j=1}^\\infty \\int_0^1 \\sin^2(j t x) dt .\n\\tag{1}\\]\n\n解决quarto找不到本地pyhton问题\npowershell 设置永久环境变量\nsetx QUARTO_PYTHON “D:.0.exe” // 永久设置环境变量(用户)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "文章",
+    "section": "",
+    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n等量异种电荷电场\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib demo\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 5, 2024\n\n\n叶叶叶\n\n\n\n\n\n\nNo matching items"
   }
 ]

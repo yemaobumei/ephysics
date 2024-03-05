@@ -2,8 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
+      "/posts/welcome/index.html",
+      "/posts/等量异种电荷电场/index.html",
+      "/posts/matplot_demo/index.html"
     ]
   }
 ]
