@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "笔耕不辍"
-  },
-  {
     "objectID": "posts/等量异种电荷电场/index.html",
     "href": "posts/等量异种电荷电场/index.html",
     "title": "等量异种电荷电场",
@@ -19,6 +12,20 @@
     "title": "如何绑定自己的域名到用户名.github.io",
     "section": "",
     "text": "根目录下创建CNAME，push上传\ntouch CNAME\n\"ephys.cn\" &gt;&gt; CNMAE\n\n\n域名解析\n主机记录 记录类型 记录值\nwww CNAME github用户名.github.io\n@ CNAME github用户名.github.io\n等待1-2分钟DNS解析生效"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "文章",
+    "section": "",
+    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n如何绑定自己的域名到用户名.github.io\n\n\n\n\n\n\nGithub\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n等量异种电荷电场\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib demo\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 5, 2024\n\n\n叶叶叶\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "笔耕不辍"
   },
   {
     "objectID": "posts/matplot_demo/index.html",
@@ -40,12 +47,5 @@
     "title": "Welcome To My Blog",
     "section": "python代码",
     "text": "python代码\ndef f(x): s = 0 for i in range(x): s += i return s ```\n\\[\n  f(x) = \\frac{1}{2} \\sum_{j=1}^\\infty \\int_0^1 \\sin^2(j t x) dt .\n\\tag{1}\\]\n\n解决quarto找不到本地pyhton问题\npowershell 设置永久环境变量\nsetx QUARTO_PYTHON “D:.0.exe” // 永久设置环境变量(用户)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "文章",
-    "section": "",
-    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n如何绑定自己的域名到用户名.github.io\n\n\n\n\n\n\nGithub\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n等量异种电荷电场\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib demo\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 5, 2024\n\n\n叶叶叶\n\n\n\n\n\n\nNo matching items"
   }
 ]
