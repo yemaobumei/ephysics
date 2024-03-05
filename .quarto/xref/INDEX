@@ -19,5 +19,8 @@
   },
   "posts/demo/index.qmd": {
     "index.html": "ca2eca2a"
+  },
+  "posts/matplot_demo/index.qmd": {
+    "index.html": "b4bb3c29"
   }
 }
