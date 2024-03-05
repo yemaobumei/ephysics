@@ -4,27 +4,34 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\n欢迎大家来到我的博客👏 实验\ns = 0\nfor i in range(100):\n    s += i\nprint(s)"
+    "text": "This is the first post in a Quarto blog. Welcome!\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\n欢迎大家来到我的博客👏\n实验"
+  },
+  {
+    "objectID": "posts/welcome/index.html#python代码",
+    "href": "posts/welcome/index.html#python代码",
+    "title": "Welcome To My Blog",
+    "section": "python代码",
+    "text": "python代码\ns = 0\nfor i in range(100):\n    s += i\nprint(s)\ndef f(x):\n    s = 0\n    for i in range(x):\n        s += i\n    return s\n\\[\n  f(x) = \\frac{1}{2} \\sum_{j=1}^\\infty \\int_0^1 \\sin^2(j t x) dt .\n\\tag{1}\\]"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Jack",
+    "title": "文章",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 30, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 30, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "作者",
     "section": "",
-    "text": "关于这篇博客"
+    "text": "笔耕不辍"
   },
   {
     "objectID": "posts/post-with-code/index.html",
     "href": "posts/post-with-code/index.html",
     "title": "Post With Code",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "This is a post with executable code.\n哈哈哈哈哈"
   }
 ]
