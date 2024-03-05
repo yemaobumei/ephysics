@@ -4,7 +4,7 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\n欢迎大家来到我的博客👏 实验"
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\n欢迎大家来到我的博客👏 实验\ns = 0\nfor i in range(100):\n    s += i\nprint(s)"
   },
   {
     "objectID": "index.html",
