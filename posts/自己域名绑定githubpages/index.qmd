@@ -1,0 +1,22 @@
+---
+title: "如何绑定自己的域名到用户名.github.io"
+author: "stack"
+date: "2024-03-06"
+categories: [Github]
+---
+
+### 根目录下创建CNAME，push上传
+
+```bash
+touch CNAME
+"ephys.cn" >> CNMAE
+```
+### 域名解析
+
+主机记录   记录类型  记录值
+
+www       CNAME    github用户名.github.io
+
+@         CNAME    github用户名.github.io
+
+等待1-2分钟DNS解析生效
