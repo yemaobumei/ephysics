@@ -1,7 +1,7 @@
 ---
 title: "Welcome To My Blog"
-author: "Tristan O'Malley"
-date: "2022-10-27"
+author: "叶叶叶"
+date: "2024-10-27"
 categories: [news]
 ---
 
@@ -12,3 +12,23 @@ This is the first post in a Quarto blog. Welcome!
 Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
 
 欢迎大家来到我的博客👏
+
+**实验**
+
+## python代码
+
+```python
+s = 0
+for i in range(100):
+	s += i
+print(s)
+def f(x):
+	s = 0
+	for i in range(x):
+		s += i
+	return s
+```
+
+$$
+  f(x) = \frac{1}{2} \sum_{j=1}^\infty \int_0^1 \sin^2(j t x) dt .
+$${#eq-mylabel}

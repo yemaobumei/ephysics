@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "作者"
 image: profile.jpg
 about:
   template: jolla
@@ -16,4 +16,4 @@ about:
 
 ---
 
-关于这篇博客
+笔耕不辍

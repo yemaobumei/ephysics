@@ -1,5 +1,5 @@
 ---
-title: "Jack"
+title: "文章"
 listing:
   contents: posts
   sort: "date desc"
