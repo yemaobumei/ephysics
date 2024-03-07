@@ -7,6 +7,34 @@
     "text": "根目录下创建CNAME，push上传\ntouch CNAME\n\"ephys.cn\" &gt;&gt; CNMAE\n\n\n域名解析\n主机记录 记录类型 记录值\nwww CNAME github用户名.github.io\n@ CNAME github用户名.github.io\n等待1-2分钟DNS解析生效"
   },
   {
+    "objectID": "posts/修改quarto中katex默认js文件/index.html",
+    "href": "posts/修改quarto中katex默认js文件/index.html",
+    "title": "修改quarto中katex默认js文件地址",
+    "section": "",
+    "text": "quarto默认生成的html文件引用js,css地址是\nhttps://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css\n这两个地址国外ip，网速很慢或者访问不到，因此需要修改成更好用的链接，具体方法如下\n\n_quarto.yml 加入一段\nformat:\n  html:\n    theme: flatly\n    css: styles.css\n    html-math-method:\n      method: katex\n      url: \"https://cdn.bootcss.com/KaTeX/0.11.1/\"\nurl也可以改成本地的js和css文件"
+  },
+  {
+    "objectID": "posts/matplot_demo/index.html",
+    "href": "posts/matplot_demo/index.html",
+    "title": "matplotlib demo",
+    "section": "",
+    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "笔耕不辍"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Stack",
+    "section": "",
+    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n修改quarto中katex默认js文件地址\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n等量异种电荷电场\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n如何绑定自己的域名到用户名.github.io\n\n\n\n\n\n\nGithub\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib demo\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 5, 2024\n\n\n叶叶叶\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
@@ -18,28 +46,7 @@
     "href": "posts/welcome/index.html#python代码",
     "title": "Welcome To My Blog",
     "section": "python代码",
-    "text": "python代码\ndef f(x):\n    s = 0\n    for i in range(x):\n        s += i\n    return s\n\n  f(x) = \\frac{1}{2} \\sum_{j=1}^\\infty \\int_0^1 \\sin^2(j t x) dt .\n\n \\alpha_1 \n\n解决quarto找不到本地pyhton问题\npowershell 设置永久环境变量\nsetx QUARTO_PYTHON \"D:\\Python3.11.0\\python.exe\" // 永久设置环境变量(用户)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "文章",
-    "section": "",
-    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n等量异种电荷电场\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n如何绑定自己的域名到用户名.github.io\n\n\n\n\n\n\nGithub\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib demo\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 5, 2024\n\n\n叶叶叶\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "笔耕不辍"
-  },
-  {
-    "objectID": "posts/matplot_demo/index.html",
-    "href": "posts/matplot_demo/index.html",
-    "title": "matplotlib demo",
-    "section": "",
-    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
+    "text": "python代码\ndef f(x):\n    s = 0\n    for i in range(x):\n        s += i\n    return s\n\n  f(x) = \\frac{1}{2} \\sum_{j=1}^\\infty \\int_0^1 \\sin^2(j x) dt .\n\n \\alpha_1 \n\n解决quarto找不到本地pyhton问题\npowershell 设置永久环境变量\nsetx QUARTO_PYTHON \"D:\\Python3.11.0\\python.exe\" // 永久设置环境变量(用户)"
   },
   {
     "objectID": "posts/等量异种电荷电场/index.html",
