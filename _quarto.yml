@@ -15,7 +15,11 @@ format:
   html:
     theme: flatly
     css: styles.css
-    
+    html-math-method:
+      method: katex
+      url: "https://cdn.bootcss.com/KaTeX/0.11.1/"
+      # css: "https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css"
+
 execute:
   freeze: auto
 

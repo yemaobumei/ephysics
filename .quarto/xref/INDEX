@@ -25,5 +25,8 @@
   },
   "posts/自己域名绑定githubpages/index.qmd": {
     "index.html": "27b4a598"
+  },
+  "posts/修改quarto中katex默认js文件/index.qmd": {
+    "index.html": "5424d2e7"
   }
 }

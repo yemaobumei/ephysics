@@ -16,7 +16,7 @@ Since this post doesn't specify an explicit `image`, the first image in the post
 **实验**
 
 ## python代码
-
+```python
 def f(x):
 	s = 0
 	for i in range(x):
@@ -25,11 +25,14 @@ def f(x):
 ```
 
 $$
-  f(x) = \frac{1}{2} \sum_{j=1}^\infty \int_0^1 \sin^2(j t x) dt .
-$${#eq-mylabel}
+  f(x) = \frac{1}{2} \sum_{j=1}^\infty \int_0^1 \sin^2(j x) dt .
+$$
+
+$$ \alpha_1 $$
 
 ### 解决quarto找不到本地pyhton问题
 
 powershell 设置永久环境变量
-
+```bash
 setx QUARTO_PYTHON "D:\Python3.11.0\python.exe" // 永久设置环境变量(用户)
+```
