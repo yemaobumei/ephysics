@@ -28,5 +28,8 @@
   },
   "posts/修改quarto中katex默认js文件/index.qmd": {
     "index.html": "5424d2e7"
+  },
+  "posts/matplot_animate/index.qmd": {
+    "index.html": "e8ef0884"
   }
 }
