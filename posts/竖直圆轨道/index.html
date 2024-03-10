@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="叶叶叶">
+<meta name="dcterms.date" content="2024-03-10">
 
-<title>欢迎来到evan’s blog - Stack</title>
+<title>欢迎来到evan’s blog - 竖直圆轨道</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,81 +102,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script defer="" src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -152,7 +114,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">欢迎来到evan’s blog</span>
     </a>
   </div>
@@ -163,7 +125,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -186,308 +148,118 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Stack</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">竖直圆轨道</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">matplot</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>叶叶叶 </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 10, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Github">Github <span class="quarto-category-count">(1)</span></div><div class="category" data-category="matplot">matplot <span class="quarto-category-count">(5)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(1)</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p>模拟小球在圆轨道运动 <img src="cos_test3.gif" class="img-fluid"></p>
+<div id="fig-oident" class="cell quarto-figure quarto-figure-center quarto-float anchored" data-execution_count="1">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-oident-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> odeint</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy.abc <span class="im">import</span> t</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> animation</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">global</span> g,r,tmax</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>g<span class="op">=</span><span class="fl">9.8</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>r<span class="op">=</span><span class="fl">0.3</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>tmax<span class="op">=</span><span class="dv">10</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#定义一个方程组（微分方程组）</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pfun(y,x):</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    y1,y2<span class="op">=</span>y<span class="op">;</span> <span class="co">#让'y'成为一个[y1',y2']的向量 所以将等式左边都化为1阶微分是很重要的</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([y2,<span class="op">-</span>g<span class="op">/</span>r<span class="op">*</span>math.cos(y1)]) <span class="co">#返回的是等式右边的值</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="kw">global</span> x,y,point_ani,text_pt,v0</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> <span class="dv">1</span><span class="op">*</span>math.sqrt(<span class="dv">3</span><span class="op">*</span>g<span class="op">/</span>r)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.arange(<span class="dv">0</span>,tmax,<span class="fl">0.02</span>) <span class="co">#创建自变量序列</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>soli<span class="op">=</span>odeint(pfun,[<span class="fl">0.0</span>,v0],x) <span class="co">#求数值解</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.rc(<span class="st">'font'</span>,size<span class="op">=</span><span class="dv">16</span>)<span class="op">;</span> plt.rc(<span class="st">'font'</span>,family<span class="op">=</span><span class="st">'SimHei'</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.rc(<span class="st">'axes'</span>, unicode_minus<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_points_v3(num):</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    point_ani.set_data([x[num]], [y[num]]) <span class="co">## point_ani.set_data(x[num], y[num]) 这种写法一直warning，需要传入列表等可迭代对象</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># point_ani.set_data(x[:num], y[:num])##显示轨迹</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    point_ani.set_markersize(<span class="dv">10</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    text_pt.set_position((x[num], y[num]))</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    text_pt.set_text(<span class="st">"x=</span><span class="sc">%.2f</span><span class="st">, y=</span><span class="sc">%.2f</span><span class="st">"</span> <span class="op">%</span> (x[num], y[num]))</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> point_ani, text_pt,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> toX(theta):</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> r<span class="op">*</span>math.cos(theta)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> toY(theta):</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> r<span class="op">*</span>math.sin(theta)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>y<span class="op">=</span>soli[:,<span class="dv">0</span>] <span class="co">#是角度 </span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span><span class="bu">list</span>(<span class="bu">map</span>(toX,y))</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>y<span class="op">=</span><span class="bu">list</span>(<span class="bu">map</span>(toY,y))</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.plot(x,y)#数值解</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>thetas <span class="op">=</span> np.arange(<span class="dv">0</span>,<span class="dv">2</span><span class="op">*</span>math.pi,<span class="fl">0.01</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>plt.plot(r<span class="op">*</span>np.cos(thetas),r<span class="op">*</span>np.sin(thetas),<span class="st">'g'</span>,label<span class="op">=</span><span class="st">"符号解曲线"</span>)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">"equal"</span>)<span class="co">##横轴纵轴等比例，防止出现不圆</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>point_ani, <span class="op">=</span> plt.plot(x[<span class="dv">0</span>], y[<span class="dv">0</span>], <span class="st">"ro"</span>)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>plt.grid(ls<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>text_pt <span class="op">=</span> plt.text(<span class="dv">4</span>, <span class="fl">0.8</span>, <span class="st">''</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>ani <span class="op">=</span> animation.FuncAnimation(fig, update_points_v3, np.arange(<span class="dv">0</span>, <span class="dv">200</span>), interval<span class="op">=</span><span class="dv">200</span>, blit<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>ani.save(<span class="st">'cos_test3.gif'</span>, writer<span class="op">=</span><span class="st">'pillow'</span>, fps<span class="op">=</span><span class="dv">10</span>)<span class="co">##imagemagick 不能用了</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-oident-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="news" data-listing-date-sort="1729958400000" data-listing-file-modified-sort="1709712248229" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="59">
-<div class="thumbnail">
-<p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\welcome\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/welcome/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/welcome/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/welcome/index.html" class="no-external">This is the first post in a Quarto blog. Welcome!</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-Oct 27, 2024
-</div>
-<div class="listing-author">
-叶叶叶
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="matplot" data-listing-date-sort="1710000000000" data-listing-file-modified-sort="1710067350214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
-<div class="thumbnail">
-<p><a href="./posts/python数值求解微分方程/index.html" class="no-external"></a></p><a href="./posts/python数值求解微分方程/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\python数值求解微分方程\index_files\figure-html\fig-oident-output-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/python数值求解微分方程/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/python数值求解微分方程/index.html" class="no-external">python数值求解微分方程</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/python数值求解微分方程/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('matplot'); return false;">
-matplot
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/python数值求解微分方程/index.html" class="no-external">模拟小球在圆轨道运动</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/python数值求解微分方程/index.html" class="no-external">
-<div class="listing-date">
-Mar 10, 2024
-</div>
-<div class="listing-author">
-叶叶叶
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="matplot" data-listing-date-sort="1710000000000" data-listing-file-modified-sort="1710077370681" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="107">
-<div class="thumbnail">
-<p><a href="./posts/竖直圆轨道/index.html" class="no-external"></a></p><a href="./posts/竖直圆轨道/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\竖直圆轨道\cos_test3.gif"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/竖直圆轨道/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/竖直圆轨道/index.html" class="no-external">竖直圆轨道</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/竖直圆轨道/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('matplot'); return false;">
-matplot
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/竖直圆轨道/index.html" class="no-external">模拟小球在圆轨道运动 </a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/竖直圆轨道/index.html" class="no-external">
-<div class="listing-date">
-Mar 10, 2024
-</div>
-<div class="listing-author">
-叶叶叶
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="matplot" data-listing-date-sort="1709740800000" data-listing-file-modified-sort="1710077238816" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="169">
-<div class="thumbnail">
-<p><a href="./posts/matplot_animate/index.html" class="no-external"></a></p><a href="./posts/matplot_animate/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\matplot_animate\cos_test3.gif"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/matplot_animate/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/matplot_animate/index.html" class="no-external">matplotlib 动画</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/matplot_animate/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('matplot'); return false;">
-matplot
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/matplot_animate/index.html" class="no-external">matplot animation的一个例子</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/matplot_animate/index.html" class="no-external">
-<div class="listing-date">
-Mar 7, 2024
-</div>
-<div class="listing-author">
-叶叶叶
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="quarto" data-listing-date-sort="1709654400000" data-listing-file-modified-sort="1709712647022" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="34">
-<div class="thumbnail">
-<p><a href="./posts/修改quarto中katex默认js文件/index.html" class="no-external"></a></p><a href="./posts/修改quarto中katex默认js文件/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\修改quarto中katex默认js文件\quarto.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/修改quarto中katex默认js文件/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/修改quarto中katex默认js文件/index.html" class="no-external">修改quarto中katex默认js文件地址</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/修改quarto中katex默认js文件/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
-quarto
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/修改quarto中katex默认js文件/index.html" class="no-external">https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/修改quarto中katex默认js文件/index.html" class="no-external">
-<div class="listing-date">
-Mar 6, 2024
-</div>
-<div class="listing-author">
-stack
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="matplot" data-listing-date-sort="1709654400000" data-listing-file-modified-sort="1709688064475" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="207">
-<div class="thumbnail">
-<p><a href="./posts/等量异种电荷电场/index.html" class="no-external"></a></p><a href="./posts/等量异种电荷电场/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\等量异种电荷电场\index_files\figure-html\fig-polar-output-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/等量异种电荷电场/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/等量异种电荷电场/index.html" class="no-external">等量异种电荷电场</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/等量异种电荷电场/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('matplot'); return false;">
-matplot
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/等量异种电荷电场/index.html" class="no-external">For a demonstration of a line plot on a polar axis, see Figure&nbsp;1.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/等量异种电荷电场/index.html" class="no-external">
-<div class="listing-date">
-Mar 6, 2024
-</div>
-<div class="listing-author">
-stack
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Github" data-listing-date-sort="1709654400000" data-listing-file-modified-sort="1709688064480" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="34">
-<div class="thumbnail">
-<p><a href="./posts/自己域名绑定githubpages/index.html" class="no-external"></a></p><a href="./posts/自己域名绑定githubpages/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/自己域名绑定githubpages/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/自己域名绑定githubpages/index.html" class="no-external">如何绑定自己的域名到用户名.github.io</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/自己域名绑定githubpages/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Github'); return false;">
-Github
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/自己域名绑定githubpages/index.html" class="no-external">主机记录 记录类型 记录值</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/自己域名绑定githubpages/index.html" class="no-external">
-<div class="listing-date">
-Mar 6, 2024
-</div>
-<div class="listing-author">
-stack
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="matplot" data-listing-date-sort="1709568000000" data-listing-file-modified-sort="1709688064475" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="52">
-<div class="thumbnail">
-<p><a href="./posts/matplot_demo/index.html" class="no-external"></a></p><a href="./posts/matplot_demo/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\matplot_demo\index_files\figure-html\fig-polar-output-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/matplot_demo/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/matplot_demo/index.html" class="no-external">matplotlib demo</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/matplot_demo/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('matplot'); return false;">
-matplot
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/matplot_demo/index.html" class="no-external">For a demonstration of a line plot on a polar axis, see Figure&nbsp;1.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/matplot_demo/index.html" class="no-external">
-<div class="listing-date">
-Mar 5, 2024
-</div>
-<div class="listing-author">
-叶叶叶
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
