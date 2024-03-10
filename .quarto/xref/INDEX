@@ -31,5 +31,11 @@
   },
   "posts/matplot_animate/index.qmd": {
     "index.html": "e8ef0884"
+  },
+  "posts/python数值求解微分方程/index.qmd": {
+    "index.html": "75695c38"
+  },
+  "posts/竖直圆轨道/index.qmd": {
+    "index.html": "f04da082"
   }
 }

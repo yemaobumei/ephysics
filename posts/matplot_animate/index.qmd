@@ -1,7 +1,7 @@
 ---
 title: "matplotlib 动画"
 author: "叶叶叶"
-date: "2024-03-10"
+date: "2024-03-07"
 categories: [matplot]
 format:
   html:
@@ -19,7 +19,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
 def update_points_v3(num):
-    point_ani.set_data(x[num], y[num])
+    point_ani.set_data([x[num]], [y[num]])
     if num % 5 == 0:
         point_ani.set_marker("*")
         point_ani.set_markersize(12)
@@ -40,7 +40,7 @@ def test3():
     plt.grid(ls="--")
     text_pt = plt.text(4, 0.8, '', fontsize=16)
     ani = animation.FuncAnimation(fig, update_points_v3, np.arange(0, 100), interval=100, blit=True)
-    ani.save('cos_test3.gif', writer='imagemagick', fps=10)
+    ani.save('cos_test3.gif', writer='pillow', fps=10)
     # plt.show()
     plt.close()
 test3()    

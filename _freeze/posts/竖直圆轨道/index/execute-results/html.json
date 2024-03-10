@@ -1,0 +1,12 @@
+{
+  "hash": "44f0cd45720e9cec9b6b14c954aab44d",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: 竖直圆轨道\nauthor: 叶叶叶\ndate: '2024-03-10'\ncategories:\n  - matplot\nformat:\n  html:\n    code-fold: true\n---\n\n模拟小球在圆轨道运动\n![](cos_test3.gif)\n\n::: {#fig-oident .cell execution_count=1}\n``` {.python .cell-code}\nimport math\nfrom scipy.integrate import odeint\nfrom sympy.abc import t\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib import animation\n\nglobal g,r,tmax\ng=9.8\nr=0.3\ntmax=10\n#定义一个方程组（微分方程组）\ndef pfun(y,x):\n\ty1,y2=y; #让'y'成为一个[y1',y2']的向量 所以将等式左边都化为1阶微分是很重要的\n\treturn np.array([y2,-g/r*math.cos(y1)]) #返回的是等式右边的值\n\n\nglobal x,y,point_ani,text_pt,v0\n\nv0 = 1*math.sqrt(3*g/r)\nx=np.arange(0,tmax,0.02) #创建自变量序列\nsoli=odeint(pfun,[0.0,v0],x) #求数值解\nplt.rc('font',size=16); plt.rc('font',family='SimHei')\nplt.rc('axes', unicode_minus=False)\n\ndef update_points_v3(num):\n    point_ani.set_data([x[num]], [y[num]]) ## point_ani.set_data(x[num], y[num]) 这种写法一直warning，需要传入列表等可迭代对象\n    # point_ani.set_data(x[:num], y[:num])##显示轨迹\n    point_ani.set_markersize(10)\n    text_pt.set_position((x[num], y[num]))\n    text_pt.set_text(\"x=%.2f, y=%.2f\" % (x[num], y[num]))\n    return point_ani, text_pt,\ndef toX(theta):\n  return r*math.cos(theta)\ndef toY(theta):\n  return r*math.sin(theta)\nfig = plt.figure()\ny=soli[:,0] #是角度 \nx=list(map(toX,y))\ny=list(map(toY,y))\n# plt.plot(x,y)#数值解\nthetas = np.arange(0,2*math.pi,0.01)\nplt.plot(r*np.cos(thetas),r*np.sin(thetas),'g',label=\"符号解曲线\")\nplt.axis(\"equal\")##横轴纵轴等比例，防止出现不圆\npoint_ani, = plt.plot(x[0], y[0], \"ro\")\nplt.grid(ls=\"--\")\ntext_pt = plt.text(4, 0.8, '', fontsize=16)\nani = animation.FuncAnimation(fig, update_points_v3, np.arange(0, 200), interval=200, blit=True)\nani.save('cos_test3.gif', writer='pillow', fps=10)##imagemagick 不能用了\n\nplt.legend()\n# plt.show()\nplt.close()\n```\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
