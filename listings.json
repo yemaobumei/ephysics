@@ -3,8 +3,8 @@
     "listing": "/index.html",
     "items": [
       "/posts/welcome/index.html",
-      "/posts/将quarto部署到云服务器/test.html",
       "/posts/将quarto部署到云服务器/index.html",
+      "/posts/将quarto部署到云服务器/test.html",
       "/posts/让圆动起来/index.html",
       "/posts/matplot_animate/index.html",
       "/posts/自己域名绑定githubpages/index.html",
