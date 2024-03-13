@@ -5,13 +5,11 @@ date: "2024-03-13"
 categories: [quarto]
 ---
 
-This is the first post in a Quarto blog. Welcome!
-
 ![](../welcome/thumbnail.jpg)
 
 
-quarto官网默认publish的几个静态服务商，国内访问很慢。因此利用自己购买的云服务器
-部署静态服务器。将quarto本地笔记自动更新到云服务器。这样就快很多。
+**quarto官网默认publish的几个静态服务商，国内访问很慢。因此利用自己购买的云服务器
+部署静态服务器。将quarto本地笔记自动更新到云服务器。这样就快很多。**
 
 1.git项目代码
 ```bash

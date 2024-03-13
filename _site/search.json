@@ -35,6 +35,13 @@
     "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
   },
   {
+    "objectID": "posts/将quarto部署到云服务器/index.html",
+    "href": "posts/将quarto部署到云服务器/index.html",
+    "title": "将quarto部署到云服务器",
+    "section": "",
+    "text": "quarto官网默认publish的几个静态服务商，国内访问很慢。因此利用自己购买的云服务器 部署静态服务器。将quarto本地笔记自动更新到云服务器。这样就快很多。\n1.git项目代码\ncd ~/  #切换到主目录\ngit clone   \"ssh@.....\"\n2.首先服务器配置,环境ubuntu20.24\n#安装web服务\nsudo apt install nginx\n#配置nginx代理\ncd /etc/nginx/site-enabled\nvi default\n##加入自己的配置\n#       server_name  1.1.1.1  #可以是ip，也可以是自购的域名\n#       location /blog {     #将  ip/blog 指向quarto生成网页文件夹\n#           alias /home/ubuntu/ephysics/_site/;  #路径看你具体存放在哪\n#}\nnginx -t ##测试配置是否成功\nsudo nginx reload ## 重启nginx服务\n浏览器输入 服务器ip/blog\n查看是否看到首页\n3.利用crontab 自动更新git仓库\ncrontab -e \n##在末尾加入下面一行，设置每分钟自动拉取远程仓库一次 \n* * * * * cd /home/ubuntu/ephysics  && git pull origin master"
+  },
+  {
     "objectID": "posts/自己域名绑定githubpages/index.html",
     "href": "posts/自己域名绑定githubpages/index.html",
     "title": "如何绑定自己的域名到用户名.github.io",
@@ -68,12 +75,5 @@
     "title": "Stack",
     "section": "",
     "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n将quarto部署到云服务器\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\nMar 13, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n让球沿轨道动起来\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 11, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib 动画\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 10, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n如何绑定自己的域名到用户名.github.io\n\n\n\n\n\n\nGithub\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n修改quarto中katex默认js文件地址\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n等量异种电荷电场\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib demo\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 5, 2024\n\n\n叶叶叶\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/将quarto部署到云服务器/index.html",
-    "href": "posts/将quarto部署到云服务器/index.html",
-    "title": "将quarto部署到云服务器",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nquarto官网默认publish的几个静态服务商，国内访问很慢。因此利用自己购买的云服务器 部署静态服务器。将quarto本地笔记自动更新到云服务器。这样就快很多。\n1.git项目代码\ncd ~/  #切换到主目录\ngit clone   \"ssh@.....\"\n2.首先服务器配置,环境ubuntu20.24\n#安装web服务\nsudo apt install nginx\n#配置nginx代理\ncd /etc/nginx/site-enabled\nvi default\n##加入自己的配置\n#       server_name  1.1.1.1  #可以是ip，也可以是自购的域名\n#       location /blog {     #将  ip/blog 指向quarto生成网页文件夹\n#           alias /home/ubuntu/ephysics/_site/;  #路径看你具体存放在哪\n#}\nnginx -t ##测试配置是否成功\nsudo nginx reload ## 重启nginx服务\n浏览器输入 服务器ip/blog\n查看是否看到首页\n3.利用crontab 自动更新git仓库\ncrontab -e \n##在末尾加入下面一行，设置每分钟自动拉取远程仓库一次 \n* * * * * cd /home/ubuntu/ephysics  && git pull origin master"
   }
 ]
