@@ -28,11 +28,11 @@
     "text": "quarto官网默认publish的几个静态服务商，国内访问很慢。因此利用自己购买的云服务器 部署静态服务器。将quarto本地笔记自动更新到云服务器。这样就快很多。\n1.git项目代码\ncd ~/  #切换到主目录\ngit clone   \"ssh@.....\"\n2.首先服务器配置,环境ubuntu20.24\n#安装web服务\nsudo apt install nginx\n#配置nginx代理\ncd /etc/nginx/site-enabled\nvi default\n##加入自己的配置\n#       server_name  1.1.1.1  #可以是ip，也可以是自购的域名\n#       location /blog {     #将  ip/blog 指向quarto生成网页文件夹\n#           alias /home/ubuntu/ephysics/_site/;  #路径看你具体存放在哪\n#}\nnginx -t ##测试配置是否成功\nsudo nginx reload ## 重启nginx服务\n浏览器输入 服务器ip/blog\n查看是否看到首页\n3.利用crontab 自动更新git仓库\ncrontab -e \n##在末尾加入下面一行，设置每分钟自动拉取远程仓库一次 \n* * * * * cd /home/ubuntu/ephysics  && git pull origin master"
   },
   {
-    "objectID": "posts/matplot_animate/index.html",
-    "href": "posts/matplot_animate/index.html",
-    "title": "matplotlib 动画",
+    "objectID": "posts/自己域名绑定githubpages/index.html",
+    "href": "posts/自己域名绑定githubpages/index.html",
+    "title": "如何绑定自己的域名到用户名.github.io",
     "section": "",
-    "text": "matplot animation的一个例子\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib import animation\ndef update_points_v3(num):\n    point_ani.set_data(x[num], y[num])\n    if num % 5 == 0:\n        point_ani.set_marker(\"*\")\n        point_ani.set_markersize(12)\n    else:\n        point_ani.set_marker(\"o\")\n        point_ani.set_markersize(8)\n    text_pt.set_position((x[num], y[num]))\n    text_pt.set_text(\"x=%.2f, y=%.2f\" % (x[num], y[num]))\n    return point_ani, text_pt,\n\ndef test3():\n    global x,y,point_ani,text_pt\n    x = np.linspace(0, 2 * np.pi, 100)\n    y = np.cos(x)\n    fig = plt.figure()\n    plt.plot(x, y)\n    point_ani, = plt.plot(x[0], y[0], \"ro\")\n    plt.grid(ls=\"--\")\n    text_pt = plt.text(4, 0.8, '', fontsize=16)\n    ani = animation.FuncAnimation(fig, update_points_v3, np.arange(0, 100), interval=100, blit=True)\n    ani.save('cos_test3.gif', writer='imagemagick', fps=10)\n    # plt.show()\n    plt.close()\ntest3()    \n\n\n/var/folders/nl/_kfvn24j60j8_q_3kd0njl3h0000gn/T/ipykernel_27064/4217115973.py:5: MatplotlibDeprecationWarning: Setting data with a non sequence type is deprecated since 3.7 and will be remove two minor releases later\n  point_ani.set_data(x[num], y[num])\nMovieWriter imagemagick unavailable; using Pillow instead.\n/var/folders/nl/_kfvn24j60j8_q_3kd0njl3h0000gn/T/ipykernel_27064/4217115973.py:5: MatplotlibDeprecationWarning: Setting data with a non sequence type is deprecated since 3.7 and will be remove two minor releases later\n  point_ani.set_data(x[num], y[num])\n\n\n测试\n\n\n\n动画示意图"
+    "text": "根目录下创建CNAME，push上传\ntouch CNAME\n\"ephys.cn\" &gt;&gt; CNMAE\n\n\n域名解析\n主机记录 记录类型 记录值\nwww CNAME github用户名.github.io\n@ CNAME github用户名.github.io\n等待1-2分钟DNS解析生效"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -49,11 +49,18 @@
     "text": "python代码\ndef f(x):\n    s = 0\n    for i in range(x):\n        s += i\n    return s\n\n  f(x) = \\frac{1}{2} \\sum_{j=1}^\\infty \\int_0^1 \\sin^2(j x) dt .\n\n \\alpha_1 \n\n解决quarto找不到本地pyhton问题\npowershell 设置永久环境变量\nsetx QUARTO_PYTHON \"D:\\Python3.11.0\\python.exe\" // 永久设置环境变量(用户)"
   },
   {
-    "objectID": "posts/自己域名绑定githubpages/index.html",
-    "href": "posts/自己域名绑定githubpages/index.html",
-    "title": "如何绑定自己的域名到用户名.github.io",
+    "objectID": "posts/matplot_animate/index.html",
+    "href": "posts/matplot_animate/index.html",
+    "title": "matplotlib 动画",
     "section": "",
-    "text": "根目录下创建CNAME，push上传\ntouch CNAME\n\"ephys.cn\" &gt;&gt; CNMAE\n\n\n域名解析\n主机记录 记录类型 记录值\nwww CNAME github用户名.github.io\n@ CNAME github用户名.github.io\n等待1-2分钟DNS解析生效"
+    "text": "matplot animation的一个例子\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib import animation\ndef update_points_v3(num):\n    point_ani.set_data(x[num], y[num])\n    if num % 5 == 0:\n        point_ani.set_marker(\"*\")\n        point_ani.set_markersize(12)\n    else:\n        point_ani.set_marker(\"o\")\n        point_ani.set_markersize(8)\n    text_pt.set_position((x[num], y[num]))\n    text_pt.set_text(\"x=%.2f, y=%.2f\" % (x[num], y[num]))\n    return point_ani, text_pt,\n\ndef test3():\n    global x,y,point_ani,text_pt\n    x = np.linspace(0, 2 * np.pi, 100)\n    y = np.cos(x)\n    fig = plt.figure()\n    plt.plot(x, y)\n    point_ani, = plt.plot(x[0], y[0], \"ro\")\n    plt.grid(ls=\"--\")\n    text_pt = plt.text(4, 0.8, '', fontsize=16)\n    ani = animation.FuncAnimation(fig, update_points_v3, np.arange(0, 100), interval=100, blit=True)\n    ani.save('cos_test3.gif', writer='imagemagick', fps=10)\n    # plt.show()\n    plt.close()\ntest3()    \n\n\n/var/folders/nl/_kfvn24j60j8_q_3kd0njl3h0000gn/T/ipykernel_27064/4217115973.py:5: MatplotlibDeprecationWarning: Setting data with a non sequence type is deprecated since 3.7 and will be remove two minor releases later\n  point_ani.set_data(x[num], y[num])\nMovieWriter imagemagick unavailable; using Pillow instead.\n/var/folders/nl/_kfvn24j60j8_q_3kd0njl3h0000gn/T/ipykernel_27064/4217115973.py:5: MatplotlibDeprecationWarning: Setting data with a non sequence type is deprecated since 3.7 and will be remove two minor releases later\n  point_ani.set_data(x[num], y[num])\n\n\n测试\n\n\n\n动画示意图"
+  },
+  {
+    "objectID": "posts/将quarto部署到云服务器/test.html",
+    "href": "posts/将quarto部署到云服务器/test.html",
+    "title": "Mac使用pyenv控制python版本",
+    "section": "",
+    "text": "pyenv常用指令\n使用方式: pyenv &lt;命令&gt; [&lt;参数&gt;]\n\n命令:\n  commands    查看所有命令\n  local       设置或显示本地的Python版本\n  global      设置或显示全局Python版本\n  shell       设置或显示shell指定的Python版本\n  install     安装指定Python版本\n  uninstall   卸载指定Python版本)\n  version     显示当前的Python版本及其本地路径\n  versions    查看所有已经安装的版本\n  which       显示安装路径\n复制代码"
   },
   {
     "objectID": "posts/matplot_demo/index.html",
@@ -74,6 +81,6 @@
     "href": "index.html",
     "title": "Stack",
     "section": "",
-    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n将quarto部署到云服务器\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\nMar 13, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n让球沿轨道动起来\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 11, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib 动画\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 10, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n如何绑定自己的域名到用户名.github.io\n\n\n\n\n\n\nGithub\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n修改quarto中katex默认js文件地址\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n等量异种电荷电场\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib demo\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 5, 2024\n\n\n叶叶叶\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\nMac使用pyenv控制python版本\n\n\n\n\n\n\npython\n\n\n\n\n\n\n\n\n\nMar 13, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n将quarto部署到云服务器\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\nMar 13, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n让球沿轨道动起来\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 11, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib 动画\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 10, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n如何绑定自己的域名到用户名.github.io\n\n\n\n\n\n\nGithub\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n修改quarto中katex默认js文件地址\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n等量异种电荷电场\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib demo\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 5, 2024\n\n\n叶叶叶\n\n\n\n\n\n\nNo matching items"
   }
 ]
