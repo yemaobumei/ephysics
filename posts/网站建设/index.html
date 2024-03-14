@@ -9,7 +9,7 @@
 <meta name="author" content="stack">
 <meta name="dcterms.date" content="2024-03-14">
 
-<title>欢迎来到evan’s blog - 网站部署到服务器</title>
+<title>物理教学 - django网站部署到服务器</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">欢迎来到evan’s blog</span>
+    <span class="navbar-title">物理教学</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">网站部署到服务器</h1>
+      <h1 class="title">django网站部署到服务器</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Django</div>
               </div>
@@ -190,6 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#同时注意在ubuntu16.04中upstart无法使用改成了systemd-service" id="toc-同时注意在ubuntu16.04中upstart无法使用改成了systemd-service" class="nav-link active" data-scroll-target="#同时注意在ubuntu16.04中upstart无法使用改成了systemd-service">同时注意在ubuntu16.04中upstart无法使用，改成了systemd service</a></li>
+  <li><a href="#注意事项" id="toc-注意事项" class="nav-link" data-scroll-target="#注意事项">注意事项</a></li>
   </ul>
 </nav>
     </div>
@@ -200,8 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>部署文件在我的Github项目可找到:<a href="https://github.com/">https://github.com/</a></p>
-<p>阿里云服务器需配置网络安全组</p>
+<p>如果是腾讯云/阿里云服务器需配置网络安全组</p>
 <p>HTTP 显示为 80/80。 实例作为网站或 Web 应用的服务器。</p>
 <ul>
 <li>第一步　安装nginx,fabric,virtualenv</li>
@@ -222,55 +222,92 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>第三步　使用sed配置Nginx和Gunicorn</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">在deploy_tools文件夹下保存了默认配置,只需稍作修改将内容复制到系统相应目录下即可</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">#在deploy_tools文件夹下保存了默认配置,只需稍作修改将内容复制到系统相应目录下即可</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">alien@server:sed</span> <span class="st">"s/SITENAME/yemaobumei.cn/g"</span> deploy_tools/nginx.template.conf <span class="kw">|</span> <span class="fu">sed</span> <span class="st">"s/USER/alien/g"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/nginx/sites-available/yemaobumei.cn</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> <span class="st">"s/SITENAME/yemaobumei.cn/g"</span> deploy_tools/nginx.template.conf <span class="kw">|</span> <span class="fu">sed</span> <span class="st">"s/USER/ubuntu/g"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/nginx/sites-available/yemaobumei.cn</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">fabric中进行文本替换的函数叫sed,先把SITENAME替换成网站地址，再把USER替换成当前系统用户名，然后使用管道操作</span><span class="er">(</span><span class="kw">|)</span><span class="ex">把文本留传给拥有root权限用户写入系统/etc/nginx/sites-available/yemaobumei.cn文件里。</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#fabric中进行文本替换的函数叫sed,先把SITENAME替换成网站地址，再把USER替换成当前系统用户名，然后使用管道操作(|)把文本留传给拥有root权限用户写入系统/etc/nginx/sites-available/yemaobumei.cn文件里。</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">激活这个配置文件的虚拟主机:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">#激活这个配置文件的虚拟主机:</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> ln <span class="at">-s</span> /etc/nginx/sites-available/yemaobumei.cn       /etc/nginx/sites-enabled/yemaobumei.cn</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">然后编写Upstart脚本:</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">#然后编写Upstart脚本:</span></span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> <span class="st">"s/SITENAME/yemaobumei.cn/g"</span> deploy_tools/gunicorn-upstart.template.conf <span class="kw">|</span> <span class="fu">sed</span> <span class="st">"s/USER/alien/g"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/init/gunicorn-yemaobumei.cn.conf</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> <span class="st">"s/SITENAME/yemaobumei.cn/g"</span> deploy_tools/gunicorn-upstart.template.conf <span class="kw">|</span> <span class="fu">sed</span> <span class="st">"s/USER/ubuntu/g"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/init/gunicorn-yemaobumei.cn.conf</span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">最后启动这两个服务:</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">#最后启动这两个服务:</span></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> service nginx reload</span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> start gunicorn-yemaobumei.cn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>为了能获取访问者的ip，特地在nginx.template.conf 加入了以下一段</p>
-<pre><code>location / {
-        proxy_set_header Host $host;
-        proxy_pass http://unix:/tmp/yemaobumei.cn.socket;
-        
-        #IP_adress
-        proxy_redirect off;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Scheme $scheme;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-
-    }
-    </code></pre>
+<ul>
+<li>第四步 为了能获取访问者的ip，特地在nginx.template.conf 加入了以下一段</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> / {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> Host <span class="va">$host</span><span class="kw">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_pass</span> http://unix:/tmp/yemaobumei.cn.socket<span class="kw">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            <span class="co">#IP_adress</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_redirect</span> off<span class="kw">;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Real-IP <span class="va">$remote_addr</span><span class="kw">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Scheme <span class="va">$scheme</span><span class="kw">;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Forwarded-For <span class="va">$proxy_add_x_forwarded_for</span><span class="kw">;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>第五步 为了将quarto静态服务纳入进来，最后/etc/nginx/sites-enabled/default 添加如下</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">server</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">listen</span> 80<span class="kw">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">server_name</span> ephys.cn<span class="kw">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> /static {</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">alias</span> /home/ubuntu/sites/ephys.cn/source/static<span class="kw">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="er">}</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> /media {</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="ex">autoindex</span> on<span class="kw">;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">alias</span> /home/ubuntu/sites/ephys.cn/source/media<span class="kw">;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="er">}</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> /teach {</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#            root  /home/ubuntu/ephysics/_site/;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">alias</span> /home/ubuntu/ephysics/_site/<span class="kw">;</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> / {</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> Host <span class="va">$host</span><span class="kw">;</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_pass</span> http://unix:/tmp/ephys.cn.socket<span class="kw">;</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_redirect</span> off<span class="kw">;</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Real-IP <span class="va">$remote_addr</span><span class="kw">;</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Scheme <span class="va">$scheme</span><span class="kw">;</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Forwarded-For <span class="va">$proxy_add_x_forwarded_for</span><span class="kw">;</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        <span class="er">}</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="同时注意在ubuntu16.04中upstart无法使用改成了systemd-service" class="level3">
 <h3 class="anchored" data-anchor-id="同时注意在ubuntu16.04中upstart无法使用改成了systemd-service">同时注意在ubuntu16.04中upstart无法使用，改成了systemd service</h3>
 <p>因此在第三步有关upstart部分改为:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> <span class="st">"s/SITENAME/yemaobumei.cn/g"</span> deploy_tools/sysd.service </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="fu">sed</span> <span class="st">"s/USER/alien/g"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee  /etc/systemd/system/yemaobumei.cn.service</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">最后启动服务</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> service nginx reload</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> systemctl daemon-reload</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> systemctl enable yemaobumei.cn.service</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> systemctl start yemaobumei.cn.service</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>####pip安装requests要&lt;2.27</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install requests==2.23.0   <span class="st">'certifi&lt;=2020.4.5.1'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>要加上 ‘certifi&lt;=2020.4.5.1’</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> <span class="st">"s/SITENAME/yemaobumei.cn/g"</span> deploy_tools/sysd.service </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="fu">sed</span> <span class="st">"s/USER/ubuntu/g"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee  /etc/systemd/system/yemaobumei.cn.service</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>最后 最后启动服务</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> service nginx reload</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> systemctl daemon-reload</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> systemctl enable yemaobumei.cn.service</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> systemctl start yemaobumei.cn.service</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="注意事项" class="level3">
+<h3 class="anchored" data-anchor-id="注意事项">注意事项</h3>
+<section id="pip安装requests要2.27" class="level4">
+<h4 class="anchored" data-anchor-id="pip安装requests要2.27">pip安装requests要&lt;2.27</h4>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install requests==2.23.0   <span class="st">'certifi&lt;=2020.4.5.1'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>要加上 ‘certifi&lt;=2020.4.5.1’ </em></p>
 <p>安装 requests&gt;2.27 会出现语法问题，与py2.7不兼容。 是时候改成Python3了</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
