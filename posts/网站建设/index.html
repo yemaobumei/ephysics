@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="stack">
-<meta name="dcterms.date" content="2024-03-11">
+<meta name="dcterms.date" content="2024-03-14">
 
-<title>欢迎来到evan’s blog - 让球沿轨道动起来</title>
+<title>欢迎来到evan’s blog - 网站部署到服务器</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -149,9 +149,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">让球沿轨道动起来</h1>
+      <h1 class="title">网站部署到服务器</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">matplot</div>
+                <div class="quarto-category">Django</div>
               </div>
                   </div>
   </div>
@@ -169,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 11, 2024</p>
+        <p class="date">March 14, 2024</p>
       </div>
     </div>
     
@@ -181,7 +181,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#同时注意在ubuntu16.04中upstart无法使用改成了systemd-service" id="toc-同时注意在ubuntu16.04中upstart无法使用改成了systemd-service" class="nav-link active" data-scroll-target="#同时注意在ubuntu16.04中upstart无法使用改成了systemd-service">同时注意在ubuntu16.04中upstart无法使用，改成了systemd service</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -190,56 +196,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>matplot 让球沿着圆轨道运动</p>
-<div id="cell-动态圆" class="cell" data-execution_count="1">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.animation <span class="im">as</span> animation</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">##定义一些常量，比如轨道的半径，球心位置。</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>x0,y0 <span class="op">=</span> <span class="dv">0</span>,<span class="dv">0</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>r_ball <span class="op">=</span> <span class="fl">0.5</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">##定义画布</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span>r<span class="op">*</span><span class="fl">1.2</span>,r<span class="op">*</span><span class="fl">1.2</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span>r<span class="op">*</span><span class="fl">1.2</span>,r<span class="op">*</span><span class="fl">1.2</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>ax.set_aspect(<span class="st">'equal'</span>) <span class="co">#画布成正方形</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">'off'</span>) <span class="co">#不显示坐标轴</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">##定义圆</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>circle <span class="op">=</span> plt.Circle((x0,y0),r_ball,color<span class="op">=</span><span class="st">'y'</span>,fill<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>circle_guidao <span class="op">=</span> plt.Circle((x0,y0),r,color<span class="op">=</span><span class="st">'red'</span>,fill<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>ax.add_artist(circle)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>ax.add_artist(circle_guidao)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">##定义更新函数，更新每一帧圆的位置</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update(frame):</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x0<span class="op">+</span>(r<span class="op">-</span>r_ball)<span class="op">*</span>np.cos(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>frame<span class="op">/</span>T)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> y0<span class="op">+</span>(r<span class="op">-</span>r_ball)<span class="op">*</span>np.sin(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>frame<span class="op">/</span>T)</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    circle.set_center((x,y))</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> circle,</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建动画</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>anim <span class="op">=</span> animation.FuncAnimation(fig, update, frames<span class="op">=</span>np.arange(<span class="dv">0</span>, <span class="dv">10</span>, <span class="fl">0.1</span>), interval<span class="op">=</span><span class="dv">50</span>,blit<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>anim.save(<span class="st">'fig.gif'</span>, writer<span class="op">=</span><span class="st">'pillow'</span>, fps<span class="op">=</span><span class="dv">10</span>) </span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示动画</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="fig.gif" class="img-fluid figure-img"></p>
-<figcaption>动画</figcaption>
-</figure>
-</div>
+<p>部署文件在我的Github项目可找到:<a href="https://github.com/yemaobumei/mysite">https://github.com/yemaobumei/mysite</a></p>
+<p>阿里云服务器需配置网络安全组</p>
+<p>HTTP 显示为 80/80。 实例作为网站或 Web 应用的服务器。</p>
+<ul>
+<li>第一步　安装nginx,fabric,virtualenv</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> apt-get install nginx</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> service nginx start</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> pip install fabric1.14==post1   <span class="co">##py2只能用低版本Fabric</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> pip install virtualenv</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">此时输入网站域名或者IP就能看到welcome</span> to nginx!测试页面</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>第二步　运行自动部署文件fabfile.py</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">在包含fabfile.py文件的目录下，运行</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">fab</span> deploy</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">输入域名和linux密码</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>第三步　使用sed配置Nginx和Gunicorn</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">在deploy_tools文件夹下保存了默认配置,只需稍作修改将内容复制到系统相应目录下即可</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">alien@server:sed</span> <span class="st">"s/SITENAME/yemaobumei.cn/g"</span> deploy_tools/nginx.template.conf <span class="kw">|</span> <span class="fu">sed</span> <span class="st">"s/USER/alien/g"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/nginx/sites-available/yemaobumei.cn</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">fabric中进行文本替换的函数叫sed,先把SITENAME替换成网站地址，再把USER替换成当前系统用户名，然后使用管道操作</span><span class="er">(</span><span class="kw">|)</span><span class="ex">把文本留传给拥有root权限用户写入系统/etc/nginx/sites-available/yemaobumei.cn文件里。</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">激活这个配置文件的虚拟主机:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> ln <span class="at">-s</span> /etc/nginx/sites-available/yemaobumei.cn       /etc/nginx/sites-enabled/yemaobumei.cn</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">然后编写Upstart脚本:</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> <span class="st">"s/SITENAME/yemaobumei.cn/g"</span> deploy_tools/gunicorn-upstart.template.conf <span class="kw">|</span> <span class="fu">sed</span> <span class="st">"s/USER/alien/g"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/init/gunicorn-yemaobumei.cn.conf</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">最后启动这两个服务:</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> service nginx reload</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> start gunicorn-yemaobumei.cn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>为了能获取访问者的ip，特地在nginx.template.conf 加入了以下一段</p>
+<pre><code>location / {
+        proxy_set_header Host $host;
+        proxy_pass http://unix:/tmp/yemaobumei.cn.socket;
+        
+        #IP_adress
+        proxy_redirect off;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Scheme $scheme;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    }
+    </code></pre>
+<section id="同时注意在ubuntu16.04中upstart无法使用改成了systemd-service" class="level3">
+<h3 class="anchored" data-anchor-id="同时注意在ubuntu16.04中upstart无法使用改成了systemd-service">同时注意在ubuntu16.04中upstart无法使用，改成了systemd service</h3>
+<p>因此在第三步有关upstart部分改为:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> <span class="st">"s/SITENAME/yemaobumei.cn/g"</span> deploy_tools/sysd.service </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="fu">sed</span> <span class="st">"s/USER/alien/g"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee  /etc/systemd/system/yemaobumei.cn.service</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">最后启动服务</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> service nginx reload</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> systemctl daemon-reload</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> systemctl enable yemaobumei.cn.service</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> systemctl start yemaobumei.cn.service</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>####pip安装requests要&lt;2.27</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install requests==2.23.0   <span class="st">'certifi&lt;=2020.4.5.1'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>要加上 ‘certifi&lt;=2020.4.5.1’</p>
+<p>安装 requests&gt;2.27 会出现语法问题，与py2.7不兼容。 是时候改成Python3了</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
