@@ -1,0 +1,49 @@
+---
+title: "将quarto部署到云服务器"
+author: "stack"
+date: "2024-03-13"
+categories: [quarto]
+---
+
+![](../welcome/thumbnail.jpg)
+
+
+**quarto官网默认publish的几个静态服务商，国内访问很慢。因此利用自己购买的云服务器
+部署静态服务器。将quarto本地笔记自动更新到云服务器。这样就快很多。**
+
+1.git项目代码
+```bash
+cd ~/  #切换到主目录
+git clone   "ssh@....."
+```
+
+2.首先服务器配置,环境ubuntu20.24
+```bash
+#安装web服务
+sudo apt install nginx
+#配置nginx代理
+cd /etc/nginx/site-enabled
+vi default
+##加入自己的配置
+#       server_name  1.1.1.1  #可以是ip，也可以是自购的域名
+#       location /blog {     #将  ip/blog 指向quarto生成网页文件夹
+#           alias /home/ubuntu/ephysics/_site/;	 #路径看你具体存放在哪
+#}
+nginx -t ##测试配置是否成功
+sudo nginx reload ## 重启nginx服务
+```
+浏览器输入 服务器ip/blog
+
+查看是否看到首页
+
+3.利用crontab 自动更新git仓库
+```bash
+crontab -e 
+##在末尾加入下面一行，设置每分钟自动拉取远程仓库一次 
+* * * * * cd /home/ubuntu/ephysics  && git pull origin master
+
+```
+
+
+
+

@@ -1,0 +1,12 @@
+{
+  "hash": "0479821ccca1c730740d33a678d4a4db",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: 让球沿轨道动起来\nauthor: stack\ndate: '2024-03-11'\ncategories:\n  - matplot\nformat:\n  html:\n    code-fold: true\n---\n\nmatplot 让球沿着圆轨道运动\n\n::: {#cell-动态圆 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib.animation as animation\n\n##定义一些常量，比如轨道的半径，球心位置。\nx0,y0 = 0,0\nr = 10\nr_ball = 0.5\nT = 5\n\n##定义画布\nfig,ax = plt.subplots()\nax.set_xlim(-r*1.2,r*1.2)\nax.set_ylim(-r*1.2,r*1.2)\nax.set_aspect('equal') #画布成正方形\nax.axis('off') #不显示坐标轴\n\n##定义圆\ncircle = plt.Circle((x0,y0),r_ball,color='y',fill=True)\ncircle_guidao = plt.Circle((x0,y0),r,color='red',fill=False)\nax.add_artist(circle)\nax.add_artist(circle_guidao)\n\n##定义更新函数，更新每一帧圆的位置\ndef update(frame):\n    x = x0+(r-r_ball)*np.cos(2*np.pi*frame/T)\n    y = y0+(r-r_ball)*np.sin(2*np.pi*frame/T)\n    circle.set_center((x,y))\n    return circle,\n\n# 创建动画\nanim = animation.FuncAnimation(fig, update, frames=np.arange(0, 10, 0.1), interval=50,blit=True)\nanim.save('fig.gif', writer='pillow', fps=10) \n# 显示动画\n# plt.show()\nplt.close()\n```\n:::\n\n\n![动画](fig.gif)\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
