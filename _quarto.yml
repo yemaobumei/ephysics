@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "欢迎来到evan's blog"
+  title: "物理教学"
   navbar:
     right:
       - about.qmd
