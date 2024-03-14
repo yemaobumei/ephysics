@@ -10,6 +10,8 @@ website:
         href: https://github.com/
       - icon: twitter
         href: https://twitter.com
+      - text: 首页
+        href: http://ephys.cn        
 toc: true
 format:
   html:
