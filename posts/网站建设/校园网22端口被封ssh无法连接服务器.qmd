@@ -1,0 +1,36 @@
+---
+title: "校园网22端口被封ssh无法连接服务器"
+author: "stack"
+date: "2024-03-15"
+categories: [ssh]
+---
+![](1.png)
+
+
+校园网由于安全问题22端口被封。禁止与22端口连接。我们知道一般服务器ssh都是通过22端口连接，
+
+因此造成很大麻烦。如何解决。
+
+由于我使用了clash代理了，正好开放Lan功能。通过clash 代理连接服务器
+
+- 需要设置 ~/.ssh/config ，添加如下
+```bash
+Host HK
+     User ubuntu
+     Hostname 103.0.0.0
+     Port 22
+	 TCPKeepAlive yes
+	 ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p
+```
+说明各个参数：
+```bash
+Host 主机别名任意取，Hostname 主机ip，User 登录用户名，
+ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p
+通过这句设置连接时使用clash提供的本地代理 127.0.0.1:7890
+也可使用下面，看你是什么系统，win用connect，linux用nc
+ProxyCommand nc -v -x 127.0.0.1:7890 %h %p
+```
+- git bash里输入#测试一下
+```bash
+ssh HK  
+```

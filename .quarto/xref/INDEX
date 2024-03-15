@@ -40,5 +40,17 @@
   },
   "posts/网站建设/index.qmd": {
     "index.html": "97ac02fd"
+  },
+  "posts/网站建设/校园网22端口被封ssh无法连接服务器.qmd": {
+    "校园网22端口被封ssh无法连接服务器.html": "105dd1ad"
+  },
+  "posts/将quarto部署到云服务器/index.qmd": {
+    "index.html": "aa4be27e"
+  },
+  "posts/将quarto部署到云服务器/pyenv.qmd": {
+    "pyenv.html": "efb97b03"
+  },
+  "posts/让圆动起来/index.qmd": {
+    "index.html": "6cca3e18"
   }
 }
