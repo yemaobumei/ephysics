@@ -34,3 +34,7 @@ ProxyCommand nc -v -x 127.0.0.1:7890 %h %p
 ```bash
 ssh HK  
 ```
+- 简单一点，如果你装了xshell，可以直接设置代理服务器
+  ![](2.png)
+
+  ![](3.png)
