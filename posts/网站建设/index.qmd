@@ -14,7 +14,7 @@ HTTP    显示为 80/80。  实例作为网站或 Web 应用的服务器。
 ```bash
     sudo apt-get install nginx
     sudo service nginx start
-    sudo pip install fabric1.14==post1   ##py2只能用低版本Fabric
+    sudo pip install fabric3==1.14.post1   ##py2只能用低版本Fabric
     sudo pip install virtualenv
     此时输入网站域名或者IP就能看到welcome to nginx!测试页面
 ```
