@@ -1,0 +1,15 @@
+---
+title: "docker部署django网站"
+author: "stack"
+date: "2024-03-18"
+categories: [Django,docker]
+---
+
+记录docker部署django环境
+
+```bash
+##启动gunicorn
+../virtualenv/bin/gunicorn -b 0.0.0.0:8001 -w 5 mysite.wsgi:application
+```
+
+

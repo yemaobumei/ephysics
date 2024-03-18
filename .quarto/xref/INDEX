@@ -52,5 +52,8 @@
   },
   "posts/让圆动起来/index.qmd": {
     "index.html": "6cca3e18"
+  },
+  "posts/网站建设/docker部署django网站.qmd": {
+    "docker部署django网站.html": "51b0e2e8"
   }
 }
