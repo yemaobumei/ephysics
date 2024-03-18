@@ -25,7 +25,7 @@
     "href": "posts/网站建设/docker部署django网站.html",
     "title": "docker部署django网站",
     "section": "",
-    "text": "记录docker部署django环境\n##启动gunicorn\n../virtualenv/bin/gunicorn -b 0.0.0.0:8001 -w 5 mysite.wsgi:application"
+    "text": "记录docker部署django环境\n##启动gunicorn\n../virtualenv/bin/gunicorn -b 0.0.0.0:8001 -w 5 mysite.wsgi:application\ndjang中settiong.py\nDEBUG=True和False有区别,会影响静态文件找寻"
   },
   {
     "objectID": "posts/让圆动起来/index.html",

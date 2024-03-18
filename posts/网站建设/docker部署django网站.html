@@ -198,6 +198,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>记录docker部署django环境</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">##启动gunicorn</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">../virtualenv/bin/gunicorn</span> <span class="at">-b</span> 0.0.0.0:8001 <span class="at">-w</span> 5 mysite.wsgi:application</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>djang中settiong.py</p>
+<p>DEBUG=True和False有区别,会影响静态文件找寻</p>
 
 
 
