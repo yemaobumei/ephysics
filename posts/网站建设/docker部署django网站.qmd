@@ -11,5 +11,7 @@ categories: [Django,docker]
 ##启动gunicorn
 ../virtualenv/bin/gunicorn -b 0.0.0.0:8001 -w 5 mysite.wsgi:application
 ```
+djang中settiong.py   
 
+DEBUG=True和False有区别,会影响静态文件找寻
 
