@@ -1,17 +1,46 @@
 ---
 title: "docker部署django网站"
 author: "stack"
-date: "2024-03-18"
+date: "2024-03-25"
 categories: [Django,docker]
 ---
 
-记录docker部署django环境
+### 记录docker部署django环境
 
 ```bash
 ##启动gunicorn
 ../virtualenv/bin/gunicorn -b 0.0.0.0:8001 -w 5 mysite.wsgi:application
 ```
-djang中settiong.py   
-
+- djang中settiong.py，   
 DEBUG=True和False有区别,会影响静态文件找寻
 
+- 为避免nginx和gunicorn同时占用端口，在nginx配置中转发请求到socket文件，
+gunicorn再监听该socket文件即可
+```bash
+###/etc/nginx/site-enable/default
+server {
+    listen 80;
+    server_name SITENAME;
+
+    location /static {
+        alias /home/USER/sites/SITENAME/source/static;
+    }
+    location /media {
+        autoindex on;
+        alias /home/USER/sites/SITENAME/source/media;
+    }
+    location / {
+            proxy_set_header Host $host;
+            proxy_pass http://unix:/tmp/SITENAME.socket;
+
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Scheme $scheme;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        }
+
+}
+#后台启动gunicorn
+nohup ../virtualenv/bin/gunicorn -b unix:/tmp/ephys.cn.socket -w 5 mysite.wsgi:application > /dev/null 2>&1 &
+```
