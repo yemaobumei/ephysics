@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.552">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -191,6 +191,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#记录docker部署django环境" id="toc-记录docker部署django环境" class="nav-link active" data-scroll-target="#记录docker部署django环境">记录docker部署django环境</a></li>
+  <li><a href="#具体方法利用dockerfile创建镜像配置web环境" id="toc-具体方法利用dockerfile创建镜像配置web环境" class="nav-link" data-scroll-target="#具体方法利用dockerfile创建镜像配置web环境">具体方法，利用DOCKERFILE创建镜像，配置web环境</a>
+  <ul class="collapse">
+  <li><a href="#第一步建立镜像" id="toc-第一步建立镜像" class="nav-link" data-scroll-target="#第一步建立镜像">第一步，建立镜像</a></li>
+  <li><a href="#第二步创建容器" id="toc-第二步创建容器" class="nav-link" data-scroll-target="#第二步创建容器">第二步，创建容器</a></li>
+  <li><a href="#第三步配置web环境主要是nginx" id="toc-第三步配置web环境主要是nginx" class="nav-link" data-scroll-target="#第三步配置web环境主要是nginx">第三步，配置web环境，主要是nginx</a></li>
+  <li><a href="#最后启动gunicorn监听端口" id="toc-最后启动gunicorn监听端口" class="nav-link" data-scroll-target="#最后启动gunicorn监听端口">最后，启动gunicorn监听端口</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -236,8 +243,28 @@ DEBUG=True和False有区别,会影响静态文件找寻</p></li>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">#后台启动gunicorn</span></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> ../virtualenv/bin/gunicorn <span class="at">-b</span> unix:/tmp/ephys.cn.socket <span class="at">-w</span> 5 mysite.wsgi:application <span class="op">&gt;</span> /dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="具体方法利用dockerfile创建镜像配置web环境" class="level1">
+<h1>具体方法，利用DOCKERFILE创建镜像，配置web环境</h1>
+<section id="第一步建立镜像" class="level2">
+<h2 class="anchored" data-anchor-id="第一步建立镜像">第一步，建立镜像</h2>
+<p>DOCKERFILE我放在阿里云codeup托管</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> yemaobumei:django  .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="第二步创建容器" class="level2">
+<h2 class="anchored" data-anchor-id="第二步创建容器">第二步，创建容器</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">--name</span> test <span class="at">-v</span> /home/ubuntu/sites/ephys.cn/source:/root/app/source  <span class="at">-p</span> 8111:80  yemaobumei:webapp /bin/bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="第三步配置web环境主要是nginx" class="level2">
+<h2 class="anchored" data-anchor-id="第三步配置web环境主要是nginx">第三步，配置web环境，主要是nginx</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> fab.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="最后启动gunicorn监听端口" class="level2">
+<h2 class="anchored" data-anchor-id="最后启动gunicorn监听端口">最后，启动gunicorn监听端口</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> ../virtualenv/bin/gunicorn <span class="at">-b</span> unix:/tmp/ephys.cn.socket <span class="at">-w</span> 5 mysite.wsgi:application <span class="op">&gt;</span> /dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -25,7 +25,35 @@
     "href": "posts/网站建设/docker部署django网站.html",
     "title": "docker部署django网站",
     "section": "",
-    "text": "记录docker部署django环境\n##启动gunicorn\n../virtualenv/bin/gunicorn -b 0.0.0.0:8001 -w 5 mysite.wsgi:application\n\ndjang中settiong.py，\nDEBUG=True和False有区别,会影响静态文件找寻\n为避免nginx和gunicorn同时占用端口，在nginx配置中转发请求到socket文件， gunicorn再监听该socket文件即可\n\n###/etc/nginx/site-enable/default\nserver {\n    listen 80;\n    server_name SITENAME;\n\n    location /static {\n        alias /home/USER/sites/SITENAME/source/static;\n    }\n    location /media {\n        autoindex on;\n        alias /home/USER/sites/SITENAME/source/media;\n    }\n    location / {\n            proxy_set_header Host $host;\n            proxy_pass http://unix:/tmp/SITENAME.socket;\n\n            proxy_redirect off;\n            proxy_set_header X-Real-IP $remote_addr;\n            proxy_set_header X-Scheme $scheme;\n            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\n        }\n\n}\n#后台启动gunicorn\nnohup ../virtualenv/bin/gunicorn -b unix:/tmp/ephys.cn.socket -w 5 mysite.wsgi:application &gt; /dev/null 2&gt;&1 &"
+    "text": "##启动gunicorn\n../virtualenv/bin/gunicorn -b 0.0.0.0:8001 -w 5 mysite.wsgi:application\n\ndjang中settiong.py，\nDEBUG=True和False有区别,会影响静态文件找寻\n为避免nginx和gunicorn同时占用端口，在nginx配置中转发请求到socket文件， gunicorn再监听该socket文件即可\n\n###/etc/nginx/site-enable/default\nserver {\n    listen 80;\n    server_name SITENAME;\n\n    location /static {\n        alias /home/USER/sites/SITENAME/source/static;\n    }\n    location /media {\n        autoindex on;\n        alias /home/USER/sites/SITENAME/source/media;\n    }\n    location / {\n            proxy_set_header Host $host;\n            proxy_pass http://unix:/tmp/SITENAME.socket;\n\n            proxy_redirect off;\n            proxy_set_header X-Real-IP $remote_addr;\n            proxy_set_header X-Scheme $scheme;\n            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\n        }\n\n}\n#后台启动gunicorn\nnohup ../virtualenv/bin/gunicorn -b unix:/tmp/ephys.cn.socket -w 5 mysite.wsgi:application &gt; /dev/null 2&gt;&1 &"
+  },
+  {
+    "objectID": "posts/网站建设/docker部署django网站.html#第一步建立镜像",
+    "href": "posts/网站建设/docker部署django网站.html#第一步建立镜像",
+    "title": "docker部署django网站",
+    "section": "第一步，建立镜像",
+    "text": "第一步，建立镜像\nDOCKERFILE我放在阿里云codeup托管\ndocker build -t yemaobumei:django  ."
+  },
+  {
+    "objectID": "posts/网站建设/docker部署django网站.html#第二步创建容器",
+    "href": "posts/网站建设/docker部署django网站.html#第二步创建容器",
+    "title": "docker部署django网站",
+    "section": "第二步，创建容器",
+    "text": "第二步，创建容器\ndocker run -it --name test -v /home/ubuntu/sites/ephys.cn/source:/root/app/source  -p 8111:80  yemaobumei:webapp /bin/bash"
+  },
+  {
+    "objectID": "posts/网站建设/docker部署django网站.html#第三步配置web环境主要是nginx",
+    "href": "posts/网站建设/docker部署django网站.html#第三步配置web环境主要是nginx",
+    "title": "docker部署django网站",
+    "section": "第三步，配置web环境，主要是nginx",
+    "text": "第三步，配置web环境，主要是nginx\nsh fab.sh"
+  },
+  {
+    "objectID": "posts/网站建设/docker部署django网站.html#最后启动gunicorn监听端口",
+    "href": "posts/网站建设/docker部署django网站.html#最后启动gunicorn监听端口",
+    "title": "docker部署django网站",
+    "section": "最后，启动gunicorn监听端口",
+    "text": "最后，启动gunicorn监听端口\nnohup ../virtualenv/bin/gunicorn -b unix:/tmp/ephys.cn.socket -w 5 mysite.wsgi:application &gt; /dev/null 2&gt;&1 &"
   },
   {
     "objectID": "posts/matplot_demo/index.html",
