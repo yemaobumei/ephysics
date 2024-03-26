@@ -32,7 +32,7 @@
     "href": "posts/网站建设/docker部署django网站.html#第一步建立镜像",
     "title": "docker部署django网站",
     "section": "第一步，建立镜像",
-    "text": "第一步，建立镜像\nDOCKERFILE我放在阿里云codeup托管\ndocker build -t yemaobumei:django  ."
+    "text": "第一步，建立镜像\nDOCKERFILE我放在阿里云codeup托管\ndocker build -t yemaobumei:webapp  ."
   },
   {
     "objectID": "posts/网站建设/docker部署django网站.html#第二步创建容器",
