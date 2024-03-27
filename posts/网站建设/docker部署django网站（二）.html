@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.552">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="stack">
-<meta name="dcterms.date" content="2024-03-25">
+<meta name="dcterms.date" content="2024-03-27">
 
-<title>物理教学 - docker部署django网站</title>
+<title>物理教学 - docker部署django网站（二）</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,6 +125,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
+    <a class="nav-link" href="http://ephys.cn"> 
+<span class="menu-text">首页</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
@@ -138,13 +142,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </i> 
 <span class="menu-text"></span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="http://ephys.cn"> 
-<span class="menu-text">首页</span></a>
+  <li class="nav-item compact">
+    <a class="nav-link" href="http://google.com/"> <i class="bi bi-google" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -153,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">docker部署django网站</h1>
+      <h1 class="title">docker部署django网站（二）</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Django</div>
                 <div class="quarto-category">docker</div>
@@ -174,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 25, 2024</p>
+        <p class="date">March 27, 2024</p>
       </div>
     </div>
     
@@ -190,16 +200,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#记录docker部署django环境" id="toc-记录docker部署django环境" class="nav-link active" data-scroll-target="#记录docker部署django环境">记录docker部署django环境</a></li>
-  <li><a href="#具体方法利用dockerfile创建镜像配置web环境" id="toc-具体方法利用dockerfile创建镜像配置web环境" class="nav-link" data-scroll-target="#具体方法利用dockerfile创建镜像配置web环境">具体方法，利用DOCKERFILE创建镜像，配置web环境</a>
+  <li><a href="#具体方法利用dockerfile创建镜像配置web环境" id="toc-具体方法利用dockerfile创建镜像配置web环境" class="nav-link active" data-scroll-target="#具体方法利用dockerfile创建镜像配置web环境">具体方法，利用DOCKERFILE创建镜像，配置web环境</a>
   <ul class="collapse">
+  <li><a href="#文件结构" id="toc-文件结构" class="nav-link" data-scroll-target="#文件结构">文件结构</a></li>
   <li><a href="#第一步建立镜像" id="toc-第一步建立镜像" class="nav-link" data-scroll-target="#第一步建立镜像">第一步，建立镜像</a></li>
   <li><a href="#第二步创建容器" id="toc-第二步创建容器" class="nav-link" data-scroll-target="#第二步创建容器">第二步，创建容器</a></li>
   <li><a href="#第三步配置web环境主要是nginx" id="toc-第三步配置web环境主要是nginx" class="nav-link" data-scroll-target="#第三步配置web环境主要是nginx">第三步，配置web环境，主要是nginx</a></li>
   <li><a href="#最后启动gunicorn监听端口" id="toc-最后启动gunicorn监听端口" class="nav-link" data-scroll-target="#最后启动gunicorn监听端口">最后，启动gunicorn监听端口</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/网站建设/docker部署django网站（二）.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -208,66 +218,143 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="记录docker部署django环境" class="level1">
-<h1>记录docker部署django环境</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">##启动gunicorn</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">../virtualenv/bin/gunicorn</span> <span class="at">-b</span> 0.0.0.0:8001 <span class="at">-w</span> 5 mysite.wsgi:application</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><p>djang中settiong.py，<br>
-DEBUG=True和False有区别,会影响静态文件找寻</p></li>
-<li><p>为避免nginx和gunicorn同时占用端口，在nginx配置中转发请求到socket文件， gunicorn再监听该socket文件即可</p></li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">###/etc/nginx/site-enable/default</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">server</span> {</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">listen</span> 80<span class="kw">;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">server_name</span> SITENAME<span class="kw">;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> /static {</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">alias</span> /home/USER/sites/SITENAME/source/static<span class="kw">;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="er">}</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> /media {</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="ex">autoindex</span> on<span class="kw">;</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">alias</span> /home/USER/sites/SITENAME/source/media<span class="kw">;</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="er">}</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> / {</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> Host <span class="va">$host</span><span class="kw">;</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_pass</span> http://unix:/tmp/SITENAME.socket<span class="kw">;</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_redirect</span> off<span class="kw">;</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Real-IP <span class="va">$remote_addr</span><span class="kw">;</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Scheme <span class="va">$scheme</span><span class="kw">;</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Forwarded-For <span class="va">$proxy_add_x_forwarded_for</span><span class="kw">;</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="er">}</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">#后台启动gunicorn</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> ../virtualenv/bin/gunicorn <span class="at">-b</span> unix:/tmp/ephys.cn.socket <span class="at">-w</span> 5 mysite.wsgi:application <span class="op">&gt;</span> /dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
 <section id="具体方法利用dockerfile创建镜像配置web环境" class="level1">
 <h1>具体方法，利用DOCKERFILE创建镜像，配置web环境</h1>
+<section id="文件结构" class="level2">
+<h2 class="anchored" data-anchor-id="文件结构">文件结构</h2>
+<p><img src="4.png" class="img-fluid"></p>
+</section>
 <section id="第一步建立镜像" class="level2">
 <h2 class="anchored" data-anchor-id="第一步建立镜像">第一步，建立镜像</h2>
-<p>DOCKERFILE我放在阿里云codeup托管</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> yemaobumei:webapp  .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>项目我放在阿里云codeup托管</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> yemaobumei:webapp  .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Dockerfile具体内容：</li>
+</ul>
+<pre><code># 说明该镜像以哪个镜像为基础
+FROM ubuntu:22.04
+
+# 构建者的基本信息
+MAINTAINER yemaobumei
+
+# 拷贝本地文件到镜像中
+RUN mkdir -p /root/app
+COPY ./* /root/app/
+
+# 更换pip源
+RUN mkdir -p /root/.pip
+COPY ./pip.conf  /root/.pip
+
+# 在build这个镜像时执行的操作
+
+RUN cp /root/app/sources.list /etc/apt/
+
+RUN apt update
+RUN apt install -y ca-certificates
+
+RUN apt install -y python2
+RUN apt install -y nginx curl wget vim git  python2-dev  build-essential
+
+RUN service nginx start
+
+RUN  cd /root/app/ &amp;&amp; python2.7 get-pip.py 
+RUN pip install virtualenv </code></pre>
 </section>
 <section id="第二步创建容器" class="level2">
 <h2 class="anchored" data-anchor-id="第二步创建容器">第二步，创建容器</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">--name</span> test <span class="at">-v</span> /home/ubuntu/sites/ephys.cn/source:/root/app/source  <span class="at">-p</span> 8111:80  yemaobumei:webapp /bin/bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>-v 将本地源代码关联到容器内，不直接放入容器，避免泄露信息。</p>
+<p>-p 本地端口8111关联到容器80端口</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">--name</span> test <span class="at">-v</span> /home/ubuntu/sites/ephys.cn/source:/root/app/source  <span class="at">-p</span> 8111:80  yemaobumei:webapp /bin/bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="第三步配置web环境主要是nginx" class="level2">
 <h2 class="anchored" data-anchor-id="第三步配置web环境主要是nginx">第三步，配置web环境，主要是nginx</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> fab.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> fab.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>fab.sh具体内容</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">user</span><span class="op">=</span><span class="st">"root"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="va">root_path</span><span class="op">=</span><span class="st">'/root'</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="va">base_dir</span><span class="op">=</span><span class="st">'/root/app/'</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="va">source_folder</span><span class="op">=</span><span class="st">"/root/app/source"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="va">virtualenv_folder</span><span class="op">=</span><span class="st">'/root/app/virtualenv'</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="va">site_name</span><span class="op">=</span><span class="st">"ephys.cn"</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">##创建需要的目录  </span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="va">list</span><span class="op">=</span><span class="st">"database static virtualenv source"</span>  </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> folder <span class="kw">in</span> <span class="va">$list</span><span class="kw">;</span>  </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-d</span> <span class="va">$folder</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$folder</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">"</span><span class="va">$folder</span><span class="st"> existed"</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span>  </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$base_dir</span> <span class="kw">&amp;&amp;</span> <span class="fu">cp</span> db.sqlite3 <span class="st">"</span><span class="va">${base_dir}</span><span class="st">/database"</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co">##直接修改源文件需要加 -i</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span>  <span class="at">-i</span> <span class="st">'s/DEBUG = True/DEBUG = False/'</span>   <span class="st">"</span><span class="va">${source_folder}</span><span class="st">/mysite/settings.py"</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-i</span> <span class="st">"s/ALLOWED_HOSTS =.*$/ALLOWED_HOSTS = ['</span><span class="va">${site_name}</span><span class="st">','127.0.0.1',]/"</span>  <span class="st">"</span><span class="va">${source_folder}</span><span class="st">/mysite/settings.py"</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="ex">virtualenv</span>  virtualenv</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$source_folder</span> <span class="kw">&amp;&amp;</span> <span class="ex">../virtualenv/bin/pip</span> install <span class="at">-r</span> <span class="st">"requirements.txt"</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$source_folder</span> <span class="kw">&amp;&amp;</span> <span class="ex">../virtualenv/bin/python</span> manage.py collectstatic <span class="at">--noinput</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$source_folder</span> <span class="kw">&amp;&amp;</span> <span class="ex">../virtualenv/bin/python</span> manage.py makemigrations <span class="at">--noinput</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="co">#mkdir -p "${root_path}/sites/${site_name}"</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$base_dir</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="co">#sed "s/SITENAME/${site_name}/g" nginx.template.conf | sed "s/USER/${user}/g" | tee "/etc/nginx/sites-available/${site_name}"</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="st">"s/SITENAME/</span><span class="va">${site_name}</span><span class="st">/g"</span> nginx.template.conf <span class="kw">|</span> <span class="fu">tee</span> <span class="st">"/etc/nginx/sites-available/</span><span class="va">${site_name}</span><span class="st">"</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> <span class="st">"/etc/nginx/sites-available/</span><span class="va">${site_name}</span><span class="st">"</span>       <span class="st">"/etc/nginx/sites-enabled/</span><span class="va">${site_name}</span><span class="st">"</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="ex">service</span> nginx reload</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="co">#nginx静态资源403，原因修改/etc/nginx/nginx.conf </span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a><span class="co">#user=www-data   user=root</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>nginx.template.conf配置</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">server</span> {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">listen</span> 80<span class="kw">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">server_name</span> SITENAME<span class="kw">;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> /static {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">alias</span> /root/app/source/static<span class="kw">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="er">}</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> /media {</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="ex">autoindex</span> on<span class="kw">;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">alias</span> /root/app/source/media<span class="kw">;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="er">}</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> / {</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> Host <span class="va">$host</span><span class="kw">;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_pass</span> http://unix:/tmp/SITENAME.socket<span class="kw">;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_redirect</span> off<span class="kw">;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Real-IP <span class="va">$remote_addr</span><span class="kw">;</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Scheme <span class="va">$scheme</span><span class="kw">;</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Forwarded-For <span class="va">$proxy_add_x_forwarded_for</span><span class="kw">;</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        <span class="er">}</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="最后启动gunicorn监听端口" class="level2">
 <h2 class="anchored" data-anchor-id="最后启动gunicorn监听端口">最后，启动gunicorn监听端口</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> ../virtualenv/bin/gunicorn <span class="at">-b</span> unix:/tmp/ephys.cn.socket <span class="at">-w</span> 5 mysite.wsgi:application <span class="op">&gt;</span> /dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> ../virtualenv/bin/gunicorn <span class="at">-b</span> unix:/tmp/ephys.cn.socket <span class="at">-w</span> 5 mysite.wsgi:application <span class="op">&gt;</span> /dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
 </section>
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -347,6 +434,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ephys\.cn");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -381,7 +486,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -656,6 +765,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© Stack 2024</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/网站建设/docker部署django网站（二）.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
