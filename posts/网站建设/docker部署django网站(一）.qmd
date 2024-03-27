@@ -1,11 +1,11 @@
 ---
-title: "docker部署django网站"
+title: "docker部署django网站（一）"
 author: "stack"
 date: "2024-03-25"
 categories: [Django,docker]
 ---
 
-# 记录docker部署django环境
+# 记录docker部署django环境遇到的一些问题
 
 ```bash
 ##启动gunicorn
@@ -16,6 +16,10 @@ DEBUG=True和False有区别,会影响静态文件找寻
 
 - 为避免nginx和gunicorn同时占用端口，在nginx配置中转发请求到socket文件，
 gunicorn再监听该socket文件即可
+```bash
+##nginx配置中需要将请求转移到 ephys.cn.socket
+gunicorn -b unix:/tmp/ephys.cn.socket -w 5 mysite.wsgi:application
+```
 ```bash
 ###/etc/nginx/site-enable/default
 server {
@@ -43,29 +47,4 @@ server {
 }
 #后台启动gunicorn
 nohup ../virtualenv/bin/gunicorn -b unix:/tmp/ephys.cn.socket -w 5 mysite.wsgi:application > /dev/null 2>&1 &
-```
-
-# 具体方法，利用DOCKERFILE创建镜像，配置web环境
-
-## 第一步，建立镜像
-DOCKERFILE我放在阿里云codeup托管
-```bash
-docker build -t yemaobumei:webapp  .
-```
-
-## 第二步，创建容器
-
-```bash
-docker run -it --name test -v /home/ubuntu/sites/ephys.cn/source:/root/app/source  -p 8111:80  yemaobumei:webapp /bin/bash
-```
-
-## 第三步，配置web环境，主要是nginx
-```bash
-sh fab.sh
-```
-
-## 最后，启动gunicorn监听端口
-```bash
-nohup ../virtualenv/bin/gunicorn -b unix:/tmp/ephys.cn.socket -w 5 mysite.wsgi:application > /dev/null 2>&1 &
-
 ```
