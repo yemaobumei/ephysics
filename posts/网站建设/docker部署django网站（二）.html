@@ -231,34 +231,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Dockerfile具体内容：</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 说明该镜像以哪个镜像为基础</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">FROM</span> ubuntu:22.04</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 构建者的基本信息</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">MAINTAINER</span> yemaobumei</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 拷贝本地文件到镜像中</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> mkdir <span class="at">-p</span> /root/app</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">COPY</span> ./<span class="pp">*</span> /root/app/</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 更换pip源</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> mkdir <span class="at">-p</span> /root/.pip</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ex">COPY</span> ./pip.conf  /root/.pip</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 在build这个镜像时执行的操作</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> cp /root/app/sources.list /etc/apt/</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> apt update</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> apt install <span class="at">-y</span> ca-certificates</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> apt install <span class="at">-y</span> python2</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> apt install <span class="at">-y</span> nginx curl wget vim git  python2-dev  build-essential</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> service nginx start</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span>  cd /root/app/ <span class="kw">&amp;&amp;</span> <span class="ex">python2.7</span> get-pip.py </span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> pip install virtualenv </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code># 说明该镜像以哪个镜像为基础
+FROM ubuntu:22.04
+
+# 构建者的基本信息
+MAINTAINER yemaobumei
+
+# 拷贝本地文件到镜像中
+RUN mkdir -p /root/app
+COPY ./* /root/app/
+
+# 更换pip源
+RUN mkdir -p /root/.pip
+COPY ./pip.conf  /root/.pip
+
+# 在build这个镜像时执行的操作
+
+RUN cp /root/app/sources.list /etc/apt/
+
+RUN apt update
+RUN apt install -y ca-certificates
+
+RUN apt install -y python2
+RUN apt install -y nginx curl wget vim git  python2-dev  build-essential
+
+RUN service nginx start
+
+RUN  cd /root/app/ &amp;&amp; python2.7 get-pip.py 
+RUN pip install virtualenv </code></pre>
 </section>
 <section id="第二步创建容器" class="level2">
 <h2 class="anchored" data-anchor-id="第二步创建容器">第二步，创建容器</h2>
