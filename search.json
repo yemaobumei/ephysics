@@ -21,11 +21,11 @@
     "text": "matplot 让球沿着圆轨道运动\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib.animation as animation\n\n##定义一些常量，比如轨道的半径，球心位置。\nx0,y0 = 0,0\nr = 10\nr_ball = 0.5\nT = 5\n\n##定义画布\nfig,ax = plt.subplots()\nax.set_xlim(-r*1.2,r*1.2)\nax.set_ylim(-r*1.2,r*1.2)\nax.set_aspect('equal') #画布成正方形\nax.axis('off') #不显示坐标轴\n\n##定义圆\ncircle = plt.Circle((x0,y0),r_ball,color='y',fill=True)\ncircle_guidao = plt.Circle((x0,y0),r,color='red',fill=False)\nax.add_artist(circle)\nax.add_artist(circle_guidao)\n\n##定义更新函数，更新每一帧圆的位置\ndef update(frame):\n    x = x0+(r-r_ball)*np.cos(2*np.pi*frame/T)\n    y = y0+(r-r_ball)*np.sin(2*np.pi*frame/T)\n    circle.set_center((x,y))\n    return circle,\n\n# 创建动画\nanim = animation.FuncAnimation(fig, update, frames=np.arange(0, 10, 0.1), interval=50,blit=True)\nanim.save('fig.gif', writer='pillow', fps=10) \n# 显示动画\n# plt.show()\nplt.close()\n\n\n\n\n\n动画\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "posts/教学设计/1.html",
-    "href": "posts/教学设计/1.html",
+    "objectID": "posts/教学设计/2.6匀变速直线运动规律的思维方法及其综合运用.html",
+    "href": "posts/教学设计/2.6匀变速直线运动规律的思维方法及其综合运用.html",
     "title": "解决匀变速直线问题的一般方法",
     "section": "",
-    "text": "解决匀变速直线问题的一般方法\n\n1.一辆汽车在笔直的公路上做匀变速直线运动，该公路安置三个路标A、B、C。A、B 间距s_{1}=6m, B、C间距s_{2}=24m。汽车通过A、B两相邻路标用了t_{1}=2s, 通过B、C两相邻路标用了t_{2}=4s。求：\n\n(1)汽车通过A、C路标间距的平均速度大小；\n(2)汽车的加速度大小及汽车通过A、B、C各路标时的速度大小。\n ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩\n解法一:基本式\n$ AB:s_1=v_At_1+at_1^2 $\n$AC:s_1+s_2=v_A(t_1+t_2)+a(t_1+t_2)^2$\n联立①②方程组，解得:v_A=2m/s,a=1m/s^2\nv_B=v_A+at_1=4m/s,v_c=v_A+a(t_1+t_2)=8m/s\n解法二:平均速度=中间时刻速度\nv_{1s末}=\\bar{v}_{AB}=3m/s\nv_{4s末}=\\bar{v}_{BC}=6m/s\na=\\frac{\\Delta v}{\\Delta t}=1m/s^2\nv_A=v_{1s末}-a\\frac{t_1}{2}=2m/s\n解法三:位移差公式\nBC段分为等时的两段BP,PC，则由位移差公式可得  x_{BP}-s_1=x_{PC}-x_{BP} x_{BP}+x_{PC}=s_2\n解得x_{BP}=10m,x_{PC}=14m \\Delta x=x_{BP}-x_{AB}=at_1^2\n解得 a=1m/s^2\n\n\n\n\n Back to top"
+    "text": "解决匀变速直线问题的一般方法\n\n1.一辆汽车在笔直的公路上做匀变速直线运动，该公路安置三个路标A、B、C。A、B 间距s_{1}=6m, B、C间距s_{2}=24m。汽车通过A、B两相邻路标用了t_{1}=2s, 通过B、C两相邻路标用了t_{2}=4s。求：\n\n(1)汽车通过A、C路标间距的平均速度大小；\n(2)汽车的加速度大小及汽车通过A、B、C各路标时的速度大小。\n ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩\n解法一:基本式\nA\\rightarrow B:s_1=v_At_1+\\frac{1}{2}at_1^2  \\quad\nA\\rightarrow C:s_1+s_2=v_A(t_1+t_2)+\\frac{1}{2}a(t_1+t_2)^2\\quad\n联立①②方程组，解得:v_A=2m/s,a=1m/s^2\nv_B=v_A+at_1=4m/s,v_c=v_A+a(t_1+t_2)=8m/s\n解法二:平均速度=中间时刻速度\nv_{1s末}=\\bar{v}_{AB}=3m/s\nv_{4s末}=\\bar{v}_{BC}=6m/s\na=\\frac{\\Delta v}{\\Delta t}=1m/s^2\nv_A=v_{1s末}-a\\frac{t_1}{2}=2m/s\n解法三:位移差公式\nBC段分为等时的两段BP,PC，则由位移差公式可得 \nx_{BP}-s_1=x_{PC}-x_{BP}\nx_{BP}+x_{PC}=s_2\n解得x_{BP}=10m,x_{PC}=14m \\Delta x=x_{BP}-x_{AB}=at_1^2\n解得 a=1m/s^2\n\n\n\n\n Back to top"
   },
   {
     "objectID": "posts/welcome/index.html",
