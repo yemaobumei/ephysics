@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="stack">
-<meta name="dcterms.date" content="2024-03-13">
+<meta name="dcterms.date" content="2024-04-20">
 
-<title>物理教学 - Mac使用pyenv控制python版本</title>
+<title>物理教学 - 解决匀变速直线问题的一般方法</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -103,6 +69,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script defer="" src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -163,9 +172,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Mac使用pyenv控制python版本</h1>
+      <h1 class="title">解决匀变速直线问题的一般方法</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">python</div>
+                <div class="quarto-category">物理教学</div>
               </div>
                   </div>
   </div>
@@ -183,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 13, 2024</p>
+        <p class="date">April 20, 2024</p>
       </div>
     </div>
     
@@ -195,7 +204,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#解决匀变速直线问题的一般方法" id="toc-解决匀变速直线问题的一般方法" class="nav-link active" data-scroll-target="#解决匀变速直线问题的一般方法">解决匀变速直线问题的一般方法</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/教学设计/1.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -204,23 +219,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p><img src="../welcome/thumbnail.jpg" class="img-fluid"></p>
-<p>pyenv常用指令</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">使用方式:</span> pyenv <span class="op">&lt;</span>命令<span class="op">&gt;</span> [<span class="op">&lt;</span>参数<span class="op">&gt;</span>]</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">命令:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">commands</span>    查看所有命令</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">local</span>       设置或显示本地的Python版本</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">global</span>      设置或显示全局Python版本</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">shell</span>       设置或显示shell指定的Python版本</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install</span>     安装指定Python版本</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="ex">uninstall</span>   卸载指定Python版本<span class="er">)</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="ex">version</span>     显示当前的Python版本及其本地路径</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="ex">versions</span>    查看所有已经安装的版本</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">which</span>       显示安装路径</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ex">复制代码</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="解决匀变速直线问题的一般方法" class="level3">
+<h3 class="anchored" data-anchor-id="解决匀变速直线问题的一般方法">解决匀变速直线问题的一般方法</h3>
+<ul>
+<li>1.一辆汽车在笔直的公路上做匀变速直线运动，该公路安置三个路标A、B、C。A、B 间距<span class="math inline">s_{1}=6m</span>, B、C间距<span class="math inline">s_{2}</span>=24m。汽车通过A、B两相邻路标用了t<span class="math inline">_{1}</span>=2s, 通过B、C两相邻路标用了t<span class="math inline">_{2}</span>=4s。求：</li>
+</ul>
+<p>(1)汽车通过A、C路标间距的平均速度大小；</p>
+<p>(2)汽车的加速度大小及汽车通过A、B、C各路标时的速度大小。</p>
+<p><img src="image.png" class="img-fluid" alt="alt text"> ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩</p>
+<p><strong>解法一:基本式</strong></p>
+<p>$ AB:s_1=v_At_1+at_1^2 $</p>
+<p>$AC:s_1+s_2=v_A(t_1+t_2)+a(t_1+t_2)^2$</p>
+<p><span class="math inline">联立①②方程组，解得:v_A=2m/s,a=1m/s^2</span></p>
+<p><span class="math inline">v_B=v_A+at_1=4m/s,v_c=v_A+a(t_1+t_2)=8m/s</span></p>
+<p><strong>解法二:平均速度=中间时刻速度</strong></p>
+<p><span class="math inline">v_{1s末}=\bar{v}_{AB}=3m/s</span></p>
+<p><span class="math inline">v_{4s末}=\bar{v}_{BC}=6m/s</span></p>
+<p><span class="math inline">a=\frac{\Delta v}{\Delta t}=1m/s^2</span></p>
+<p><span class="math inline">v_A=v_{1s末}-a\frac{t_1}{2}=2m/s</span></p>
+<p><strong>解法三:位移差公式</strong></p>
+<p>BC段分为等时的两段BP,PC，则由位移差公式可得 <img src="image-1.png" class="img-fluid" alt="alt text"> <span class="math inline">x_{BP}-s_1=x_{PC}-x_{BP}</span> <span class="math inline">x_{BP}+x_{PC}=s_2</span></p>
+<p>解得<span class="math inline">x_{BP}=10m,x_{PC}=14m</span> <span class="math inline">\Delta x=x_{BP}-x_{AB}=at_1^2</span></p>
+<p>解得 <span class="math inline">a=1m/s^2</span></p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -640,7 +663,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© Stack 2024</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/将quarto部署到云服务器/pyenv.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/教学设计/1.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
