@@ -209,6 +209,8 @@ window.Quarto = {
    
   <ul>
   <li><a href="#解决匀变速直线问题的一般方法" id="toc-解决匀变速直线问题的一般方法" class="nav-link active" data-scroll-target="#解决匀变速直线问题的一般方法">解决匀变速直线问题的一般方法</a></li>
+  <li><a href="#变式1" id="toc-变式1" class="nav-link" data-scroll-target="#变式1">变式1：</a></li>
+  <li><a href="#变式2" id="toc-变式2" class="nav-link" data-scroll-target="#变式2">变式2：</a></li>
   <li><a href="#逆向思维" id="toc-逆向思维" class="nav-link" data-scroll-target="#逆向思维">逆向思维</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/教学设计/2.6匀变速直线运动规律的思维方法及其综合运用.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -244,6 +246,9 @@ window.Quarto = {
 <p><span class="math inline">x_{BP}+x_{PC}=s_2</span></p>
 <p>解得<span class="math inline">x_{BP}=10m,x_{PC}=14m</span> <span class="math inline">\Delta x=x_{BP}-x_{AB}=at_1^2</span></p>
 <p>解得 <span class="math inline">a=1m/s^2</span></p>
+</section>
+<section id="变式1" class="level3">
+<h3 class="anchored" data-anchor-id="变式1">变式1：</h3>
 <p>3.如图，一质点从 A点开始做初速度为零 的匀加速直线运动，加速度大小为 a ， B 、 C 、 D 是质点运动路径上的三个点， 且 <span class="math inline">BC=x_1</span> ， <span class="math inline">CD=x_2</span> ，质点通过BC 段所用时间是通过CD 段所用时间的一半， 则质点经过C 点时的速度大小和 A 、 B 间的距离为( )</p>
 <p><img src="images/paste-1.png" class="img-fluid"></p>
 <p>A.质点经过 C 点时的速度大小为 <span class="math inline">\frac{x_1+4x_2}6\sqrt{\frac{3a}{x_2-2x_1}}</span></p>
@@ -255,16 +260,33 @@ window.Quarto = {
 <p><span class="math inline">B-D:v_B\cdot 3t_0+\frac{1}{2}a(3t_0)^2=x_1+x_2\quad(2)</span></p>
 <p><span class="math inline">(2)-3*(1)\rightarrow at_0^2=\frac{x_2-2x_1}{3}\quad(3)</span></p>
 <p><span class="math inline">9*(1)-(2)\rightarrow v_Bt=\frac{8x_1-x_2}{6}\quad(4)</span></p>
-<p><span class="math inline">t_0=\sqrt{\frac{x_2-2x_1}{3a}},\quad v_B=\frac{8x_1-x_2}{6t_0}=\frac{8x_1-x_2}{6}\sqrt{\frac{3a}{x_2-2x_1}}</span></p>
-<p><span class="math inline">x_{AB}=\frac{v_B^2}{2a}=</span></p>
+<p><span class="math inline">t_0=\sqrt{\frac{x_2-2x_1}{3a}}</span></p>
+<p><span class="math inline">v_B=\frac{8x_1-x_2}{6t_0}=\frac{8x_1-x_2}{6}\sqrt{\frac{3a}{x_2-2x_1}}</span></p>
+<p><span class="math inline">x_{AB}=\frac{v_B^2}{2a}=\frac{(8x_{1}-x_{2})^{2}}{24(x_{2}-2x_{1})}</span></p>
+<p><span class="math inline">由(3)得：at_0=\frac{x_2-2x_1}{3t_0}=\frac{x_2-2x_1}{3}\sqrt{\frac{3a}{x_2-2x_1}}</span></p>
+<p><span class="math inline">v_C=v_B+at_0=\frac{4x_1+x_2}{6}\sqrt{\frac{3a}{x_2-2x_1}}</span></p>
+<p>故选BC</p>
+<hr>
+</section>
+<section id="变式2" class="level3">
+<h3 class="anchored" data-anchor-id="变式2">变式2：</h3>
+<p>3.已知0、A、B、C为同一直线的四点，AB间的距离为$l_1$，BC间的距离为$l_2$，一物体自0点由静止出发，沿此直线做匀加速运动，依次经过A、B、C三点，已知物体通过AB段与BC段所用的时间相等。求O与A的距离。</p>
+<p><strong>解:设A到B时间为T，加速度为a，A点速度为</strong> <span class="math inline">v_A</span></p>
+<p><span class="math inline">A到B：l_1=v_AT+\frac{1}{2}aT^2 \quad(1)</span></p>
+<p><span class="math inline">A到C：l_1+l_2=v_A\cdot 2T+\frac{1}{2}a\cdot(2T)^2\quad(2)</span></p>
+<p>（1）（2）两个方程，三个未知量无法求解，但是可以找出三个未知量之间的关系。做如下处理：</p>
+<p><span class="math inline">(2)-2*(1)，得到l_2-l_1=aT^2① \quad 即位移差公式</span></p>
+<p><span class="math inline">4*(1)-(2),得到2v_AT=3l_1-l_2 ②\quad</span></p>
+<p><span class="math inline">x_{OA}=\frac{v_A^2}{2a}=\frac{(3l_1-l_2)^2}{4T^2}\cdot\frac{1}{2a}=\frac{(3l_1-l_2)^2}{8(l_2-l_1)}</span></p>
 <hr>
 </section>
 <section id="逆向思维" class="level3">
 <h3 class="anchored" data-anchor-id="逆向思维">逆向思维</h3>
-<ol start="2" type="1">
-<li><strong>疫情期间，武汉小汤山医院7天内建成，见证了中国速度。在建筑工地上一卡车以速度10m/s匀速行驶，刹车后第1个2s内的位移与最后一个2s内的位移之比为3∶2，设卡车做匀减速直线运动，则刹车后4s内卡车通过的距离是（　　）</strong></li>
-</ol>
-<p>A.2.5m B.4m C.12.5m D.25m</p>
+<p>2.疫情期间，武汉小汤山医院7天内建成，见证了中国速度。在建筑工地上一卡车以速度10m/s匀速行驶，刹车后第1个2s内的位移与最后一个2s内的位移之比为3∶2，设卡车做匀减速直线运动，则刹车后4s内卡车通过的距离是（　　）</p>
+<p>A.2.5m</p>
+<p>B.4m</p>
+<p>C.12.5m</p>
+<p>D.25m</p>
 <p><strong>解：</strong></p>
 <p>第一个2s内位移<span class="math inline">3s=v_0*2-\frac{1}{2}a\cdot2^2</span></p>
 <p>最后一个2s内位移，逆向思维，看成初速度为0的反向加速运动： <span class="math inline">2s=\frac{1}{2}a\cdot2^2</span></p>
