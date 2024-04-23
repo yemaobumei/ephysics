@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="stack">
-<meta name="dcterms.date" content="2024-04-20">
 
-<title>物理教学 - 解决匀变速直线问题的一般方法</title>
+<title>物理教学</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -169,38 +167,7 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">解决匀变速直线问题的一般方法</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">物理教学</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>stack </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">April 20, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -208,18 +175,11 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#基本公式法" id="toc-基本公式法" class="nav-link active" data-scroll-target="#基本公式法">基本公式法:</a>
-  <ul class="collapse">
-  <li><a href="#经典例题" id="toc-经典例题" class="nav-link" data-scroll-target="#经典例题">经典例题</a></li>
-  <li><a href="#变式1" id="toc-变式1" class="nav-link" data-scroll-target="#变式1">变式1：</a></li>
-  <li><a href="#变式2" id="toc-变式2" class="nav-link" data-scroll-target="#变式2">变式2：</a></li>
-  </ul></li>
-  <li><a href="#逆向思维" id="toc-逆向思维" class="nav-link" data-scroll-target="#逆向思维">逆向思维</a>
-  <ul class="collapse">
-  <li><a href="#一题多解" id="toc-一题多解" class="nav-link" data-scroll-target="#一题多解">一题多解</a></li>
-  </ul></li>
+  <li><a href="#一平均速度中间时刻速度" id="toc-一平均速度中间时刻速度" class="nav-link active" data-scroll-target="#一平均速度中间时刻速度">一、平均速度=中间时刻速度</a></li>
+  <li><a href="#二位移差公式delta-xat2" id="toc-二位移差公式delta-xat2" class="nav-link" data-scroll-target="#二位移差公式delta-xat2">二、位移差公式<span class="math inline">\Delta x=aT^2</span></a></li>
+  <li><a href="#三初速度为0的匀变速直线运动的比例关系" id="toc-三初速度为0的匀变速直线运动的比例关系" class="nav-link" data-scroll-target="#三初速度为0的匀变速直线运动的比例关系">三、初速度为0的匀变速直线运动的比例关系</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/教学设计/2.6匀变速直线运动规律的思维方法及其综合运用.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/教学设计/2.6.1匀变速直线运动规律推论的应用.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -227,116 +187,29 @@ window.Quarto = {
 
 
 
-
-<section id="基本公式法" class="level2">
-<h2 class="anchored" data-anchor-id="基本公式法">基本公式法:</h2>
-<section id="经典例题" class="level3">
-<h3 class="anchored" data-anchor-id="经典例题">经典例题</h3>
-<ol type="1">
-<li><strong>一辆汽车在笔直的公路上做匀变速直线运动，该公路安置三个路标A、B、C。A、B 间距</strong><span class="math inline">s_{1}=6m</span><strong>, B、C间距</strong><span class="math inline">s_{2}</span><strong>=24m。汽车通过A、B两相邻路标用了t</strong><span class="math inline">_{1}</span><strong>=2s, 通过B、C两相邻路标用了t</strong><span class="math inline">_{2}</span><strong>=4s。求：</strong></li>
-</ol>
-<p>(1)汽车通过A、C路标间距的平均速度大小；</p>
-<p>(2)汽车的加速度大小及汽车通过A、B、C各路标时的速度大小。</p>
-<p><img src="image.png" class="img-fluid" alt="alt text"> ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩</p>
-<p><strong>解法一:基本式</strong></p>
-<p><span class="math inline">A\rightarrow B:s_1=v_At_1+\frac{1}{2}at_1^2  \quad</span></p>
-<p><span class="math inline">A\rightarrow C:s_1+s_2=v_A(t_1+t_2)+\frac{1}{2}a(t_1+t_2)^2\quad</span></p>
-<p><span class="math inline">联立①②方程组，解得:v_A=2m/s,a=1m/s^2</span></p>
-<p><span class="math inline">v_B=v_A+at_1=4m/s,v_c=v_A+a(t_1+t_2)=8m/s</span></p>
-<p><strong>解法二:平均速度=中间时刻速度</strong></p>
-<p><span class="math inline">v_{1s末}=\bar{v}_{AB}=3m/s</span></p>
-<p><span class="math inline">v_{4s末}=\bar{v}_{BC}=6m/s</span></p>
-<p><span class="math inline">a=\frac{\Delta v}{\Delta t}=1m/s^2</span></p>
-<p><span class="math inline">v_A=v_{1s末}-a\frac{t_1}{2}=2m/s</span></p>
-<p><strong>解法三:位移差公式</strong></p>
-<p>BC段分为等时的两段BP,PC，则由位移差公式可得 <img src="image-1.png" class="img-fluid" alt="alt text"></p>
-<p><span class="math inline">x_{BP}-s_1=x_{PC}-x_{BP}</span></p>
-<p><span class="math inline">x_{BP}+x_{PC}=s_2</span></p>
-<p>解得<span class="math inline">x_{BP}=10m,x_{PC}=14m</span> <span class="math inline">\Delta x=x_{BP}-x_{AB}=at_1^2</span></p>
-<p>解得 <span class="math inline">a=1m/s^2</span></p>
-</section>
-<section id="变式1" class="level3">
-<h3 class="anchored" data-anchor-id="变式1">变式1：</h3>
-<p>3.如图，一质点从 A点开始做初速度为零 的匀加速直线运动，加速度大小为 a ， B 、 C 、 D 是质点运动路径上的三个点， 且 <span class="math inline">BC=x_1</span> ， <span class="math inline">CD=x_2</span> ，质点通过BC 段所用时间是通过CD 段所用时间的一半， 则质点经过C 点时的速度大小和 A 、 B 间的距离为( )</p>
-<p><img src="images/paste-1.png" class="img-fluid"></p>
-<p>A.质点经过 C 点时的速度大小为 <span class="math inline">\frac{x_1+4x_2}6\sqrt{\frac{3a}{x_2-2x_1}}</span></p>
-<p>B.质点经过 C 点时的速度大小为<span class="math inline">\frac{4x_1+x_2}6\sqrt{\frac{3a}{x_2-2x_1}}</span></p>
-<p>C. A 、 B 间的距离为 <span class="math inline">\frac{(8x_{1}-x_{2})^{2}}{24(x_{2}-2x_{1})}</span></p>
-<p>D. A 、 B 间的距离为 <span class="math inline">\frac{(8x_{1}-x_{2})^{2}}{12(x_{2}-2x_{1})}</span></p>
-<p><strong>解：设BC段时间为t，则CD段时间为2t。</strong></p>
-<p><span class="math inline">B-C:v_Bt_0+\frac{1}{2}at_0^2=x_1 \quad(1)</span></p>
-<p><span class="math inline">B-D:v_B\cdot 3t_0+\frac{1}{2}a(3t_0)^2=x_1+x_2\quad(2)</span></p>
-<p><span class="math inline">(2)-3*(1)\rightarrow at_0^2=\frac{x_2-2x_1}{3}\quad(3)</span></p>
-<p><span class="math inline">9*(1)-(2)\rightarrow v_Bt=\frac{8x_1-x_2}{6}\quad(4)</span></p>
-<p><span class="math inline">t_0=\sqrt{\frac{x_2-2x_1}{3a}}</span></p>
-<p><span class="math inline">v_B=\frac{8x_1-x_2}{6t_0}=\frac{8x_1-x_2}{6}\sqrt{\frac{3a}{x_2-2x_1}}</span></p>
-<p><span class="math inline">x_{AB}=\frac{v_B^2}{2a}=\frac{(8x_{1}-x_{2})^{2}}{24(x_{2}-2x_{1})}</span></p>
-<p><span class="math inline">由(3)得：at_0=\frac{x_2-2x_1}{3t_0}=\frac{x_2-2x_1}{3}\sqrt{\frac{3a}{x_2-2x_1}}</span></p>
-<p><span class="math inline">v_C=v_B+at_0=\frac{4x_1+x_2}{6}\sqrt{\frac{3a}{x_2-2x_1}}</span></p>
-<p>故选BC</p>
-<hr>
-</section>
-<section id="变式2" class="level3">
-<h3 class="anchored" data-anchor-id="变式2">变式2：</h3>
-<p>3.已知0、A、B、C为同一直线的四点，AB间的距离为<span class="math inline">l_1</span>，BC间的距离为<span class="math inline">l_2</span>，一物体自0点由静止出发，沿此直线做匀加速运动，依次经过A、B、C三点，已知物体通过AB段与BC段所用的时间相等。求O与A的距离。</p>
-<p><img src="images/1713843340280.png" class="img-fluid"></p>
-<p><strong>解:设A到B时间为T，加速度为a，A点速度为</strong> <span class="math inline">v_A</span></p>
-<p><span class="math inline">A到B：l_1=v_AT+\frac{1}{2}aT^2 \quad(1)</span></p>
-<p><span class="math inline">A到C：l_1+l_2=v_A\cdot 2T+\frac{1}{2}a\cdot(2T)^2\quad(2)</span></p>
-<p>（1）（2）两个方程，三个未知量无法求解，但是可以找出三个未知量之间的关系。做如下处理：</p>
-<p><span class="math inline">(2)-2*(1)，得到l_2-l_1=aT^2① \quad 即位移差公式</span></p>
-<p><span class="math inline">4*(1)-(2),得到2v_AT=3l_1-l_2 ②\quad</span></p>
-<p><span class="math inline">x_{OA}=\frac{v_A^2}{2a}=\frac{(3l_1-l_2)^2}{4T^2}\cdot\frac{1}{2a}=\frac{(3l_1-l_2)^2}{8(l_2-l_1)}</span></p>
-<hr>
-</section>
-</section>
-<section id="逆向思维" class="level2">
-<h2 class="anchored" data-anchor-id="逆向思维">逆向思维</h2>
-<p>2.疫情期间，武汉小汤山医院7天内建成，见证了中国速度。在建筑工地上一卡车以速度10m/s匀速行驶，刹车后第1个2s内的位移与最后一个2s内的位移之比为3∶2，设卡车做匀减速直线运动，则刹车后4s内卡车通过的距离是（　　）</p>
-<p>A.2.5m</p>
-<p>B.4m</p>
-<p>C.12.5m</p>
-<p>D.25m</p>
-<p><strong>解：</strong></p>
-<p>第一个2s内位移<span class="math inline">3s=v_0*2-\frac{1}{2}a\cdot2^2</span></p>
-<p>最后一个2s内位移，逆向思维，看成初速度为0的反向加速运动： <span class="math inline">2s=\frac{1}{2}a\cdot2^2</span></p>
-<p>解得 <span class="math inline">s=4m,a=4m/s^2</span></p>
-<p><span class="math inline">v_0=10m/s,t=2.5s停下，因此4s内位移：x=\frac{v_0^2}{2a}=12.5m</span></p>
-<p><strong>注意逆向思维：匀减速至0的运动可以看成反向的初速度为0的匀加速运动解决问题</strong></p>
-<section id="一题多解" class="level3">
-<h3 class="anchored" data-anchor-id="一题多解">一题多解</h3>
-<p>1.目前交警部门开展的“车让人”活动深入人心.司机发现前方有行人正通过人行横道时开始做匀减速直线运动，恰好在停车线处停止运动.汽车经 4 s停止，若在第 1 s 内的位移是14 m ，则最后 1 s内的位移大小是( )</p>
-<p>A. 3.5 m B. 2 m C. 1 m D. 0 m</p>
-<p><strong>解法一基本公式:</strong></p>
-<p><span class="math inline">第1秒内位移14m:v_0\cdot1-\frac{1}{2}a\cdot 1^2=14\quad(1)</span></p>
-<p><span class="math inline">4s减速为0:v_0-4a=0\quad(2)</span></p>
-<p>联立(1)(2)方程组解得：</p>
-<p><span class="math inline">v_0=16m/s</span></p>
-<p><span class="math inline">a=4m/s^2</span></p>
-<p><span class="math inline">最后一秒内位移s=\frac{1}{2}at^2=\frac{1}{2}a\cdot 1=2m</span></p>
-<p><strong>解法二：中间时刻速度等于平均速度</strong></p>
-<p><span class="math inline">v_{0.5s末}=\bar{v}_{第1s内}=14m/s</span></p>
-<p><span class="math inline">v_{4s末}=0m/s</span></p>
-<p><span class="math inline">a=\frac{\Delta v}{\Delta t}=-4m/s^2</span></p>
-<p><span class="math inline">\bar{v}_{最后一秒内}=v_{3.5s末}=v_{0.5s末}-a\cdot 3=2m/s^2</span></p>
-<p><span class="math inline">最后一秒内位移:x=\bar{v}_{最后1s内}\cdot 1s=2m</span></p>
-<p><strong>解法三：比例关系、逆向思维</strong></p>
-<p>减速运动可以看成反向的初速度为0的匀加速运动，因此满足以下比例关系：</p>
-<p><span class="math inline">x_{第1s内}:x_{第2s内}:x_{第3s内}:x_{第4s内}=7:5:3:1</span></p>
-<p><span class="math inline">x_{第1s内}=14m</span></p>
-<p><span class="math inline">x_{第4s内}=2m</span></p>
+<section id="一平均速度中间时刻速度" class="level3">
+<h3 class="anchored" data-anchor-id="一平均速度中间时刻速度">一、平均速度=中间时刻速度</h3>
 <p>2.一物体做匀加速直线运动，初速度<span class="math inline">v_0=2m/s^2</span>，他在第3s内通过的位移是4.5m，则它的加速度为（ ）</p>
 <p>A.<span class="math inline">0.5m/s^2</span></p>
 <p>B.<span class="math inline">1m/s^2</span></p>
 <p>C.<span class="math inline">1.5m/s^2</span></p>
-<p>D.<span class="math inline">2.0m/s^2</span> **** 3.一物体做匀加速直线运动，通过一段位移<span class="math inline">\Delta x</span>所用时间为<span class="math inline">t_1</span>，紧接着通过下一段位移<span class="math inline">\Delta x</span>所用时间为<span class="math inline">t_2</span>。则物体的加速度为（ ）</p>
+<p>D.<span class="math inline">2.0m/s^2</span></p>
+<hr>
+<p>3.一物体做匀加速直线运动，通过一段位移<span class="math inline">\Delta x</span>所用时间为<span class="math inline">t_1</span>，紧接着通过下一段位移<span class="math inline">\Delta x</span>所用时间为<span class="math inline">t_2</span>。则物体的加速度为（ ）</p>
 <p><span class="math inline">A.\frac{2\Delta x (t_1-t_2)}{t_1t_2(t_1+t_2)}</span></p>
 <p><span class="math inline">B.\frac{\Delta x (t_1-t_2)}{t_1t_2(t_1+t_2)}</span></p>
 <p><span class="math inline">C.\frac{2\Delta x (t_1+t_2)}{t_1t_2(t_1-t_2)}</span></p>
 <p><span class="math inline">D.\frac{\Delta x (t_1+t_2)}{t_1t_2(t_1-t_2)}</span></p>
-
-
 </section>
+<section id="二位移差公式delta-xat2" class="level3">
+<h3 class="anchored" data-anchor-id="二位移差公式delta-xat2">二、位移差公式<span class="math inline">\Delta x=aT^2</span></h3>
+<p>1.一个做匀变速直线运动的质点，它在两段连续相等的时间内通过的位移分别是24m和64m，连续相等的时间为4s，求质点的初速度和加速度大小。</p>
+<p>2.一个做匀变速直线运动的质点，它在第1秒内通过的位移是2m，第3s内通过的位移是8m。求质点加速度大小。</p>
+</section>
+<section id="三初速度为0的匀变速直线运动的比例关系" class="level3">
+<h3 class="anchored" data-anchor-id="三初速度为0的匀变速直线运动的比例关系">三、初速度为0的匀变速直线运动的比例关系</h3>
+
+
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -757,7 +630,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© Stack 2024</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/教学设计/2.6匀变速直线运动规律的思维方法及其综合运用.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/教学设计/2.6.1匀变速直线运动规律推论的应用.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
