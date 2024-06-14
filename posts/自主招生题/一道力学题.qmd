@@ -67,3 +67,21 @@ $$
 联立(1)-(6)方程解得: $$
 a_{Ey}=\frac{(M+m)g}{m+M+\frac{M}{2tan^2\alpha}}=\frac{2(M+m)~g~sin^2\alpha}{2(m+M)sin^2\alpha+Mcos^2\alpha}
 $$
+
+
+::: {.callout-note}
+Note that there are five types of callouts, including:
+`note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+::: {.callout-tip}
+## Tip with Title
+
+This is an example of a callout with a title.
+:::
+
+::: {.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
