@@ -4,7 +4,7 @@
     "href": "posts/自主招生题/一道力学题.html",
     "title": "一道南大自主招生力学题",
     "section": "",
-    "text": "图1\n\n\n2.如图1所示.为斜面重合的两楔块ABC及ADC,质量均为M,AD、BC两面成水平,E为质量等于m的小滑块,楔块的倾角为α，各面均光滑,系统放在水平平台角上从静止开始释放,求两斜面未分离前E的加速度.\n解法：\n以地面为参考系，水平向右为x正方向，竖直向下为y正方向，E贴着楔块ADC下降，E只受重力和支持力，只有竖直y方向加速度记为a_{Ey}.\n楔块ADC的加速度分解为水平向右x方向和水平向右y方向a_{2x}和a_{2y}\n楔块ABC有水平向左的加速度a_{1x}\n楔块ADC和ABC水平方向合力为0，水平方向动量守恒。因此\n\na_{1x}=a_{2x}\n\n或者从其他角度分析，\n\n两楔块ADC和ABC之间的弹力FN大小相等方向相反，各自在水平方向贡献了分力，水平方向不受其他力。因此\n\na_{1x}=a_{2x}  ~~~~(1)\n\n滑块E贴着楔块ADC往下移动，因此\n\na_{Ey}=a_{2y}~~~~(2)\n\n对滑块E受力分析，列牛二定律:\n\nmg-F_{N1}=ma_{Ey}~~~~(3)\n\n对楔块ADC受力分析，列牛二定律： \n\nx方向：F_{N}~sin\\alpha = M~a_{2x}~~~~(4)\n\n\ny方向: F_{N1}+Mg-F_N~cos\\alpha=M~a_{2y} ~~~~(5)\n\n以楔块ABC为参考系，楔块ADC沿着AC面加速下滑，因此加速度满足如下关系:\n\n\n\\frac{a_{2y}}{2a_{2x}} = tan\\alpha  ~~~~(6)\n\n联立(1)-(6)方程解得: \na_{Ey}=\\frac{(M+m)g}{m+M+\\frac{M}{2tan^2\\alpha}}=\\frac{2(M+m)~g~sin^2\\alpha}{2(m+M)sin^2\\alpha+Mcos^2\\alpha}\n\n\n\n\n Back to top"
+    "text": "图1\n\n\n2.如图1所示.为斜面重合的两楔块ABC及ADC,质量均为M,AD、BC两面成水平,E为质量等于m的小滑块,楔块的倾角为α，各面均光滑,系统放在水平平台角上从静止开始释放,求两斜面未分离前E的加速度.\n解法：\n以地面为参考系，水平向右为x正方向，竖直向下为y正方向，E贴着楔块ADC下降，E只受重力和支持力，只有竖直y方向加速度记为a_{Ey}.\n楔块ADC的加速度分解为水平向右x方向和水平向右y方向a_{2x}和a_{2y}\n楔块ABC有水平向左的加速度a_{1x}\n楔块ADC和ABC水平方向合力为0，水平方向动量守恒。因此\n\na_{1x}=a_{2x}\n\n或者从其他角度分析，\n\n两楔块ADC和ABC之间的弹力FN大小相等方向相反，各自在水平方向贡献了分力，水平方向不受其他力。因此\n\na_{1x}=a_{2x}  ~~~~(1)\n\n滑块E贴着楔块ADC往下移动，因此\n\na_{Ey}=a_{2y}~~~~(2)\n\n对滑块E受力分析，列牛二定律:\n\nmg-F_{N1}=ma_{Ey}~~~~(3)\n\n对楔块ADC受力分析，列牛二定律： \n\nx方向：F_{N}~sin\\alpha = M~a_{2x}~~~~(4)\n\n\ny方向: F_{N1}+Mg-F_N~cos\\alpha=M~a_{2y} ~~~~(5)\n\n以楔块ABC为参考系，楔块ADC沿着AC面加速下滑，因此加速度满足如下关系:\n\n\n\\frac{a_{2y}}{2a_{2x}} = tan\\alpha  ~~~~(6)\n\n联立(1)-(6)方程解得: \na_{Ey}=\\frac{(M+m)g}{m+M+\\frac{M}{2tan^2\\alpha}}=\\frac{2(M+m)~g~sin^2\\alpha}{2(m+M)sin^2\\alpha+Mcos^2\\alpha}\n\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, warning, important, tip, and caution.\n\n\n\n\n\n\n\n\nTip with Title\n\n\n\nThis is an example of a callout with a title.\n\n\n\n\n\n\n\n\nExpand To Learn About Collapse\n\n\n\n\n\nThis is an example of a ‘folded’ caution callout that can be expanded by the user. You can use collapse=\"true\" to collapse it by default or collapse=\"false\" to make a collapsible callout that is expanded by default.\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "posts/网站建设/docker部署django网站（二）.html",
@@ -77,25 +77,11 @@
     "text": "pyenv常用指令\n使用方式: pyenv &lt;命令&gt; [&lt;参数&gt;]\n\n命令:\n  commands    查看所有命令\n  local       设置或显示本地的Python版本\n  global      设置或显示全局Python版本\n  shell       设置或显示shell指定的Python版本\n  install     安装指定Python版本\n  uninstall   卸载指定Python版本)\n  version     显示当前的Python版本及其本地路径\n  versions    查看所有已经安装的版本\n  which       显示安装路径\n复制代码\n\n\n\n Back to top"
   },
   {
-    "objectID": "posts/教学设计/2.5自由落体.html",
-    "href": "posts/教学设计/2.5自由落体.html",
-    "title": "物理教学",
+    "objectID": "posts/教学设计/2.6.1匀变速直线运动规律推论的应用.html",
+    "href": "posts/教学设计/2.6.1匀变速直线运动规律推论的应用.html",
+    "title": "匀变速直线运动规律推论的应用",
     "section": "",
-    "text": "h=\\frac{1}{2}gt^2\n\n\nv=gt\n\n\nv^2=2gh\n\n\nh=\\frac{v}{2}t"
-  },
-  {
-    "objectID": "posts/教学设计/2.5自由落体.html#自由落体公式",
-    "href": "posts/教学设计/2.5自由落体.html#自由落体公式",
-    "title": "物理教学",
-    "section": "",
-    "text": "h=\\frac{1}{2}gt^2\n\n\nv=gt\n\n\nv^2=2gh\n\n\nh=\\frac{v}{2}t"
-  },
-  {
-    "objectID": "posts/教学设计/2.5自由落体.html#能力提升",
-    "href": "posts/教学设计/2.5自由落体.html#能力提升",
-    "title": "物理教学",
-    "section": "能力提升",
-    "text": "能力提升\n\n\n例题1\n【例题】屋檐上每隔一定时间滴下一滴水，当第5滴正欲滴下时，第1滴刚好落到地面，而第3滴与第2滴分别位于高1 m的窗子的上、下沿，如图所示。问：(g取10 m/s^2)\n\n\n\nalt text\n\n\n⑴此屋檐离地面多高？\n⑵滴水的时间间隔是多少？ 设滴水的时间间隔是T，屋檐离地面高度为H。\n解法一：基本法 第2个水滴离地高度: h_1=\\frac{1}{2}g(3T)^2\n第3个水滴离地高度: h_2=\\frac{1}{2}g(2T)^2\nh_1-h_2=1m 解得 T=0.2s\nH=\\frac{1}{2}g(4T)^2=3.2m\n解法二：比例关系 自由落体是初速度为0的匀加速运动，满足\nh_{5-4}:h_{4-3}:h_{3-2}:h_{2-1}=1:3:5:7\nh_{3-2}=1m\n\\rightarrow  H=\\frac{16}{5}m\n解法三：平均速度=中间时刻速度 3-2水滴平均速度\n\\bar{v}=\\frac{1}{T}\nv_{2.5T末}=2.5gT\n\\bar{v}=v_{2.5T末}\n解得 T=0.2s\n\n\n\n例题2\n参观古镇时，恰逢下雨，小吴同学饶有兴致地观察屋檐滴水的情景，他观察到滴水中水滴下落时间间隔均匀，测得1分钟内下落水滴180个，由参观资料知屋檐高为3.2m。不计空气阻力，重力加速度g取，他有以下推断，其中正确的是（　　）\n\n\n\nalt text\n\n\nA. 空中相邻的两个水滴的间距保持不变\nB. 空中相邻的两个水滴的之间的最大间距是\\frac{5}{3}m\nC. 空中有3个水滴时相邻间距之比始终为1：3\nD. 空中有3个水滴和2个水滴的时间之比是2：3\n\n\n\nalt text\n\n\n看下图分析，某时刻与t=1.0s,t=1.0这条竖线与3条斜线有3个交点，此时空中有3个水滴。若有2个交点则代表空中有2个水滴。\n水滴从释放到落地时间:t=\\sqrt{\\frac{2h}{g}}=0.8s,\n相邻两个水滴时间间隔 \\frac{1}{3} s,\n随便取一段t=1.0 s 至 t=1+\\frac{1}{3} s 观察:\n1.0s 至 \\frac{1}{3}+0.8 s=\\frac{2}{15}s有3滴水滴;\n则2滴水滴时间为:(\\frac{1}{3}-\\frac{2}{15})s=\\frac{3}{15}s\n\n\n\n水滴v-t图像"
+    "text": "一、平均速度=中间时刻速度\n2.一物体做匀加速直线运动，初速度v_0=2m/s^2，他在第3s内通过的位移是4.5m，则它的加速度为（ ）\nA.0.5m/s^2\nB.1m/s^2\nC.1.5m/s^2\nD.2.0m/s^2\n\n3.一物体做匀加速直线运动，通过一段位移\\Delta x所用时间为t_1，紧接着通过下一段位移\\Delta x所用时间为t_2。则物体的加速度为（ ）\nA.\\frac{2\\Delta x (t_1-t_2)}{t_1t_2(t_1+t_2)}\nB.\\frac{\\Delta x (t_1-t_2)}{t_1t_2(t_1+t_2)}\nC.\\frac{2\\Delta x (t_1+t_2)}{t_1t_2(t_1-t_2)}\nD.\\frac{\\Delta x (t_1+t_2)}{t_1t_2(t_1-t_2)}\n\n\n二、位移差公式\\Delta x=aT^2\n1.一个做匀变速直线运动的质点，它在两段连续相等的时间内通过的位移分别是24m和64m，连续相等的时间为4s，求质点的初速度和加速度大小。\n2.一个做匀变速直线运动的质点，它在第1秒内通过的位移是2m，第3s内通过的位移是8m。求质点加速度大小。\n\n\n三、初速度为0的匀变速直线运动的比例关系\n6.(多选)如图所示，完全相同的三块木块并排固定在水平面上，一颗子弹以速度v水平射入，若子弹在木块中做匀减速直线运动，且穿过第三块木块后子弹的速度恰好为0，则子弹依次射入每块木块时的速度之比和穿过每块木块所用的时间之比分别是(　　)\n\n\n11．（多选）如图所示，光滑斜面AE被分为四个相等的部分，一物体从A点由静止释放，它沿斜面向下做匀加速运动，依次通过B、C、D点，最后到达底端E点。下列说法正确的是(　 　)\n\nA．物体通过各点的瞬时速度之比为v_B∶v_C∶v_D∶v_E＝1∶\\sqrt{2}:\\sqrt{3}:2\nB．物体通过每一部分时，其速度增量v_B-v_A＝v_C-v_B＝v_D-v_C＝v_E-v_D\nC．物体由A点到各点所经历的时间之比为t_B:t_C:t_D:t_E=1∶\\sqrt{2}:\\sqrt{3}:2\nD．下滑全程的平均速度等于v_B\n正确答案：ACD\n\n\n\n\n Back to top"
   },
   {
     "objectID": "posts/教学设计/统计规律.html",
@@ -112,18 +98,11 @@
     "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "posts/生活中的物理/空中有几个水滴.html",
-    "href": "posts/生活中的物理/空中有几个水滴.html",
-    "title": "游泳是怎么前进的？",
+    "objectID": "posts/竖直圆轨道/index.html",
+    "href": "posts/竖直圆轨道/index.html",
+    "title": "竖直圆轨道",
     "section": "",
-    "text": "1\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Stack",
-    "section": "",
-    "text": "一、平均速度=中间时刻速度\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n自由落体公式\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n一道南大自主招生力学题\n\n\n\n\n\n\n高中物理难题\n\n\n力学\n\n\n\n\n\n\n\n\n\nJun 4, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n统计规律图\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMay 15, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n解决匀变速直线问题的一般方法\n\n\n\n\n\n\n物理教学\n\n\n\n\n\n\n\n\n\nApr 20, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n游泳是怎么前进的？\n\n\n\n\n\n\n生活中的物理\n\n\n\n\n\n\n\n\n\nMar 28, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n游泳是怎么前进的？\n\n\n\n\n\n\n生活中的物理\n\n\n\n\n\n\n\n\n\nMar 28, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\ndocker部署django网站（二）\n\n\n\n\n\n\nDjango\n\n\ndocker\n\n\n\n\n\n\n\n\n\nMar 27, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\ndocker部署django网站（一）\n\n\n\n\n\n\nDjango\n\n\ndocker\n\n\n\n\n\n\n\n\n\nMar 25, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n校园网22端口被封ssh无法连接服务器\n\n\n\n\n\n\nssh\n\n\n\n\n\n\n\n\n\nMar 15, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\ndjango网站部署到服务器\n\n\n\n\n\n\nDjango\n\n\n\n\n\n\n\n\n\nMar 14, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n将quarto部署到云服务器\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\nMar 13, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nMac使用pyenv控制python版本\n\n\n\n\n\n\npython\n\n\n\n\n\n\n\n\n\nMar 13, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n让球沿轨道动起来\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 11, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n竖直圆轨道\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 10, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\npython数值求解微分方程\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 10, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib 动画\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 7, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n修改quarto中katex默认js文件地址\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n等量异种电荷电场\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n如何绑定自己的域名到用户名.github.io\n\n\n\n\n\n\nGithub\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib demo\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 5, 2024\n\n\n叶叶叶\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "模拟小球在圆轨道运动 \n\n\n\n\nCode\nimport math\nfrom scipy.integrate import odeint\nfrom sympy.abc import t\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib import animation\n\nglobal g,r,tmax\ng=9.8\nr=0.3\ntmax=10\n#定义一个方程组（微分方程组）\ndef pfun(y,x):\n    y1,y2=y; #让'y'成为一个[y1',y2']的向量 所以将等式左边都化为1阶微分是很重要的\n    return np.array([y2,-g/r*math.cos(y1)]) #返回的是等式右边的值\n\n\nglobal x,y,point_ani,text_pt,v0\n\nv0 = 1*math.sqrt(3*g/r)\nx=np.arange(0,tmax,0.02) #创建自变量序列\nsoli=odeint(pfun,[0.0,v0],x) #求数值解\nplt.rc('font',size=16); plt.rc('font',family='SimHei')\nplt.rc('axes', unicode_minus=False)\n\ndef update_points_v3(num):\n    point_ani.set_data([x[num]], [y[num]]) ## point_ani.set_data(x[num], y[num]) 这种写法一直warning，需要传入列表等可迭代对象\n    # point_ani.set_data(x[:num], y[:num])##显示轨迹\n    point_ani.set_markersize(10)\n    text_pt.set_position((x[num], y[num]))\n    text_pt.set_text(\"x=%.2f, y=%.2f\" % (x[num], y[num]))\n    return point_ani, text_pt,\ndef toX(theta):\n  return r*math.cos(theta)\ndef toY(theta):\n  return r*math.sin(theta)\nfig = plt.figure()\ny=soli[:,0] #是角度 \nx=list(map(toX,y))\ny=list(map(toY,y))\n# plt.plot(x,y)#数值解\nthetas = np.arange(0,2*math.pi,0.01)\nplt.plot(r*np.cos(thetas),r*np.sin(thetas),'g',label=\"符号解曲线\")\nplt.axis(\"equal\")##横轴纵轴等比例，防止出现不圆\npoint_ani, = plt.plot(x[0], y[0], \"ro\")\nplt.grid(ls=\"--\")\ntext_pt = plt.text(4, 0.8, '', fontsize=16)\nani = animation.FuncAnimation(fig, update_points_v3, np.arange(0, 200), interval=200, blit=True)\nani.save('cos_test3.gif', writer='pillow', fps=10)##imagemagick 不能用了\n\nplt.legend()\n# plt.show()\nplt.close()\n\n\n\nFigure 1\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "about.html",
@@ -133,11 +112,11 @@
     "text": "笔耕不辍\n\n\n Back to top"
   },
   {
-    "objectID": "posts/竖直圆轨道/index.html",
-    "href": "posts/竖直圆轨道/index.html",
-    "title": "竖直圆轨道",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Stack",
     "section": "",
-    "text": "模拟小球在圆轨道运动 \n\n\n\n\nCode\nimport math\nfrom scipy.integrate import odeint\nfrom sympy.abc import t\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib import animation\n\nglobal g,r,tmax\ng=9.8\nr=0.3\ntmax=10\n#定义一个方程组（微分方程组）\ndef pfun(y,x):\n    y1,y2=y; #让'y'成为一个[y1',y2']的向量 所以将等式左边都化为1阶微分是很重要的\n    return np.array([y2,-g/r*math.cos(y1)]) #返回的是等式右边的值\n\n\nglobal x,y,point_ani,text_pt,v0\n\nv0 = 1*math.sqrt(3*g/r)\nx=np.arange(0,tmax,0.02) #创建自变量序列\nsoli=odeint(pfun,[0.0,v0],x) #求数值解\nplt.rc('font',size=16); plt.rc('font',family='SimHei')\nplt.rc('axes', unicode_minus=False)\n\ndef update_points_v3(num):\n    point_ani.set_data([x[num]], [y[num]]) ## point_ani.set_data(x[num], y[num]) 这种写法一直warning，需要传入列表等可迭代对象\n    # point_ani.set_data(x[:num], y[:num])##显示轨迹\n    point_ani.set_markersize(10)\n    text_pt.set_position((x[num], y[num]))\n    text_pt.set_text(\"x=%.2f, y=%.2f\" % (x[num], y[num]))\n    return point_ani, text_pt,\ndef toX(theta):\n  return r*math.cos(theta)\ndef toY(theta):\n  return r*math.sin(theta)\nfig = plt.figure()\ny=soli[:,0] #是角度 \nx=list(map(toX,y))\ny=list(map(toY,y))\n# plt.plot(x,y)#数值解\nthetas = np.arange(0,2*math.pi,0.01)\nplt.plot(r*np.cos(thetas),r*np.sin(thetas),'g',label=\"符号解曲线\")\nplt.axis(\"equal\")##横轴纵轴等比例，防止出现不圆\npoint_ani, = plt.plot(x[0], y[0], \"ro\")\nplt.grid(ls=\"--\")\ntext_pt = plt.text(4, 0.8, '', fontsize=16)\nani = animation.FuncAnimation(fig, update_points_v3, np.arange(0, 200), interval=200, blit=True)\nani.save('cos_test3.gif', writer='pillow', fps=10)##imagemagick 不能用了\n\nplt.legend()\n# plt.show()\nplt.close()\n\n\n\nFigure 1\n\n\n\n\n\n\n Back to top"
+    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 27, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n自由落体经典题型\n\n\n\n\n\n\n教学设计\n\n\n\n\n\n\n\n\n\nJun 14, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n匀变速直线运动规律推论的应用\n\n\n\n\n\n\n教学设计\n\n\n\n\n\n\n\n\n\nJun 14, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n一道南大自主招生力学题\n\n\n\n\n\n\n高中物理难题\n\n\n力学\n\n\n\n\n\n\n\n\n\nJun 4, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n统计规律图\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMay 15, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n解决匀变速直线问题的一般方法\n\n\n\n\n\n\n物理教学\n\n\n\n\n\n\n\n\n\nApr 20, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n游泳是怎么前进的？\n\n\n\n\n\n\n生活中的物理\n\n\n\n\n\n\n\n\n\nMar 28, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\ndocker部署django网站（二）\n\n\n\n\n\n\nDjango\n\n\ndocker\n\n\n\n\n\n\n\n\n\nMar 27, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\ndocker部署django网站（一）\n\n\n\n\n\n\nDjango\n\n\ndocker\n\n\n\n\n\n\n\n\n\nMar 25, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n校园网22端口被封ssh无法连接服务器\n\n\n\n\n\n\nssh\n\n\n\n\n\n\n\n\n\nMar 15, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\ndjango网站部署到服务器\n\n\n\n\n\n\nDjango\n\n\n\n\n\n\n\n\n\nMar 14, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n将quarto部署到云服务器\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\nMar 13, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nMac使用pyenv控制python版本\n\n\n\n\n\n\npython\n\n\n\n\n\n\n\n\n\nMar 13, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n让球沿轨道动起来\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 11, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n竖直圆轨道\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 10, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\npython数值求解微分方程\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 10, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib 动画\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 7, 2024\n\n\n叶叶叶\n\n\n\n\n\n\n\n\n\n\n\n\n修改quarto中katex默认js文件地址\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n等量异种电荷电场\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\n如何绑定自己的域名到用户名.github.io\n\n\n\n\n\n\nGithub\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\nstack\n\n\n\n\n\n\n\n\n\n\n\n\nmatplotlib demo\n\n\n\n\n\n\nmatplot\n\n\n\n\n\n\n\n\n\nMar 5, 2024\n\n\n叶叶叶\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "posts/生活中的物理/游泳如何前进.html",
@@ -147,11 +126,25 @@
     "text": "游泳时，水对手的椎力是做负功的，水对人头和躯体的阻力或拽力也是做负功的，人所受外力都对他做负功，他怎么还能匀速甚至加速前进呢？试用能量转换分析此问题。\n\n分析：游泳时，人手从前向后划水使得身体不断地向前运动。我们只考虑手的划动在游泳中的作用，且设手从前向后相对身体划动一次的距离为 \\Delta s_{1},在此时间内身体在泳道中前 进了\\Delta s_2的距离，那么同一时间手在水中(相对水)由前向后划动了 达\\Delta l=\\Delta s_1-\\Delta s_2的距离， 如图 1.33 所示。由于手是相对水向后划动，水给手的反作用推力是向前的，它和手的位移 方向相反，所以此推力对手做负功。\n\n\n\n图 1.33\n\n\n​ 从力的角度分析。对于人体质点系，沿前进方向受到的外力一是水对手向前的推力F，一是向后的水对人头和躯体的阻力或拽力f_{i} 。由质心运动定理，作用在质点系上各外力的合力等于质点系质量M和质心加速度a_c的乘积，有 \n\\sum\\left(F-f_r\\right)=M\\frac{\\mathrm{d}v_{\\mathrm{C}}}{\\mathrm{d}t}=Ma_{\\mathrm{C}}\n 当F-f_c=0,a_c=0,在此划动过程中人体质心匀速前进；当F-f_r &gt; 0 时，a_C &gt; 0,人体质心就会得到加速。\n​ 从能量转换(功能关系)角度分析。根据质心动能定理，作用在质点系上各外力的合力对质心位移的功等于质心动能的增量。可认为竖直方向人体所受的外力(重力、浮力等)不做功，沿游泳前进方向大体质点系受到的外力为上述的F和f_r。在手从前向后的划动过程中，虽然手的位移方向向后，但人体的质心位移 \\mathrm{d}r_c方向却是向前的，故向前的推力F对人体质心做正功。考虑到向后的阻力f_r对人体质心做负功，有 \ndA=\\left(F+f_r\\right)\\cdot dr_{C}=Fdr_{C}-f_rdr_{C}=d\\left(\\frac{1}{2}Mv_{C}^{2}\\right)\n 当Fdr_c- f_rdr_c= 0时，人体质心匀速前进；当 Fdr_c- f_r dr_c&gt; 0 时，人体质心动能在过程中将得到增加。做正功的水是被向后划的手挤压的水，在被挤压过程中手对它做正功，它从中得到了对人体质心做正功的能量(内能)。手做正功的能量则是来源于手臂肌肉的“生物能”” (化学能),此能量转化过程是人体内非保守内力的做功过程，是把通过手臂肌肉收缩所消耗的生物能转化成手臂划动动能的过程。总之，游泳时人体匀速或加速前进所需能量是来源于人体肌肉的生物能，手臂向后划水的过程是一个把人体生物能转化为其他形式能的过程。\n\n\n\n Back to top"
   },
   {
-    "objectID": "posts/教学设计/2.6.1匀变速直线运动规律推论的应用.html",
-    "href": "posts/教学设计/2.6.1匀变速直线运动规律推论的应用.html",
-    "title": "物理教学",
+    "objectID": "posts/教学设计/2.5自由落体.html",
+    "href": "posts/教学设计/2.5自由落体.html",
+    "title": "自由落体经典题型",
     "section": "",
-    "text": "一、平均速度=中间时刻速度\n2.一物体做匀加速直线运动，初速度v_0=2m/s^2，他在第3s内通过的位移是4.5m，则它的加速度为（ ）\nA.0.5m/s^2\nB.1m/s^2\nC.1.5m/s^2\nD.2.0m/s^2\n\n3.一物体做匀加速直线运动，通过一段位移\\Delta x所用时间为t_1，紧接着通过下一段位移\\Delta x所用时间为t_2。则物体的加速度为（ ）\nA.\\frac{2\\Delta x (t_1-t_2)}{t_1t_2(t_1+t_2)}\nB.\\frac{\\Delta x (t_1-t_2)}{t_1t_2(t_1+t_2)}\nC.\\frac{2\\Delta x (t_1+t_2)}{t_1t_2(t_1-t_2)}\nD.\\frac{\\Delta x (t_1+t_2)}{t_1t_2(t_1-t_2)}\n\n\n二、位移差公式\\Delta x=aT^2\n1.一个做匀变速直线运动的质点，它在两段连续相等的时间内通过的位移分别是24m和64m，连续相等的时间为4s，求质点的初速度和加速度大小。\n2.一个做匀变速直线运动的质点，它在第1秒内通过的位移是2m，第3s内通过的位移是8m。求质点加速度大小。\n\n\n三、初速度为0的匀变速直线运动的比例关系\n6.(多选)如图所示，完全相同的三块木块并排固定在水平面上，一颗子弹以速度v水平射入，若子弹在木块中做匀减速直线运动，且穿过第三块木块后子弹的速度恰好为0，则子弹依次射入每块木块时的速度之比和穿过每块木块所用的时间之比分别是(　　)\n\n\n11．（多选）如图所示，光滑斜面AE被分为四个相等的部分，一物体从A点由静止释放，它沿斜面向下做匀加速运动，依次通过B、C、D点，最后到达底端E点。下列说法正确的是(　 　)\n\nA．物体通过各点的瞬时速度之比为v_B∶v_C∶v_D∶v_E＝1∶\\sqrt{2}:\\sqrt{3}:2\nB．物体通过每一部分时，其速度增量v_B-v_A＝v_C-v_B＝v_D-v_C＝v_E-v_D\nC．物体由A点到各点所经历的时间之比为t_B:t_C:t_D:t_E=1∶\\sqrt{2}:\\sqrt{3}:2\nD．下滑全程的平均速度等于v_B\n正确答案：ACD\n\n\n\n\n Back to top"
+    "text": "h=\\frac{1}{2}gt^2\n\n\nv=gt\n\n\nv^2=2gh\n\n\nh=\\frac{v}{2}t"
+  },
+  {
+    "objectID": "posts/教学设计/2.5自由落体.html#自由落体公式",
+    "href": "posts/教学设计/2.5自由落体.html#自由落体公式",
+    "title": "自由落体经典题型",
+    "section": "",
+    "text": "h=\\frac{1}{2}gt^2\n\n\nv=gt\n\n\nv^2=2gh\n\n\nh=\\frac{v}{2}t"
+  },
+  {
+    "objectID": "posts/教学设计/2.5自由落体.html#能力提升",
+    "href": "posts/教学设计/2.5自由落体.html#能力提升",
+    "title": "自由落体经典题型",
+    "section": "能力提升",
+    "text": "能力提升\n\n\n例题1\n【例题】屋檐上每隔一定时间滴下一滴水，当第5滴正欲滴下时，第1滴刚好落到地面，而第3滴与第2滴分别位于高1 m的窗子的上、下沿，如图所示。问：(g取10 m/s^2)\n\n⑴此屋檐离地面多高？\n⑵滴水的时间间隔是多少？ 设滴水的时间间隔是T，屋檐离地面高度为H。\n解法一：基本法 第2个水滴离地高度: h_1=\\frac{1}{2}g(3T)^2\n第3个水滴离地高度: h_2=\\frac{1}{2}g(2T)^2\nh_1-h_2=1m 解得 T=0.2s\nH=\\frac{1}{2}g(4T)^2=3.2m\n解法二：比例关系 自由落体是初速度为0的匀加速运动，满足\nh_{5-4}:h_{4-3}:h_{3-2}:h_{2-1}=1:3:5:7\nh_{3-2}=1m\n\\rightarrow  H=\\frac{16}{5}m\n解法三：平均速度=中间时刻速度 3-2水滴平均速度\n\\bar{v}=\\frac{1}{T}\nv_{2.5T末}=2.5gT\n\\bar{v}=v_{2.5T末}\n解得 T=0.2s\n\n\n\n例题2\n参观古镇时，恰逢下雨，小吴同学饶有兴致地观察屋檐滴水的情景，他观察到滴水中水滴下落时间间隔均匀，测得1分钟内下落水滴180个，由参观资料知屋檐高为3.2m。不计空气阻力，重力加速度g取，他有以下推断，其中正确的是（　　）\n\nA. 空中相邻的两个水滴的间距保持不变\nB. 空中相邻的两个水滴的之间的最大间距是\\frac{5}{3}m\nC. 空中有3个水滴时相邻间距之比始终为1：3\nD. 空中有3个水滴和2个水滴的时间之比是2：3\n\n\n\n\n\n\n\nNote\n\n\n\n[详解]A.空中相邻的两个水滴间的时间间隔相同。但是水滴在做加速运动，加速度相同 所以下面的水滴相对上面水滴在匀速下落，间距变大，故A错误\nB.1分钟内下落水滴180个，相邻水渊间隔 t_0=\\frac{1}{3}s 下落总时间 t=\\sqrt{\\frac{2h}{g}}=0.8\\mathrm{s} 空中相邻的两个水滴的之间的最大间距是 \\Delta h=\\frac{1}{2}\\:gt^{2}-\\frac{1}{2}g(t-t_{0})^{2}=\\frac{19}{9}\\mathrm{m} 故B错误\nC.只有初速度为零匀加速时，才有相邻间距之比为 1: 3,故不是始终存在，故 C 错误\nD.下落总时间是 0.8s, 时间间隔为\\frac13s,空中有 3个水滴和2个水滴的时间之比是 \\frac{0.8-\\frac{1}{3}\\times2}{\\frac{1}{3}\\times3-0.8}=2:3 故D正确。\n故选 D.\n\n\n\n新的思路\n\n\n\n\n\n\nCaution\n\n\n\n看下图分析，某时刻与t=1.0s,t=1.0这条竖线与3条斜线有3个交点，此时空中有3个水滴。若有2个交点则代表空中有2个水滴。\n水滴从释放到落地时间:t=\\sqrt{\\frac{2h}{g}}=0.8s,\n相邻两个水滴时间间隔 \\frac{1}{3} s,\n随便取一段t=1.0 s 至 t=1+\\frac{1}{3} s 观察:\n1.0s 至 \\frac{1}{3}+0.8 s=\\frac{2}{15}s有3滴水滴;\n则2滴水滴时间为:(\\frac{1}{3}-\\frac{2}{15})s=\\frac{3}{15}s\n\n\n\n\n\n水滴v-t图像"
   },
   {
     "objectID": "posts/教学设计/2.6匀变速直线运动规律的思维方法及其综合运用.html",
