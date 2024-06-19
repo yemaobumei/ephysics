@@ -1,0 +1,47 @@
+---
+title: "共点力平衡-动态平衡"
+author: "stack"
+date: "2024-08-19"
+categories: [教学设计,相互作用]
+---
+
+::: callout-note
+4．（多选）如图，轻杆一端连在光滑的铰链上，另一端固定着质量为m的小球，初始时，在球上施加作用力F使杆处于水平静止，力F和杆的夹角α=120°。现保持α角不变，改变力F的大小缓慢向上旋转轻杆，直至杆与水平方向成60°角，在这个过程中（　　）
+
+::: columns
+::: {.column width="50%"}
+A．力F逐渐增大
+
+B．力F逐渐减小
+
+C．杆对小球的弹力先增大后减小
+
+D．杆对小球的弹力先减小后增大
+:::
+
+::: {.column width="50%"}
+![](images/paste-1.png){fig-align="left" width="120"}
+:::
+:::
+
+【解析】AB.由于轻杆一端连在光滑的铰链上，故杆对小球的作用力始终沿着杆的方向，设转动过程中杆与竖直方向夹角为，由平衡条件可得，垂直杆方向满足： $$
+Fsin60^\circ = mg\sin\theta
+$$
+
+杆转过60°过程，从90°减小到30°，可知力F逐渐减小，A错误，B正确； CD．沿杆方向满足: $$
+F_{杆}=F\cos60^\circ-mg\cos\theta
+$$ 联立上述两式可得 $$
+F_{杆}=\frac{2\sqrt{3}}{3}mg\sin(\theta-60^\circ)
+$$ 其中利用了数学里的辅助角公式: $$
+a\sin\theta+b\cos\theta=\sqrt{a^2+b^2}[\sin\theta\cdot\frac{a}{\sqrt{a^2+b^2}}+\cos\theta\cdot\frac{b}{\sqrt{a^2+b^2}}]\\
+=\sqrt{a^2+b^2}\sin(\theta+\varphi) \\
+其中：\sin\varphi = \frac{a}{\sqrt{a^2+b^2}};\\
+\cos\varpi = \frac{b}{\sqrt{a^2+b^2}}
+$$ 可知当时，，故从90°减小到30°的过程，sin值先减小为0后为负，绝对值增大。负号代表沿着杆向外。杆对小球的弹力先减小为零后反向增大，C错误，D正确。 故选BD。
+:::
+
+除了正交分解，通过解析法分析力的变化。还可以作图。由于F和杆夹角始终不变，三力平衡，重力mg，F，杆的力三个力组成的矢量三角形。F和杆的力夹角不变，因此可以补充外接圆。注意杆的力方向变化。
+
+<iframe src="https://www.geogebra.org/classic/mnmzec6s?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+
+</iframe>
