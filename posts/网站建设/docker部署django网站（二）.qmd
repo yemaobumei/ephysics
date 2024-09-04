@@ -11,7 +11,9 @@ categories: [Django,docker]
 
 ## 第一步，建立镜像
 项目我放在阿里云codeup托管
+下载该项目，进入该项目目录下
 ```bash
+cd docker_django/
 docker build -t yemaobumei:webapp  .
 ```
 - Dockerfile具体内容：
@@ -48,13 +50,14 @@ RUN pip install virtualenv
 ## 第二步，创建容器
 -v 将本地源代码关联到容器内，不直接放入容器，避免泄露信息。
 
--p 本地端口8111关联到容器80端口
+-p 本地端口8111关联到容器80端口,这样通过域名地址访问8111端口，容器内部会自动监听听接收
 ```bash
 docker run -it --name test -v /home/ubuntu/sites/ephys.cn/source:/root/app/source  -p 8111:80  yemaobumei:webapp /bin/bash
 ```
 
 ## 第三步，配置web环境，主要是nginx
 ```bash
+cd /root/app/
 sh fab.sh
 ```
 - fab.sh具体内容
@@ -135,6 +138,17 @@ server {
 ```
 ## 最后，启动gunicorn监听端口
 ```bash
+cd /root/app/source/
 nohup ../virtualenv/bin/gunicorn -b unix:/tmp/ephys.cn.socket -w 5 mysite.wsgi:application > /dev/null 2>&1 &
 
 ```
+但是，我在容器内运行出现问题，外部浏览器访问不到。
+故可更改为
+```bash
+nohup ../virtualenv/bin/gunicorn -b 0.0.0.0:80 -w 5 mysite.wsgi:application > /dev/null 2>&1 &
+```
+
+## 注意事项
+
+在上面操作中，将服务器8111端口与容器80端口绑定了，但是服务器nginx不许listen 8111。
+容器启动时会冲突。

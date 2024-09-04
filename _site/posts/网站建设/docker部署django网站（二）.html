@@ -207,6 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#第二步创建容器" id="toc-第二步创建容器" class="nav-link" data-scroll-target="#第二步创建容器">第二步，创建容器</a></li>
   <li><a href="#第三步配置web环境主要是nginx" id="toc-第三步配置web环境主要是nginx" class="nav-link" data-scroll-target="#第三步配置web环境主要是nginx">第三步，配置web环境，主要是nginx</a></li>
   <li><a href="#最后启动gunicorn监听端口" id="toc-最后启动gunicorn监听端口" class="nav-link" data-scroll-target="#最后启动gunicorn监听端口">最后，启动gunicorn监听端口</a></li>
+  <li><a href="#注意事项" id="toc-注意事项" class="nav-link" data-scroll-target="#注意事项">注意事项</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/网站建设/docker部署django网站（二）.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -226,8 +227,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="第一步建立镜像" class="level2">
 <h2 class="anchored" data-anchor-id="第一步建立镜像">第一步，建立镜像</h2>
-<p>项目我放在阿里云codeup托管</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> yemaobumei:webapp  .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>项目我放在阿里云codeup托管 下载该项目，进入该项目目录下</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> docker_django/</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> yemaobumei:webapp  .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Dockerfile具体内容：</li>
 </ul>
@@ -263,12 +265,13 @@ RUN pip install virtualenv </code></pre>
 <section id="第二步创建容器" class="level2">
 <h2 class="anchored" data-anchor-id="第二步创建容器">第二步，创建容器</h2>
 <p>-v 将本地源代码关联到容器内，不直接放入容器，避免泄露信息。</p>
-<p>-p 本地端口8111关联到容器80端口</p>
+<p>-p 本地端口8111关联到容器80端口,这样通过域名地址访问8111端口，容器内部会自动监听听接收</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">--name</span> test <span class="at">-v</span> /home/ubuntu/sites/ephys.cn/source:/root/app/source  <span class="at">-p</span> 8111:80  yemaobumei:webapp /bin/bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="第三步配置web环境主要是nginx" class="level2">
 <h2 class="anchored" data-anchor-id="第三步配置web环境主要是nginx">第三步，配置web环境，主要是nginx</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> fab.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /root/app/</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> fab.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>fab.sh具体内容</li>
 </ul>
@@ -348,7 +351,14 @@ RUN pip install virtualenv </code></pre>
 </section>
 <section id="最后启动gunicorn监听端口" class="level2">
 <h2 class="anchored" data-anchor-id="最后启动gunicorn监听端口">最后，启动gunicorn监听端口</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> ../virtualenv/bin/gunicorn <span class="at">-b</span> unix:/tmp/ephys.cn.socket <span class="at">-w</span> 5 mysite.wsgi:application <span class="op">&gt;</span> /dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /root/app/source/</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> ../virtualenv/bin/gunicorn <span class="at">-b</span> unix:/tmp/ephys.cn.socket <span class="at">-w</span> 5 mysite.wsgi:application <span class="op">&gt;</span> /dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>但是，我在容器内运行出现问题，外部浏览器访问不到。 故可更改为</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> ../virtualenv/bin/gunicorn <span class="at">-b</span> 0.0.0.0:80 <span class="at">-w</span> 5 mysite.wsgi:application <span class="op">&gt;</span> /dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="注意事项" class="level2">
+<h2 class="anchored" data-anchor-id="注意事项">注意事项</h2>
+<p>在上面操作中，将服务器8111端口与容器80端口绑定了，但是服务器nginx不许listen 8111。 容器启动时会冲突。</p>
 
 
 </section>
