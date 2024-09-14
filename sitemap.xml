@@ -2,98 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ephys.cn/posts/教学设计/2.6匀变速直线运动规律的思维方法及其综合运用.html</loc>
-    <lastmod>2024-09-06T13:09:29.400Z</lastmod>
+    <lastmod>2024-09-14T09:34:54.260Z</lastmod>
   </url>
   <url>
     <loc>https://ephys.cn/posts/教学设计/必修一第三章相互作用力/三力平衡.html</loc>
-    <lastmod>2024-09-06T13:09:29.428Z</lastmod>
+    <lastmod>2024-09-14T09:34:54.288Z</lastmod>
   </url>
   <url>
     <loc>https://ephys.cn/posts/教学设计/统计规律.html</loc>
-    <lastmod>2024-09-06T13:09:29.428Z</lastmod>
+    <lastmod>2024-09-14T09:34:54.288Z</lastmod>
   </url>
   <url>
     <loc>https://ephys.cn/posts/将quarto部署到云服务器/index.html</loc>
-    <lastmod>2024-09-06T13:09:29.400Z</lastmod>
+    <lastmod>2024-09-14T09:34:54.260Z</lastmod>
   </url>
   <url>
     <loc>https://ephys.cn/posts/让圆动起来/index.html</loc>
-    <lastmod>2024-09-06T13:09:29.440Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/posts/python数值求解微分方程/index.html</loc>
-    <lastmod>2024-09-06T13:09:29.400Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/posts/matplot_demo/index.html</loc>
-    <lastmod>2024-09-06T13:09:29.400Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/posts/等量异种电荷电场/index.html</loc>
-    <lastmod>2024-09-06T13:09:29.432Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/posts/网站建设/docker部署django网站（二）.html</loc>
-    <lastmod>2024-09-06T13:09:29.436Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/posts/网站建设/校园网22端口被封ssh无法连接服务器.html</loc>
-    <lastmod>2024-09-06T13:09:29.436Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/posts/自主招生题/一道力学题.html</loc>
-    <lastmod>2024-09-06T13:09:29.436Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/about.html</loc>
-    <lastmod>2024-09-06T13:09:29.388Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/index.html</loc>
-    <lastmod>2024-09-06T13:09:29.392Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/posts/生活中的物理/游泳如何前进.html</loc>
-    <lastmod>2024-09-06T13:09:29.428Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/posts/竖直圆轨道/index.html</loc>
-    <lastmod>2024-09-06T13:09:29.432Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/posts/网站建设/docker部署django网站(一）.html</loc>
-    <lastmod>2024-09-06T13:09:29.436Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/posts/网站建设/index.html</loc>
-    <lastmod>2024-09-06T13:09:29.436Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/posts/matplot_animate/index.html</loc>
-    <lastmod>2024-09-06T13:09:29.400Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ephys.cn/posts/修改quarto中katex默认js文件/index.html</loc>
-    <lastmod>2024-09-06T13:09:29.400Z</lastmod>
+    <lastmod>2024-09-14T09:34:54.296Z</lastmod>
   </url>
   <url>
     <loc>https://ephys.cn/posts/自己域名绑定githubpages/index.html</loc>
-    <lastmod>2024-09-06T13:09:29.436Z</lastmod>
+    <lastmod>2024-09-14T09:34:54.296Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/修改quarto中katex默认js文件/index.html</loc>
+    <lastmod>2024-09-14T09:34:54.260Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/matplot_animate/index.html</loc>
+    <lastmod>2024-09-14T09:34:54.256Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/网站建设/index.html</loc>
+    <lastmod>2024-09-14T09:34:54.296Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/网站建设/docker部署django网站(一）.html</loc>
+    <lastmod>2024-09-14T09:34:54.296Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/竖直圆轨道/index.html</loc>
+    <lastmod>2024-09-14T09:34:54.292Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/生活中的物理/游泳如何前进.html</loc>
+    <lastmod>2024-09-14T09:34:54.288Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/index.html</loc>
+    <lastmod>2024-09-14T09:34:54.252Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/about.html</loc>
+    <lastmod>2024-09-14T09:34:54.248Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/自主招生题/一道力学题.html</loc>
+    <lastmod>2024-09-14T09:34:54.296Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/网站建设/校园网22端口被封ssh无法连接服务器.html</loc>
+    <lastmod>2024-09-14T09:34:54.296Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/网站建设/docker部署django网站（二）.html</loc>
+    <lastmod>2024-09-14T09:34:54.296Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/等量异种电荷电场/index.html</loc>
+    <lastmod>2024-09-14T09:34:54.292Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/matplot_demo/index.html</loc>
+    <lastmod>2024-09-14T09:34:54.256Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/python数值求解微分方程/index.html</loc>
+    <lastmod>2024-09-14T09:34:54.256Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ephys.cn/posts/高考物理/物理.html</loc>
+    <lastmod>2024-09-14T09:34:54.300Z</lastmod>
   </url>
   <url>
     <loc>https://ephys.cn/posts/将quarto部署到云服务器/pyenv.html</loc>
-    <lastmod>2024-09-06T13:09:29.400Z</lastmod>
+    <lastmod>2024-09-14T09:34:54.260Z</lastmod>
   </url>
   <url>
     <loc>https://ephys.cn/posts/welcome/index.html</loc>
-    <lastmod>2024-09-06T13:09:29.400Z</lastmod>
+    <lastmod>2024-09-14T09:34:54.256Z</lastmod>
   </url>
   <url>
     <loc>https://ephys.cn/posts/教学设计/2.5自由落体.html</loc>
-    <lastmod>2024-09-06T13:09:29.400Z</lastmod>
+    <lastmod>2024-09-14T09:34:54.260Z</lastmod>
   </url>
   <url>
     <loc>https://ephys.cn/posts/教学设计/2.6.1匀变速直线运动规律推论的应用.html</loc>
-    <lastmod>2024-09-06T13:09:29.400Z</lastmod>
+    <lastmod>2024-09-14T09:34:54.260Z</lastmod>
   </url>
 </urlset>
