@@ -4,7 +4,25 @@ author: "stack"
 date: "2024-08-19"
 categories: [教学设计,相互作用]
 ---
+三力平衡问题是共点力平衡中最常见的问题，
 
+常用的解决方法有力的合成法、矢量三角形法、相似三角形法、拉密定理、外接圆法
+
+### 三力平衡--最小值
+
+::: callout-note
+1. 如图所示，一质量为*m*的光滑小球放置在倾角为*θ*的固定斜面上，用垂直于斜面的挡板挡住，挡板绕*O*点顺时针缓慢地转向竖直位置的过程中，下列判断正确的是（　　）
+
+| A．小球对挡板的压力先减小后增大 | B．小球对挡板的压力逐渐增大 |
+| C．小球对斜面的压力先减小后增大 | D．小球对斜面的压力一直减小 |
+
+![](images/paste-7.png){fig-align="left" width="300"}
+
+:::
+
+**ggb动画演示**
+<iframe src="https://www.geogebra.org/calculator/nntutjqk?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+</iframe>
 
 ### 外接圆法
 
