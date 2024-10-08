@@ -1,18 +1,30 @@
 ---
-title: "共点力平衡-动态平衡"
+title: "力的合成与分解"
 author: "叶叶叶"
 date: "2024-10-9"
 categories: [教学设计,相互作用]
 ---
 
+### 力的合成（演示）
+
+::: callout-note
+![](images/paste-8.png){width="305"}
+
+两个力合成什么时候取最大值，什么时候取最小值。两个分力不变，夹角变化合力怎么变。
+:::
+
+<iframe src="https://www.geogebra.org/classic/ykr2fhmu?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+
+</iframe>
 
 ### 力的合成（一个力大小方向不变，一个力方向不变）
 
 ::: callout-note
-
 这种情况下，分析第三个力什么时候可以取最小值
 :::
 
 **ggb动画演示**
 
-<iframe src="https://www.geogebra.org/calculator/prjrujwg?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<iframe src="https://www.geogebra.org/calculator/prjrujwg?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
+
+</iframe>
