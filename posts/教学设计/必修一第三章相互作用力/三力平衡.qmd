@@ -20,7 +20,7 @@ categories: [教学设计,相互作用]
 
 :::
 
-**ggb动画演示**
+**ggb动画演示[https://www.geogebra.org/calculator/nntutjqk](https://www.geogebra.org/calculator/nntutjqk)**
 <iframe src="https://www.geogebra.org/calculator/nntutjqk?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
 </iframe>
 
@@ -61,6 +61,9 @@ $$ 可知当时，，故从90°减小到30°的过程，sin值先减小为0后�
 
 除了正交分解，通过解析法分析力的变化。还可以作图。由于F和杆夹角始终不变，三力平衡，重力mg，F，杆的力三个力组成的矢量三角形。F和杆的力夹角不变，因此可以补充外接圆。注意杆的力方向变化。
 
+**ggb动画演示[https://www.geogebra.org/classic/mnmzec6s](https://www.geogebra.org/classic/mnmzec6s)**
+
+
 <iframe src="https://www.geogebra.org/classic/mnmzec6s?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
 
 </iframe>
@@ -86,7 +89,7 @@ D．当OB板转过60°时，棉包对OA板的作用力大小为mg
 【解析】三力平衡，三个力重力、支持力$F_{NOB},F_{NOA}$ ，两个支持力夹角始终不变。矢量三角形外接圆。可以看到OA增大，OB减小。注意当OA板水平后，OB板弹力消失，变成在斜面运动。斜面OA越陡，OA板弹力越小。
 :::
 :::
-
+**ggb动画演示[https://www.geogebra.org/classic/ukmpdq5v](https://www.geogebra.org/classic/ukmpdq5v)**
 <iframe src="https://www.geogebra.org/classic/ukmpdq5v?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
 
 </iframe>

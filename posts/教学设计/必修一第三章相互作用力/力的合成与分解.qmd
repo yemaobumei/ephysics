@@ -11,17 +11,20 @@ categories: [教学设计,相互作用]
 ![](images/paste-8.png){width="305"}
 
 两个力合成什么时候取最大值，什么时候取最小值。两个分力不变，夹角变化合力怎么变。
+
+ggb动画演示 [https://www.geogebra.org/classic/ykr2fhmu](https://www.geogebra.org/classic/ykr2fhmu)
 :::
 
 <iframe src="https://www.geogebra.org/classic/ykr2fhmu?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0">
 
 </iframe>
 
-### 力的合成（一个力大小方向不变，一个力方向不变）
+### 三力平衡（一个力大小方向不变，一个力方向不变，第三个力大小方向都可以变）
 
 ::: callout-note
 这种情况下，分析第三个力什么时候可以取最小值
 :::
+ggb动画演示  [https://www.geogebra.org/calculator/prjrujwg](https://www.geogebra.org/calculator/prjrujwg)
 
 **ggb动画演示**
 
