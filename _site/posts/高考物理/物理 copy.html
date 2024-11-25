@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="叶">
-<meta name="dcterms.date" content="2024-09-09">
+<meta name="author" content="叶叶叶">
+<meta name="dcterms.date" content="2024-11-25">
 
-<title>物理教学 - 高中物理知识点</title>
+<title>物理教学 - 含电感切割磁感线问题</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script defer="" src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>
+  <script defer="" src="../../site_libs/katex/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
    });
 }}});
   </script>
-  <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+  <link rel="stylesheet" href="../../site_libs/katex/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -176,7 +176,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">高中物理知识点</h1>
+      <h1 class="title">含电感切割磁感线问题</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">高考物理</div>
               </div>
@@ -189,14 +189,14 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>叶 </p>
+               <p>叶叶叶 </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 9, 2024</p>
+        <p class="date">November 25, 2024</p>
       </div>
     </div>
     
@@ -212,10 +212,33 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#相对原子质量" id="toc-相对原子质量" class="nav-link active" data-scroll-target="#相对原子质量">相对原子质量</a></li>
-  <li><a href="#速度恢复系数" id="toc-速度恢复系数" class="nav-link" data-scroll-target="#速度恢复系数">速度恢复系数</a></li>
+  <li><a href="#含电感和外力的金属棒运动分析" id="toc-含电感和外力的金属棒运动分析" class="nav-link active" data-scroll-target="#含电感和外力的金属棒运动分析">含电感和外力的金属棒运动分析</a>
+  <ul class="collapse">
+  <li><a href="#电路方程" id="toc-电路方程" class="nav-link" data-scroll-target="#电路方程">1. 电路方程</a></li>
+  <li><a href="#动力学方程" id="toc-动力学方程" class="nav-link" data-scroll-target="#动力学方程">2. 动力学方程</a></li>
+  <li><a href="#消去-it-并求解微分方程" id="toc-消去-it-并求解微分方程" class="nav-link" data-scroll-target="#消去-it-并求解微分方程">3. 消去 <span class="math inline">i(t)</span> 并求解微分方程</a>
+  <ul class="collapse">
+  <li><a href="#从电路方程得到-fracdidt" id="toc-从电路方程得到-fracdidt" class="nav-link" data-scroll-target="#从电路方程得到-fracdidt">3.1 从电路方程得到 <span class="math inline">\frac{di}{dt}</span></a></li>
+  <li><a href="#对动力学方程求一次导" id="toc-对动力学方程求一次导" class="nav-link" data-scroll-target="#对动力学方程求一次导">3.2 对动力学方程求一次导</a></li>
+  <li><a href="#这是二阶非齐次常微分方程-m-fracd2vdt2-gamma-fracdvdt-beta-v-f-其中" id="toc-这是二阶非齐次常微分方程-m-fracd2vdt2-gamma-fracdvdt-beta-v-f-其中" class="nav-link" data-scroll-target="#这是二阶非齐次常微分方程-m-fracd2vdt2-gamma-fracdvdt-beta-v-f-其中">3.3 这是二阶非齐次常微分方程： <span class="math display">
+  m \frac{d^2v}{dt^2} + \gamma \frac{dv}{dt} + \beta v = F'
+  </span> 其中：</a></li>
+  </ul></li>
+  <li><a href="#求解二阶微分方程" id="toc-求解二阶微分方程" class="nav-link" data-scroll-target="#求解二阶微分方程">4. 求解二阶微分方程</a>
+  <ul class="collapse">
+  <li><a href="#齐次方程解" id="toc-齐次方程解" class="nav-link" data-scroll-target="#齐次方程解">4.1 齐次方程解</a></li>
+  <li><a href="#非齐次方程解" id="toc-非齐次方程解" class="nav-link" data-scroll-target="#非齐次方程解">4.2 非齐次方程解</a></li>
+  <li><a href="#总解" id="toc-总解" class="nav-link" data-scroll-target="#总解">4.3 总解</a></li>
+  </ul></li>
+  <li><a href="#初始条件" id="toc-初始条件" class="nav-link" data-scroll-target="#初始条件">5. 初始条件</a></li>
+  <li><a href="#稳定速度" id="toc-稳定速度" class="nav-link" data-scroll-target="#稳定速度">6. 稳定速度</a></li>
+  <li><a href="#速度随时间变化" id="toc-速度随时间变化" class="nav-link" data-scroll-target="#速度随时间变化">7. 速度随时间变化</a>
+  <ul class="collapse">
+  <li><a href="#总结" id="toc-总结" class="nav-link" data-scroll-target="#总结">总结</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/高考物理/物理.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/高考物理/物理 copy.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -224,25 +247,111 @@ window.Quarto = {
 
 
 
-<section id="相对原子质量" class="level3">
-<h3 class="anchored" data-anchor-id="相对原子质量">相对原子质量</h3>
-<p>1u=碳12的原子质量的1/12。 12g碳12的原子数 1NA=<span class="math inline">6.02 x 10^{23}</span></p>
-<p>所以1u相对原子质量对应真实质量为<span class="math inline">1g/NA</span></p>
-<p><img src="images/paste-1.png" class="img-fluid"></p>
+<section id="含电感和外力的金属棒运动分析" class="level1">
+<h1>含电感和外力的金属棒运动分析</h1>
+<p>假设金属棒在磁场中切割磁感线，同时电路中含有电感 <span class="math inline">L</span> 和电阻 <span class="math inline">R</span>，并且施加了外力 <span class="math inline">F</span>。我们的目标是求解金属棒的速度 <span class="math inline">v(t)</span> 随时间的变化规律。</p>
+<section id="电路方程" class="level2">
+<h2 class="anchored" data-anchor-id="电路方程">1. 电路方程</h2>
+<p>根据法拉第电磁感应定律，金属棒切割磁感线产生感应电动势 <span class="math inline">\mathcal{E}</span>，其大小为： <span class="math display">
+\mathcal{E} = B l v
+</span> 其中： <span class="math inline">B</span> 是磁场强度， <span class="math inline">l</span> 是金属棒的长度， <span class="math inline">v</span> 是金属棒的速度。</p>
+<p>电流 <span class="math inline">i(t)</span> 将根据感应电动势以及电感 <span class="math inline">L</span> 和电阻 <span class="math inline">R</span> 变化，因此电路方程为： <span class="math display">
+B l v = L \frac{di}{dt} + R i
+</span> 这里，电感 <span class="math inline">L</span> 控制电流变化率，电阻 <span class="math inline">R</span> 与电流大小相关。</p>
 </section>
-<section id="速度恢复系数" class="level3">
-<h3 class="anchored" data-anchor-id="速度恢复系数">速度恢复系数</h3>
-<p>碰撞过程中,</p>
-<p><span class="math display">
-e=\frac{|{\Delta v'}|}{|\Delta v|}
+<section id="动力学方程" class="level2">
+<h2 class="anchored" data-anchor-id="动力学方程">2. 动力学方程</h2>
+<p>金属棒在磁场中切割磁感线时会受到安培力 <span class="math inline">F_{\text{Ampere}}</span>，该力的大小为： <span class="math display">
+F_{\text{Ampere}} = B l i
+</span> 根据牛顿第二定律，金属棒受到的总力将使其加速： <span class="math display">
+m \frac{dv}{dt} = F - B l i
+</span> 其中 <span class="math inline">m</span> 是金属棒的质量，<span class="math inline">F</span> 是外部施加的力。</p>
+</section>
+<section id="消去-it-并求解微分方程" class="level2">
+<h2 class="anchored" data-anchor-id="消去-it-并求解微分方程">3. 消去 <span class="math inline">i(t)</span> 并求解微分方程</h2>
+<section id="从电路方程得到-fracdidt" class="level3">
+<h3 class="anchored" data-anchor-id="从电路方程得到-fracdidt">3.1 从电路方程得到 <span class="math inline">\frac{di}{dt}</span></h3>
+<p>从电路方程： <span class="math display">
+B l v = L \frac{di}{dt} + R i
+</span> 解得 <span class="math inline">\frac{di}{dt}</span>： <span class="math display">
+\frac{di}{dt} = \frac{B l}{L} v - \frac{R}{L} i
 </span></p>
-<p>e=1, 弹性碰撞,没有机械能损失</p>
-<p>e&lt;1,非弹性碰撞</p>
-<p>e=0,完全非弹性碰撞,</p>
-<p>e&gt;1,爆炸，超弹性碰撞</p>
-<p><span class="math inline">x_1</span></p>
+</section>
+<section id="对动力学方程求一次导" class="level3">
+<h3 class="anchored" data-anchor-id="对动力学方程求一次导">3.2 对动力学方程求一次导</h3>
+<p><span class="math display">
+m\frac{d^2v}{dt}=-Bl\frac{di}{dt}
+</span></p>
+<p>将 <span class="math inline">\frac{di}{dt}</span> 代入上式： <span class="math display">
+m \frac{d^2v}{dt} = -B l (\frac{B l}{L} v - \frac{R}{L} i)
+</span> 得到关于v的二阶微分方程： <span class="math display">
+m \frac{d^2v}{dt} = - \frac{(B l)^2}{L} v +\frac{Bli\cdot R}{L}
+</span> 结合动力学方程，得到：</p>
+<p><span class="math display">
+Bli = F-m\frac{dv}{dt}
+</span></p>
+<p>代入上式二阶微分方程，得到： <span class="math display">
+m \frac{d^2v}{dt} +\frac{mR}{L}\frac{dv}{dt}+\frac{B^2l^2}{L}v=\frac{RF}{L}
+</span></p>
+</section>
+<section id="这是二阶非齐次常微分方程-m-fracd2vdt2-gamma-fracdvdt-beta-v-f-其中" class="level3">
+<h3 class="anchored" data-anchor-id="这是二阶非齐次常微分方程-m-fracd2vdt2-gamma-fracdvdt-beta-v-f-其中">3.3 这是二阶非齐次常微分方程： <span class="math display">
+m \frac{d^2v}{dt^2} + \gamma \frac{dv}{dt} + \beta v = F'
+</span> 其中：</h3>
+<ul>
+<li><p><span class="math inline">\gamma = \frac{R m}{L} + \frac{(B l)^2}{R}</span></p></li>
+<li><p><span class="math inline">\beta = \frac{(B l)^2}{L}</span></p></li>
+<li><p><span class="math inline">F'=\frac{RF}{L}</span></p></li>
+</ul>
+</section>
+</section>
+<section id="求解二阶微分方程" class="level2">
+<h2 class="anchored" data-anchor-id="求解二阶微分方程">4. 求解二阶微分方程</h2>
+<section id="齐次方程解" class="level3">
+<h3 class="anchored" data-anchor-id="齐次方程解">4.1 齐次方程解</h3>
+<p>齐次方程为： <span class="math display">
+m \frac{d^2 v}{dt^2} + \gamma \frac{dv}{dt} + \beta v = 0
+</span> 特征方程为： <span class="math display">
+m \lambda^2 + \gamma \lambda + \beta = 0
+</span> 解得特征根 <span class="math inline">\lambda_1</span> 和 <span class="math inline">\lambda_2</span>。</p>
+<p>齐次解为： <span class="math display">
+v_h(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}
+</span></p>
+</section>
+<section id="非齐次方程解" class="level3">
+<h3 class="anchored" data-anchor-id="非齐次方程解">4.2 非齐次方程解</h3>
+<p>非齐次方程的特解为常数解： <span class="math display">
+v_p = \frac{F'}{\beta} = \frac{RF}{B^2l^2}
+</span></p>
+</section>
+<section id="总解" class="level3">
+<h3 class="anchored" data-anchor-id="总解">4.3 总解</h3>
+<p>总解为齐次解与特解的和： <span class="math display">
+v(t) = v_h(t) + v_p = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t} + \frac{R F}{B^2l^2}
+</span></p>
+</section>
+</section>
+<section id="初始条件" class="level2">
+<h2 class="anchored" data-anchor-id="初始条件">5. 初始条件</h2>
+<p>通过初始条件 <span class="math inline">v(0) = v_0</span> 和 <span class="math inline">\frac{dv}{dt}(0) = a_0</span>，我们可以求得常数 <span class="math inline">C_1</span> 和 <span class="math inline">C_2</span>，从而得到完整的速度表达式。</p>
+</section>
+<section id="稳定速度" class="level2">
+<h2 class="anchored" data-anchor-id="稳定速度">6. 稳定速度</h2>
+<p>当 <span class="math inline">t \to \infty</span>，金属棒将达到稳定速度： <span class="math display">
+v_{\text{steady}} = \frac{R F}{B^2 l^2}
+</span></p>
+</section>
+<section id="速度随时间变化" class="level2">
+<h2 class="anchored" data-anchor-id="速度随时间变化">7. 速度随时间变化</h2>
+<p>在时间的初期，金属棒的速度会逐渐接近稳定速度，且在过渡阶段，速度的变化可能呈现<strong>指数衰减</strong>或者<strong>振荡衰减</strong>的形式，具体取决于系统的阻尼情况。</p>
+<hr>
+<section id="总结" class="level3">
+<h3 class="anchored" data-anchor-id="总结">总结</h3>
+<p>通过电路方程和动力学方程，我们最终得到了一个包含外力 <span class="math inline">F</span> 的二阶线性微分方程。解这个方程后，我们可以得到金属棒的速度随时间的变化规律，并得到其稳定速度。</p>
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -641,7 +750,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© Stack 2024</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/高考物理/物理.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/高考物理/物理 copy.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
