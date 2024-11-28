@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-41afc036f4045670d8a63ab41900e02e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -235,9 +235,9 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#从求解结果来看" id="toc-从求解结果来看" class="nav-link" data-scroll-target="#从求解结果来看">1.从求解结果来看</a></li>
   <li><a href="#重新看电路方程和动力学方程" id="toc-重新看电路方程和动力学方程" class="nav-link" data-scroll-target="#重新看电路方程和动力学方程">2.重新看电路方程和动力学方程</a></li>
-  <li><a href="#总结" id="toc-总结" class="nav-link" data-scroll-target="#总结">总结</a></li>
-  <li><a href="#例题1" id="toc-例题1" class="nav-link" data-scroll-target="#例题1">例题1</a></li>
   </ul></li>
+  <li><a href="#总结" id="toc-总结" class="nav-link" data-scroll-target="#总结">8.总结</a></li>
+  <li><a href="#例题1" id="toc-例题1" class="nav-link" data-scroll-target="#例题1">例题1</a></li>
   <li><a href="#例题2" id="toc-例题2" class="nav-link" data-scroll-target="#例题2">例题2</a></li>
   </ul></li>
   </ul>
@@ -393,16 +393,16 @@ F_合=F-Bil=F-\frac{B^2l^2}{L}x=-\frac{B^2l^2}{L}（x-\frac{FL}{B^2l^2}）
 </ul>
 <hr>
 </section>
-<section id="总结" class="level3">
-<h3 class="anchored" data-anchor-id="总结">总结</h3>
+</section>
+<section id="总结" class="level2">
+<h2 class="anchored" data-anchor-id="总结">8.总结</h2>
 <p>通过电路方程和动力学方程，我们最终得到了一个包含外力 <span class="math inline">F</span> 的二阶线性微分方程。解这个方程后，我们可以得到金属棒的速度随时间的变化规律。</p>
 </section>
-<section id="例题1" class="level3">
-<h3 class="anchored" data-anchor-id="例题1">例题1</h3>
+<section id="例题1" class="level2">
+<h2 class="anchored" data-anchor-id="例题1">例题1</h2>
 <p><img src="images/paste-2.png" class="img-fluid"></p>
 <p><img src="images/paste-3.png" class="img-fluid"></p>
 <p><img src="images/paste-4.png" class="img-fluid"></p>
-</section>
 </section>
 <section id="例题2" class="level2">
 <h2 class="anchored" data-anchor-id="例题2">例题2</h2>
@@ -498,8 +498,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -610,7 +608,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
