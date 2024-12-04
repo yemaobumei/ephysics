@@ -13,7 +13,7 @@ categories: [杂谈,技术,生活]
 
 # 2.使用方法
 
-### 1.安装chrome浏览器，[官方安装地址](https://www.google.com/intl/zh-CN/chrome/ "点我打开")
+### 1.安装最新谷歌chrome浏览器，[官方安装地址](https://www.google.com/intl/zh-CN/chrome/ "点我打开")
 
 ### 2.下载浏览器插件：公需课辅助助手，点我下载
 
@@ -24,6 +24,10 @@ categories: [杂谈,技术,生活]
 ![](images/paste-1.png)
 
 ![](images/paste-14.png){width="535"}
+
+-   打开开发者模式
+
+    ![](images/paste-16.png)
 
 -   将下载好的 **crx文件** 拖动到该页面
 
