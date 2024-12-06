@@ -1,5 +1,5 @@
 ---
-title: "如何使用公需课辅助助手"
+title: "如何使用公需课助手"
 author: "叶叶叶"
 date: "2024-12-04"
 categories: [杂谈,技术,生活]
@@ -9,13 +9,17 @@ categories: [杂谈,技术,生活]
 
 -   自动播放视频，切换下一个视频。无需动手
 
--   可以用电脑做其他事，不用担心视频会暂停
+-   可以最小化，不影响正常办公，不用担心视频会暂停
 
-# 2.使用方法
+# 2.下载地址(包含公需课助手和谷歌浏览器安装包)
+- 百度云 [点我下载](https://pan.baidu.com/s/1aMeeXjQt-x9yMTMJjA2gaQ?pwd=6666)
+  
+# 3.使用方法
 
-### 1.安装最新谷歌chrome浏览器，[官方安装地址](https://www.google.com/intl/zh-CN/chrome/ "点我打开")
+### 1.安装最新谷歌chrome浏览器，[安装包下载地址](https://www.iplaysoft.com/tools/chrome/ "点我打开")
+[备用地址](https://pan.baidu.com/s/1aMeeXjQt-x9yMTMJjA2gaQ?pwd=6666)
 
-### 2.下载浏览器插件：公需课辅助助手，点我下载
+### 2.下载浏览器插件：公需课助手，点我下载
 
 ### 3.安装浏览器插件，如下
 
@@ -55,7 +59,7 @@ categories: [杂谈,技术,生活]
 
 ![](images/paste-11.png)
 
-# 注意事项
+# 4.注意事项
 
 -   不要关机，休眠，否则断网没法播放
 
