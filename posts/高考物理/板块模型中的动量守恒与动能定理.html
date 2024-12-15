@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="stack">
-<meta name="dcterms.date" content="2024-03-25">
+<meta name="author" content="叶叶叶">
+<meta name="dcterms.date" content="2024-12-15">
 
-<title>docker部署django网站（一） – 物理教学</title>
+<title>板块模型中的动量守恒与动能定理 – 物理教学</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -103,6 +69,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script defer="" src="../../site_libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="../../site_libs/katex/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -167,10 +176,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">docker部署django网站（一）</h1>
+      <h1 class="title">板块模型中的动量守恒与动能定理</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Django</div>
-                <div class="quarto-category">docker</div>
+                <div class="quarto-category">高考物理</div>
               </div>
                   </div>
   </div>
@@ -181,14 +189,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>stack </p>
+               <p>叶叶叶 </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 25, 2024</p>
+        <p class="date">December 15, 2024</p>
       </div>
     </div>
     
@@ -204,9 +212,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#记录docker部署django环境遇到的一些问题" id="toc-记录docker部署django环境遇到的一些问题" class="nav-link active" data-scroll-target="#记录docker部署django环境遇到的一些问题">记录docker部署django环境遇到的一些问题</a></li>
+  <li><a href="#高考真题" id="toc-高考真题" class="nav-link active" data-scroll-target="#高考真题">高考真题</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/网站建设/docker部署django网站(一）.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/高考物理/板块模型中的动量守恒与动能定理.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -215,43 +223,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="记录docker部署django环境遇到的一些问题" class="level1">
-<h1>记录docker部署django环境遇到的一些问题</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">##启动gunicorn</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">../virtualenv/bin/gunicorn</span> <span class="at">-b</span> 0.0.0.0:8001 <span class="at">-w</span> 5 mysite.wsgi:application</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><p>djang中settiong.py，<br>
-DEBUG=True和False有区别,会影响静态文件找寻</p></li>
-<li><p>为避免nginx和gunicorn同时占用端口，在nginx配置中转发请求到socket文件， gunicorn再监听该socket文件即可</p></li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">##nginx配置中需要将请求转移到 ephys.cn.socket</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gunicorn</span> <span class="at">-b</span> unix:/tmp/ephys.cn.socket <span class="at">-w</span> 5 mysite.wsgi:application</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">###/etc/nginx/site-enable/default</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">server</span> {</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">listen</span> 80<span class="kw">;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">server_name</span> SITENAME<span class="kw">;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> /static {</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">alias</span> /home/USER/sites/SITENAME/source/static<span class="kw">;</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="er">}</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> /media {</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="ex">autoindex</span> on<span class="kw">;</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">alias</span> /home/USER/sites/SITENAME/source/media<span class="kw">;</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="er">}</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">location</span> / {</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> Host <span class="va">$host</span><span class="kw">;</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_pass</span> http://unix:/tmp/SITENAME.socket<span class="kw">;</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_redirect</span> off<span class="kw">;</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Real-IP <span class="va">$remote_addr</span><span class="kw">;</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Scheme <span class="va">$scheme</span><span class="kw">;</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>            <span class="ex">proxy_set_header</span> X-Forwarded-For <span class="va">$proxy_add_x_forwarded_for</span><span class="kw">;</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="er">}</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#后台启动gunicorn</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> ../virtualenv/bin/gunicorn <span class="at">-b</span> unix:/tmp/ephys.cn.socket <span class="at">-w</span> 5 mysite.wsgi:application <span class="op">&gt;</span> /dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="高考真题" class="level3">
+<h3 class="anchored" data-anchor-id="高考真题">高考真题</h3>
+<p>（2024安徽高考题14题）如图所示，一实验小车静止在光滑水平面上，其上表面有粗糙水平轨道与光滑四分之一圆弧轨道。圆弧轨道与水平轨道相切于圆弧轨道最低点，一物块静止于小车最左端，一小球用不可伸长的轻质细线悬挂于<span class="math inline">O</span>点正下方，并轻靠在物块左侧。现将细线拉直到水平位置时，静止释放小球，小球运动到最低点时与物块发生弹性碰撞。碰撞后，物块沿着小车上的轨道运动，已知细线长<span class="math inline">L=1.25</span>m。小球质量<span class="math inline">m=0.20</span>kg。物块、小车质量均为<span class="math inline">M=0.30</span>kg。小车上的水平轨道长s=1.0m。圆弧轨道半径<span class="math inline">R=0.15</span>m。小球、物块均可视为质点。不计空气阻力，重力加速度g取<span class="math inline">10m/ s^2</span>。</p>
+<p>（1）求小球运动到最低点与物块碰撞前所受拉力的大小；</p>
+<p>（2）求小球与物块碰撞后的瞬间，物块速度的大小；</p>
+<p>（3）为使物块能进入圆弧轨道，且在上升阶段不脱离小车，求物块与水平轨道间的动摩擦因数<span class="math inline">\mu</span>的取值范围。</p>
+<p><img src="images/paste-7.png" class="img-fluid" width="295"></p>
 
 
 </section>
@@ -682,7 +660,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© Stack 2024</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/网站建设/docker部署django网站(一）.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/高考物理/板块模型中的动量守恒与动能定理.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
