@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="叶">
+<meta name="author" content="叶叶叶">
 <meta name="dcterms.date" content="2024-12-15">
 
 <title>物理教学 - 板块模型中的动量守恒与动能定理</title>
@@ -189,7 +189,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>叶 </p>
+               <p>叶叶叶 </p>
             </div>
     </div>
       
@@ -230,6 +230,38 @@ window.Quarto = {
 <p>（2）求小球与物块碰撞后的瞬间，物块速度的大小；</p>
 <p>（3）为使物块能进入圆弧轨道，且在上升阶段不脱离小车，求物块与水平轨道间的动摩擦因数<span class="math inline">\mu</span>的取值范围。</p>
 <p><img src="images/paste-7.png" class="img-fluid" width="295"></p>
+<p>解： (1)从释放到最低点过程由动能定理得: <span class="math inline">mgL=\frac{1}{2}mv^2-0</span></p>
+<pre><code>在最低点由牛二定律有:</code></pre>
+<p><span class="math inline">F_N-mg=\frac{mv^2}{L}</span></p>
+<p>解得： <span class="math inline">F_N=3mg=6N</span></p>
+<p>(2)弹性碰撞机械能守恒: <span class="math inline">\frac{1}{2}mv^2=\frac{1}{2}Mv_{球}^2+\frac{1}{2}Mv_{木}^2</span></p>
+<p>球和木块动量守恒: <span class="math inline">mv=Mv_{球}+Mv_{木}</span></p>
+<p>解得： <span class="math inline">v_{球}=-1m/s,v_{木}=4m/s</span></p>
+<p>当然直接解会比较麻烦，结合弹性碰撞，碰撞系数为1更好解</p>
+<p><span class="math inline">v_{相对} = -v'_{相对}</span></p>
+<p><span class="math inline">v-0 = v_{木}-v_{球}</span></p>
+<p>(3)只要木块没离开小车，木块和小车组成的系统水平方向没有外力干扰，因此水平方向动量守恒。</p>
+<ul>
+<li><p>木块恰好运动到圆最低点达到共速，此时由动量守恒得:</p>
+<p><span class="math display">Mv_{木块}=2Mv_3 \tag{3.1}</span></p>
+<p>过程能量守恒得： <span class="math display">\frac{1}{2}Mv^2_{木块}=2\cdot\frac{1}{2}Mv^2_3+uMgs\tag{3.2} </span></p>
+<p>由<span class="math inline">(3.1),(3.2)</span>得:</p>
+<p><span class="math display">u_1=0.4</span></p></li>
+<li><p>木块恰好能运动圆的最高点，此时竖直方向分速度为0，只有水平速度。此时由动量守恒得:</p>
+<p><span class="math display">Mv_{木块}=2Mv_4 \tag{3.3}</span></p>
+<p><span class="math display">\frac{1}{2}Mv^2_{木块}=2\cdot\frac{1}{2}Mv^2_3+uMgs+MgR\tag{3.4} </span></p>
+<p>由<span class="math inline">(3.3),(3.4)</span>得:</p>
+<p><span class="math display">u_1=0.25</span></p></li>
+</ul>
+<p>综上所述动摩擦因数取值范围:</p>
+<p><span class="math display"> 0.25 \leq \mu&lt;0.4</span></p>
+<ul>
+<li><p>其实能量守恒也能写成质点系的动能定理，<strong>质点系动能变化包括所有外力做功还有内力做功之和。</strong> 其中支持力和压力不做功，因为木块和轨道不分离，沿着弹力方向这一对弹力做功之和为0。 摩擦力做功之和看相对位移。再还有重力对木块做功，因此<span class="math inline">(3.4)</span>式可以这么理解:</p>
+<p>系统动能变化:<span class="math inline">2\cdot\frac{1}{2}Mv^2_3-\frac{1}{2}Mv^2_{木块}</span></p>
+<p>一对摩擦力做功: <span class="math inline">-uMgs</span></p>
+<p>重力对木块做功: <span class="math inline">-MgR</span></p>
+<p>综上: <span class="math inline">-uMgs-MgR=2\cdot\frac{1}{2}Mv^2_3-\frac{1}{2}Mv^2_{木块}</span></p></li>
+</ul>
 
 
 </section>
