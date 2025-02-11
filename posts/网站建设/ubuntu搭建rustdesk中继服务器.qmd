@@ -1,0 +1,45 @@
+---
+title: "ubuntu搭建rustdesk中继服务器"
+author: "stack"
+date: "2025-02-11"
+categories: [ubuntu,rustdesk]
+---
+
+#### 利用docker自建最简单
+- 没有docker先安装，使用官方脚本
+
+```bash
+curl -fsSL https://test.docker.com -o test-docker.sh
+sudo sh test-docker.sh
+###可以测试是否安装成功
+sudo docker run hello-world
+```
+
+-   1.创建目录
+
+``` bash
+mkdir rustdesk
+cd rustdesk
+```
+
+-   2.下载rustdesk镜像，建立容器
+
+```bash
+sudo docker image pull rustdesk/rustdesk-server
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs 
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
+```
+
+- 3.获取服务器Key
+
+```bash 
+docker logs hbbs|grep Key
+```
+
+- 3.配置使用Rust Server
+
+D服务器：填入 服务器ip:21116
+
+中继服务器：填入 服务器ip:21117
+
+Key：填入刚才获取的Key
