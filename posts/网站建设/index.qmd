@@ -2,23 +2,32 @@
 title: "django网站部署到服务器"
 author: "stack"
 date: "2024-03-14"
-categories: [Django]
+categories: [Django,网站建设]
 ---
 
 如果是腾讯云/阿里云服务器需配置网络安全组
 
 HTTP    显示为 80/80。  实例作为网站或 Web 应用的服务器。
 
-- 第一步　安装nginx,fabric,virtualenv
+- 第一步 新的ubuntu20.04已经默认python3，需要安装python2
+
+```bash
+    sudo apt install python2
+    sudo apt install curl
+    curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+    sudo python2 get-pip.py
+```
+
+- 第二步　安装nginx,fabric,virtualenv
 
 ```bash
     sudo apt-get install nginx
     sudo service nginx start
-    sudo pip install fabric3==1.14.post1   ##py2只能用低版本Fabric
+    sudo pip install fabric3==1.14.post1   ##必须使用py2对应的pip安装。py2只能用低版本Fabric
     sudo pip install virtualenv
     此时输入网站域名或者IP就能看到welcome to nginx!测试页面
 ```
-- 第二步　运行自动部署文件fabfile.py
+- 第三步　运行自动部署文件fabfile.py
 
 ```bash
     在包含fabfile.py文件的目录下，运行
@@ -27,34 +36,34 @@ HTTP    显示为 80/80。  实例作为网站或 Web 应用的服务器。
     
     输入域名和linux密码
 ```
-- 第三步　使用sed配置Nginx和Gunicorn
+- 第四步　使用sed配置Nginx和Gunicorn
 
-```bash    
+```bash    sudo service nginx reload
     #在deploy_tools文件夹下保存了默认配置,只需稍作修改将内容复制到系统相应目录下即可
 
-    sed "s/SITENAME/yemaobumei.cn/g" deploy_tools/nginx.template.conf | sed "s/USER/ubuntu/g" | sudo tee /etc/nginx/sites-available/yemaobumei.cn
+    sed "s/SITENAME/ephys.cn/g" deploy_tools/nginx.template.conf | sed "s/USER/ubuntu/g" | sudo tee /etc/nginx/sites-available/ephys.cn
     
-    #fabric中进行文本替换的函数叫sed,先把SITENAME替换成网站地址，再把USER替换成当前系统用户名，然后使用管道操作(|)把文本留传给拥有root权限用户写入系统/etc/nginx/sites-available/yemaobumei.cn文件里。
+    #fabric中进行文本替换的函数叫sed,先把SITENAME替换成网站地址，再把USER替换成当前系统用户名，然后使用管道操作(|)把文本留传给拥有root权限用户写入系统/etc/nginx/sites-available/ephys.cn文件里。
     
     #激活这个配置文件的虚拟主机:
     
-    sudo ln -s /etc/nginx/sites-available/yemaobumei.cn       /etc/nginx/sites-enabled/yemaobumei.cn
+    sudo ln -s /etc/nginx/sites-available/ephys.cn       /etc/nginx/sites-enabled/ephys.cn
     
     #然后编写Upstart脚本:
     
-    sed "s/SITENAME/yemaobumei.cn/g" deploy_tools/gunicorn-upstart.template.conf | sed "s/USER/ubuntu/g" | sudo tee /etc/init/gunicorn-yemaobumei.cn.conf
+    sed "s/SITENAME/ephys.cn/g" deploy_tools/gunicorn-upstart.template.conf | sed "s/USER/ubuntu/g" | sudo tee /etc/init/gunicorn-ephys.cn.conf
     
     #最后启动这两个服务:
     
     sudo service nginx reload
-    sudo start gunicorn-yemaobumei.cn
+    sudo start gunicorn-ephys.cn
 ```
 
-- 第四步 为了能获取访问者的ip，特地在nginx.template.conf 加入了以下一段
+- 第五步 为了能获取访问者的ip，特地在nginx.template.conf 加入了以下一段
 ```bash
     location / {
             proxy_set_header Host $host;
-            proxy_pass http://unix:/tmp/yemaobumei.cn.socket;
+            proxy_pass http://unix:/tmp/ephys.cn.socket;
             
             #IP_adress
             proxy_redirect off;
@@ -64,7 +73,7 @@ HTTP    显示为 80/80。  实例作为网站或 Web 应用的服务器。
 
         }
  ```
-- 第五步 为了将quarto静态服务纳入进来，最后/etc/nginx/sites-enabled/default 添加如下
+- 第六步 为了将quarto静态服务纳入进来，最后/etc/nginx/sites-enabled/default 添加如下
 ```bash
 server {
     listen 80;
@@ -99,16 +108,16 @@ server {
 
 因此在第三步有关upstart部分改为:
 ```bash
-    sed "s/SITENAME/yemaobumei.cn/g" deploy_tools/sysd.service 
-    | sed "s/USER/ubuntu/g" | sudo tee  /etc/systemd/system/yemaobumei.cn.service
+    sed "s/SITENAME/ephys.cn/g" deploy_tools/sysd.service 
+    | sed "s/USER/ubuntu/g" | sudo tee  /etc/systemd/system/ephys.cn.service
 ```
 
 - 最后 最后启动服务
 ```bash
     sudo service nginx reload
     sudo systemctl daemon-reload
-    sudo systemctl enable yemaobumei.cn.service
-    sudo systemctl start yemaobumei.cn.service
+    sudo systemctl enable ephys.cn.service
+    sudo systemctl start ephys.cn.service
 ``` 
 ### 注意事项
 #### pip安装requests要<2.27  
