@@ -242,7 +242,7 @@
     "href": "posts/网站建设/ubuntu搭建rustdesk中继服务器.html",
     "title": "ubuntu搭建rustdesk中继服务器",
     "section": "",
-    "text": "利用docker自建最简单\n\n没有docker先安装，使用官方脚本\n\ncurl -fsSL https://test.docker.com -o test-docker.sh\nsudo sh test-docker.sh\n###可以测试是否安装成功\nsudo docker run hello-world\n\n1.创建目录\n\nmkdir rustdesk\ncd rustdesk\n\n2.下载rustdesk镜像，建立容器\n\nsudo docker image pull rustdesk/rustdesk-server\nsudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs \nsudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr\n\n3.获取服务器Key\n\ndocker logs hbbs|grep Key\n\n3.配置使用Rust Server\n\nD服务器：填入 服务器ip:21116\n中继服务器：填入 服务器ip:21117\nKey：填入刚才获取的Key\n\n\n\n\n Back to top"
+    "text": "利用docker自建最简单\n\n没有docker先安装，使用官方脚本\n\ncurl -fsSL https://test.docker.com -o test-docker.sh\nsudo sh test-docker.sh\n###可以测试是否安装成功\nsudo docker run hello-world\n\n1.创建目录\n\nmkdir rustdesk\ncd rustdesk\n\n2.下载rustdesk镜像，建立容器\n\nsudo docker image pull rustdesk/rustdesk-server\nsudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs \nsudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr\n\n3.获取服务器Key\n\ndocker logs hbbs|grep Key\n\n3.配置使用Rust Server\n\nID服务器：填入 服务器ip:21116\n中继服务器：填入 服务器ip:21117\nKey：填入刚才获取的Key\n\n注意\n\n如果用的云服务器端口没开放，得去安全组开放21115-21119端口\n\n\n\n\n Back to top"
   },
   {
     "objectID": "posts/网站建设/docker部署django网站(一）.html",
