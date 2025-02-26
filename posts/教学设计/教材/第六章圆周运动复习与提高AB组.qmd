@@ -11,7 +11,9 @@ categories: [教材,复习与提高]
 
 1．请根据加速度的特点，对以下七种运动进行分类，并画出分类的树状结构图：匀速直线运动；匀变速直线运动；自由落体运动；抛体运动；平抛运动；匀速圆周运动；变速圆周运动。
 
-**参考解答**：略
+**参考解答**：
+
+![](images/paste-8.png){width="450"}
 
 ------------------------------------------------------------------------
 
@@ -28,15 +30,25 @@ $a_A : a_B : a_C : a_D = 4 : 1 : 2 : 4$。
 
 3．在空间站中，宇航员长期处于失重状态。为缓解这种状态带来的不适，科学家设想建造一种环形空间站，如图 6-2 所示。圆环绕中心匀速旋转，宇航员站在旋转舱内的侧壁上，可以受到与他站在地球表面时相同大小的支持力。已知地球表面的重力加速度为 $g$，圆环的半径为 $r$，宇航员可视为质点，为达到目的，旋转舱绕其轴线匀速转动的角速度应为多大？
 
-**参考解答**：\
-$\omega = \sqrt{\frac{g}{r}}$。
+**参考解答**：
+
+支持力提供自转的向心力
+
+$$F_N=m\omega^2r,F=mg$$\
+$$\omega = \sqrt{\frac{g}{r}}$$
 
 ------------------------------------------------------------------------
 
 4．如图 6-3 所示，长 $L$ 的轻杆两端分别固定着可以视为质点的小球 A、B，放置在光滑水平桌面上，杆中心 O 有一竖直方向的固定转动轴，小球 A、B 的质量分别为 $3m$、$m$。当轻杆以角速度 $\omega$ 绕轴在水平桌面上转动时，求转轴受杆拉力的大小。
 
-**参考解答**：\
-转轴受杆拉力的大小为 $m\omega^2 L$。
+![](images/paste-9.png){width="414"}
+
+**参考解答**：
+
+对A球: $F_A=3m\omega^2\frac{L}2$\
+对B球: $F_B=m\omega^2\frac{L}2$\
+对杆: $F_\text{轴对杆}=F'_A-F'_B=m\omega^2 L$\
+由牛三定律得,转轴受杆拉力的大小为 $$F_\text{杆对轴}=m\omega^2 L$$
 
 ------------------------------------------------------------------------
 
@@ -56,7 +68,12 @@ $\omega = \sqrt{\frac{g}{r}}$。
 
 7．如图 6-6 所示，半径为 $R$ 的半球形陶罐固定在水平转台上，转台以角速度 $\omega$ 匀速转动。一质量为 $m$ 的小物块落入陶罐内，随罐一起转动且相对静止时，摩擦力为 0，与 O 点连线夹角 $\theta = 60^\circ$。求转台转动的角速度。
 
-**参考解答**：\
+![](images/paste-10.png){width="343"}
+
+**参考解答**：
+
+$mgtan\theta=m\omega^2Rsin\theta$
+
 $\omega = \sqrt{\frac{g}{R \cos\theta}} = \sqrt{\frac{2g}{R}}$。
 
 ------------------------------------------------------------------------
@@ -76,12 +93,22 @@ $\omega = \sqrt{\frac{g}{R \cos\theta}} = \sqrt{\frac{2g}{R}}$。
 
 2．如图 6-8 所示，质点做匀速圆周运动，时间 $t$ 内由 A 运动到 B，圆心角为 $\theta$。
 
+![](images/paste-11.png){width="219"}
+
 （1）若 AB 弧长为 $l$，求向心加速度大小；\
-（2）若速度改变量大小为 $\Delta v$，求向心加速度大小。
+（2）若$\theta=60^\circ$,求$\frac{\Delta v}{\Delta t}$与向心加速度的比值。
 
 **参考解答**：\
-（1）$a_n = \frac{l^2}{r t^2}$；\
-（2）$a_n = \frac{\Delta v^2}{4r}$。
+（1）$a_n = v\omega=\frac{l\theta}{t^2}$；\
+（2）
+$$
+\begin{aligned}
+&\frac{\Delta v}{\Delta t}=\frac{v}{\Delta t}\\
+&a_n=v\omega\\
+&\frac{\Delta v}{\Delta t}:a_n=\frac{1}{\omega \Delta t}=\frac{1}{\theta}=\frac{3}{\pi}
+\end{aligned}
+$$
+
 
 ------------------------------------------------------------------------
 
@@ -131,13 +158,13 @@ $\omega = \sqrt{\frac{g}{R \cos\theta}} = \sqrt{\frac{2g}{R}}$。
 
 **参考解答**：\
 （1）$F = m\omega^2 l$；\
-（2）$\omega$ 与 $l$ 无关；\
-（3）$F \propto l$。
+（2）$\omega$ 与 $l$ 无关；$g=\omega^2h$\
+（3）$F=\frac{mgl}h$。
 
 力的三角形与绳长、半径、高度三角形相似
 
 $$
-\frac{mg}h=\frac{F_T}l=\frac{m\omega^2R}R
+\frac{mg}h=\frac{F}l=\frac{m\omega^2R}R
 $$
 
 根据上述关系很快得到结论。
@@ -171,7 +198,7 @@ $$\begin{aligned}&x=v_1t_1\\&h=d-r=\frac12gt_1^2\end{aligned}$$
 
 绳能承受的最大拉力不变，有
 
-$$F-mg=m\frac{\nu_1^2}r$$
+$$\frac{11}{3}mg-mg=m\frac{\nu_1^2}r$$
 
 解得 解得
 
@@ -199,13 +226,12 @@ $v=\sqrt{gR\mathrm{tan}\theta}=\sqrt{10\times60\times0.27}m/s\approx12.7m/s$
 
 (2)当自行车速为
 
-```{=tex}
 \begin{aligned}
  & \nu^{\prime}=18\mathrm{m/s}>12.7\mathrm{m/s} \\
  & \text{此时重力和支持力的合力不足以提供向心力,斜面对人和自行车施加沿斜面向下的静摩擦力,} \\
  & \text{其受力分析如图所示}
 \end{aligned}
-```
+
 ![](images/paste-4.png){width="292"}
 
 根据牛顿第二定律可得：在y轴方向
@@ -214,8 +240,7 @@ $$Ncos\theta=mg+f\sin\theta$$
 
 在$x$轴方向
 
-$$f\cos\theta+N\sin\theta=\frac{mv^{\prime2}}R$$
-联立解得:
+$$f\cos\theta+N\sin\theta=\frac{mv^{\prime2}}R$$ 联立解得:
 
 $$f\approx263.8N$$
 
