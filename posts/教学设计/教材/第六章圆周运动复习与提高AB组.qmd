@@ -134,9 +134,9 @@ $$
 
 根据$F_1+mg=m\omega^2l$解得$F_1= m$ $( \omega ^2l- g) .$
 
--   若$\omega>\sqrt{\frac gl}$ ,杆对小球的拉力大小为$F_1= m(\omega ^2l- g)$ ,方向竖直向下。
+-   若$\omega>\sqrt{\frac gl}$ ,杆对小球的拉力大小为$F_1= m( \omega ^2l- g)$ ,方向竖直向下。
 -   若$\omega=\sqrt{\frac{g}l}$ ,$F_1=0$,杆对小球恰好无作用力。
--   若 $\omega < \sqrt {\frac {g}l}$,杆对小球的支持力大小为$F_1= m(g-\omega ^2l)$ ,方向竖直向上。
+-   若 $\omega < \sqrt {\frac {g}l}$,杆对小球的支持力大小为$F_1= m( g- \omega ^2l)$ ,方向竖直向上。
 
 (2)小球运动到水平位置 A 处时，
 
