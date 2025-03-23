@@ -1,0 +1,14 @@
+---
+title: "docker部署django网站（三）"
+author: "stack"
+date: "2025-03-23"
+categories: [Django,docker]
+---
+
+
+```bash
+#force_text django4.0已经移除了，改成force_str
+# .pyenv/versions/3.11.11/lib/python3.11/site-packages/simpleui/templatetags/simpletags.py
+from django.utils.encoding import force_text 改成
+from django.utils.encoding import force_str as force_text
+```
