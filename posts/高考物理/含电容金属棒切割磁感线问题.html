@@ -213,7 +213,11 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#含电容和外力的金属棒运动分析" id="toc-含电容和外力的金属棒运动分析" class="nav-link active" data-scroll-target="#含电容和外力的金属棒运动分析">含电容和外力的金属棒运动分析</a></li>
+  <li><a href="#含电容和恒定外力的金属棒运动分析" id="toc-含电容和恒定外力的金属棒运动分析" class="nav-link active" data-scroll-target="#含电容和恒定外力的金属棒运动分析">含电容和恒定外力的金属棒运动分析</a>
+  <ul class="collapse">
+  <li><a href="#忽略一切电阻以导体棒为研究对象" id="toc-忽略一切电阻以导体棒为研究对象" class="nav-link" data-scroll-target="#忽略一切电阻以导体棒为研究对象">忽略一切电阻，以导体棒为研究对象，</a></li>
+  <li><a href="#若电阻r考虑则2式再次求导" id="toc-若电阻r考虑则2式再次求导" class="nav-link" data-scroll-target="#若电阻r考虑则2式再次求导">若电阻R考虑，则(2)式再次求导，</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/yemaobumei/edit/main/posts/高考物理/含电容金属棒切割磁感线问题.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/yemaobumei/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -224,9 +228,11 @@ window.Quarto = {
 
 
 
-<section id="含电容和外力的金属棒运动分析" class="level1">
-<h1>含电容和外力的金属棒运动分析</h1>
-<p>忽略一切电阻，以导体棒为研究对象， 利用动量定理对齐进行分析， <span class="math display">
+<section id="含电容和恒定外力的金属棒运动分析" class="level1">
+<h1>含电容和恒定外力的金属棒运动分析</h1>
+<section id="忽略一切电阻以导体棒为研究对象" class="level3">
+<h3 class="anchored" data-anchor-id="忽略一切电阻以导体棒为研究对象">忽略一切电阻，以导体棒为研究对象，</h3>
+<p>利用动量定理对齐进行分析， <span class="math display">
 (F_A+F)\cdot \Delta t = m \Delta v
 </span> 即为动力学方程 <span class="math display">
 -BL\frac{dQ}{dt}+F=m\frac{dv}{dt}\tag{1}
@@ -239,7 +245,10 @@ BLv=\frac{Q}{C}\rightarrow BL\frac{dv}{dt}=\frac{1}{C}\frac{dQ}{dt}
 </span> 得到: <span class="math display">
 a=\frac{dv}{dt}=\frac{F}{m+CB^2L^2}\tag{4}
 </span> 金属棒做匀加速运动，导体棒和电容两端电压随时间线性增大，电容器携带电量也线性增加。在不考虑电阻下，系统将在极短时间达到最终状态。在这个过程中有一瞬间存在大电流，从而形成不能忽略的电磁波能量耗散，因此往往不能采用系统能量守恒进行解题。</p>
-<p>若电阻R考虑，则(2)式再次求导， <span class="math display">
+</section>
+<section id="若电阻r考虑则2式再次求导" class="level3">
+<h3 class="anchored" data-anchor-id="若电阻r考虑则2式再次求导">若电阻R考虑，则(2)式再次求导，</h3>
+<p><span class="math display">
 BL\frac{dv}{dt}=R\frac{d^2Q}{dt^2}+\frac{1}{C}\frac{dQ}{dt}\tag{5}
 </span> 由(1)得 <span class="math display">
 \frac{dQ}{dt}=\frac{F}{BL}-\frac{m}{BL}\frac{dv}{dt}
@@ -258,6 +267,7 @@ v(t)=c_1e^{-at}+\frac{F}{m+CB^2L^2}t+c_2
 </span> 从这个解也可以看出当R小，a很大，或者长时间后，主要形式规律以线性函数为主。</p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
