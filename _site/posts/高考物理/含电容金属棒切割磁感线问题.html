@@ -69,6 +69,49 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script defer="" src="../../site_libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="../../site_libs/katex/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -182,7 +225,36 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="含电容和外力的金属棒运动分析" class="level1">
 <h1>含电容和外力的金属棒运动分析</h1>
-<p>点对点</p>
+<p>忽略一切电阻，以导体棒为研究对象， 利用动量定理对齐进行分析， <span class="math display">
+(F_A+F)\cdot \Delta t = m \Delta v
+</span> 即为动力学方程 <span class="math display">
+-BL\frac{dQ}{dt}+F=m\frac{dv}{dt}\tag{1}
+</span> 电路满足基尔霍夫定律： <span class="math display">
+BLv = R\frac{dQ}{dt}+\frac{Q}{C}\tag{2}
+</span> 若电路一切电阻忽略不计，即R=0，则 <span class="math display">
+BLv=\frac{Q}{C}\rightarrow BL\frac{dv}{dt}=\frac{1}{C}\frac{dQ}{dt}
+</span> 带入金属棒动力学方程 <span class="math display">
+-CB^2L^2\frac{dv}{dt}+F=m\frac{dv}{dt}\tag{3}
+</span> 得到: <span class="math display">
+a=\frac{dv}{dt}=\frac{F}{m+CB^2L^2}\tag{4}
+</span> 金属棒做匀加速运动，导体棒和电容两端电压随时间线性增大，电容器携带电量也线性增加。在不考虑电阻下，系统将在极短时间达到最终状态。在这个过程中有一瞬间存在大电流，从而形成不能忽略的电磁波能量耗散，因此往往不能采用系统能量守恒进行解题。</p>
+<p>若电阻R考虑，则(2)式再次求导， <span class="math display">
+BL\frac{dv}{dt}=R\frac{d^2Q}{dt^2}+\frac{1}{C}\frac{dQ}{dt}\tag{5}
+</span> 由(1)得 <span class="math display">
+\frac{dQ}{dt}=\frac{F}{BL}-\frac{m}{BL}\frac{dv}{dt}
+</span> <span class="math display">
+\frac{d^2Q}{dt^2}=-\frac{m}{BL}\frac{d^2v}{dt^2}
+</span> 带入(5)得： <span class="math display">
+\frac{d^2v}{dt^2}+\frac{m+CB^2L^2}{CmR}\frac{dv}{dt}=\frac{F}{CmR}
+</span> v关于t的二阶非其次常微分方程 令 <span class="math display">
+a=\frac{m+CB^2L^2}{CmR},b=\frac{F}{CmR}
+</span> <span class="math display">
+\frac{d^2v}{dt^2}+a\frac{dv}{dt}=b
+</span> 可求助chatgpt求解 <span class="math display">
+v(t)=c_1e^{-at}+\frac{b}{a}t+c_2,\quad c_1,c_2为常数
+</span> 进一步 <span class="math display">
+v(t)=c_1e^{-at}+\frac{F}{m+CB^2L^2}t+c_2
+</span> 从这个解也可以看出当R小，a很大，或者长时间后，主要形式规律以线性函数为主。</p>
 
 
 </section>

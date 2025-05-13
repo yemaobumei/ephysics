@@ -12,3 +12,11 @@ categories: [Django,docker]
 from django.utils.encoding import force_text 改成
 from django.utils.encoding import force_str as force_text
 ```
+
+如果是docker服务器
+```bash
+docker compose web sh
+cd /usr/local/lib/python3.10/site-packages/simpleui/templatetags
+vi simpletags.py
+
+```
